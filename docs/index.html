@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>Fundamentals of Data Science</title>
+
+        <script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+        <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="site_libs/navigation-1.1/tabsets.js"></script>
+        <link href="site_libs/readthedown-0.1/readthedown.css" rel="stylesheet" />
+        <link href="site_libs/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
+        <script src="site_libs/readthedown-0.1/readthedown.js"></script>
+    
+    
+    
+        <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+         <!-- readthedown start -->   
+   <div id="content" data-toggle="wy-nav-shift">
+     <nav id="nav-top" role="navigation" aria-label="top navigation">
+       <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+     </nav>
+         
+   
+        
+      <h1 class="title">Fundamentals of Data Science</h1>
+         <h1 class="subtitle"><div class="line-block">MTH-391 | Section
+A<br />
+Spring 2025 | University of Portland<br />
+<em>One-Time Course Offering</em></div></h1>
+   
+         <!-- readthedown authors -->
+   <div id="sidebar">
+    <h2><a href="#content">Fundamentals of Data Science</a></h2>
+    <div id="toc">
+      <ul>
+      <li><a href="#syllabus" id="toc-syllabus">Syllabus</a>
+      <ul>
+      <li><a href="#about-the-class"
+      id="toc-about-the-class"><strong>About the Class</strong></a></li>
+      <li><a href="#communication-tools"
+      id="toc-communication-tools"><strong>Communication
+      Tools</strong></a></li>
+      <li><a href="#assignment-tools"
+      id="toc-assignment-tools"><strong>Assignment
+      Tools</strong></a></li>
+      <li><a href="#learning-goals"
+      id="toc-learning-goals"><strong>Learning Goals</strong></a></li>
+      <li><a href="#topics-schedule" id="toc-topics-schedule">Topics
+      Schedule</a></li>
+      <li><a href="#academic-support"
+      id="toc-academic-support"><strong>Academic
+      Support</strong></a></li>
+      <li><a href="#assessment"
+      id="toc-assessment"><strong>Assessment</strong></a></li>
+      <li><a href="#assignments"
+      id="toc-assignments"><strong>Assignments</strong></a></li>
+      <li><a href="#expectations"
+      id="toc-expectations"><strong>Expectations</strong></a></li>
+      </ul></li>
+      </ul>
+    </div>
+    <div id="postamble" data-toggle="wy-nav-shift" class="status">
+                  <p class="author"><span class="glyphicon glyphicon-user"></span> <div
+class="line-block">Dr. <a href="https://www.alexjohnquijano.com"
+target="_blank">Alex John Quijano</a> <a
+href="https://creativecommons.org/licenses/by/4.0/"
+target="_blank">CC-BY 4.0</a><br />
+Department of Mathematics<br />
+University of Portland<br />
+<br />
+Made with <a href="https://cran.r-project.org/" target="_blank">R</a>
+and <a href="https://rmarkdown.rstudio.com/"
+target="_blank">RMarkdown</a><br />
+Last updated on January 14, 2025</div></p>
+                      </div>
+   </div>
+     
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div id="main">
+<div id="syllabus" class="section level1">
+<h1>Syllabus</h1>
+<div id="about-the-class" class="section level2">
+<h2><strong>About the Class</strong></h2>
+<div id="course-information" class="section level3">
+<h3>Course Information</h3>
+<blockquote>
+<ul>
+<li>Title: MTH 391: Fundamentals of Data Science</li>
+<li>Sections: A</li>
+</ul>
+</blockquote>
+</div>
+<div id="instructor-information" class="section level3">
+<h3>Instructor Information</h3>
+<blockquote>
+<ul>
+<li>Instructor: Dr. Alex John Quijano</li>
+<li>Office: Buckley Center 279</li>
+<li>Email: <a href="mailto:quijano@up.edu"
+class="email">quijano@up.edu</a></li>
+</ul>
+</blockquote>
+</div>
+<div id="lectures-and-discussions" class="section level3">
+<h3>Lectures and Discussions</h3>
+<p>This course meets on Mondays, Wednesdays, and Fridays. Wednesdays and
+Fridays will focus on discussing topics. Project phases will be
+scheduled for Mondays. The typical class routine will include
+pre-reading assignments before each class, followed by a short lecture
+or demonstration, worksheet activities, group presentations, and
+discussions.</p>
+<blockquote>
+<p>The course schedule and location is:</p>
+<ul>
+<li><strong>Section A:</strong> MWF 1:35 PM - 2:30 PM, Franz Hall
+125</li>
+</ul>
+</blockquote>
+</div>
+<div id="textbook" class="section level3">
+<h3>Textbook</h3>
+<p>This course uses the following textbook - which is free to access -
+for reading and practice.</p>
+<ul>
+<li>Baumer BS, Kaplan DT, orton, Nicholas J (2017). <em>Modern data
+science, with R</em>. Chapman and Hall/CRC. <a
+href="https://mdsr-book.github.io/mdsr3e/"
+class="uri">https://mdsr-book.github.io/mdsr3e/</a>.</li>
+<li>Wickham H, Çetinkaya-Rundel M, rolemund, Garrett (2023). <em>R for
+data, science</em>. O’Reilly Media, Inc. <a
+href="https://r4ds.hadley.nz/"
+class="uri">https://r4ds.hadley.nz/</a>.</li>
+<li>VanderPlas, Jake (2016). <em>Python data science handbook: Essential
+tools, for working with data</em>. O’Reilly Media, Inc., <a
+href="https://jakevdp.github.io/PythonDataScienceHandbook/"
+class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/</a>.</li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="communication-tools" class="section level2">
+<h2><strong>Communication Tools</strong></h2>
+<div id="class-website" class="section level3">
+<h3>Class Website</h3>
+<p>The syllabus, tentative topics schedule, and other information are
+posted on the course website.</p>
+<blockquote>
+<p>You can access the course website at <a
+href="https://upmathematics.github.io/mth-391a-sp24-otco/"
+target="_blank">mth-391a-sp25-otco</a>.</p>
+</blockquote>
+<p>Note that this website can also be viewed in Teams.</p>
+</div>
+<div id="microsoft-teams" class="section level3">
+<h3>Microsoft Teams</h3>
+<p>We will be using Teams as the main real-time communication tool for
+general announcements, question-answering discussions, and direct
+messages. I added you to the Teams page already, so you just need to log
+in using your UP credentials. If not, then send a request when you log
+in. Let me know if you need any assistance.</p>
+<p>I recommend that you install the Teams software on your own machine
+for easy and stable access, instead of accessing Teams on the
+browser.</p>
+<blockquote>
+<p>The Teams for this course is <a
+href="https://teams.microsoft.com/l/team/19%3AWFMBF6OwDzF-uJNtQ3ebdzzHaN5eFfxiJMJiYsNg_is1%40thread.tacv2/conversations?groupId=edfc417f-df31-45e1-9bb9-1a6e0bb4a704&amp;tenantId=ea8f3949-231c-40b6-a33f-56873af96f87"
+target="_blank">MTH-391A-sp25</a>.</p>
+</blockquote>
+<p>Note that this course website and textbook can be accessed in
+Teams.</p>
+</div>
+<div id="email" class="section level3">
+<h3>Email</h3>
+<p>My UP email is <a href="mailto:quijano@up.edu"
+class="email">quijano@up.edu</a>.</p>
+<blockquote>
+<p>If you prefer communicating through email, note that I have set up an
+email filter for this course, and you must put the “MTH 391” keyword in
+your subject line.</p>
+</blockquote>
+<p>It is easy for me to get notice of your email if you put the keyword
+in the subject line. Concise and specific messages are helpful, so I
+know how I can best help you.</p>
+<p><br></p>
+</div>
+</div>
+<div id="assignment-tools" class="section level2">
+<h2><strong>Assignment Tools</strong></h2>
+<div id="moodle" class="section level3">
+<h3>Moodle</h3>
+<p>We will be using the course <a href="https://learning.up.edu"
+target="_blank">Moodle</a> page for submitting assignments and giving
+feedback.</p>
+<blockquote>
+<p>The Moodle for this course is <a
+href="https://learning.up.edu/course/view.php?id=41273"
+target="_blank">MTH-391A - sp25 - Fundamentals of Data Science</a>. You
+are already listed in Moodle for this course using your UP account.</p>
+</blockquote>
+</div>
+<div id="posit-cloud" class="section level3">
+<h3>Posit Cloud</h3>
+<p>We will be using a computational tool (R) for some assignments. These
+tools are free and open-source. We will use the <a
+href="https://login.posit.cloud/login?redirect=%2F"
+target="_blank">Posit Cloud</a> service, an online computing
+environment.</p>
+<blockquote>
+<p>Create a free account at <a
+href="https://login.posit.cloud/register?redirect=%2F"
+target="_blank">Posit Cloud Sign-Up</a> using your UP email. Note that
+you must use your UP email for me to add you into the course’s workspace
+in Posit Cloud. You will receive an email inviting you into the
+workspace at the first week of the semester.</p>
+</blockquote>
+<blockquote>
+<p>R instructions and materials will be provided ad hoc.</p>
+</blockquote>
+<p>Note that the Posit Cloud computing service is free for you but it is
+metered by computation hours for the instructor. Please only use the
+service for course related computations.</p>
+<p>If you are interested in using your own machine, you can install R
+environments yourself. First, you need to install <a
+href="https://cran.r-project.org/" target="_blank">R</a>. Next, install
+<a href="https://posit.co/download/rstudio-desktop/" target="_blank">R
+Studio</a>.</p>
+<p><br></p>
+</div>
+</div>
+<div id="learning-goals" class="section level2">
+<h2><strong>Learning Goals</strong></h2>
+<div id="description" class="section level3">
+<h3>Description</h3>
+<p>This course provides students with a comprehensive understanding of
+the essential principles and techniques in the field of data science.
+Through this course, students will learn to proficiently handle and
+visualize structured and unstructured data, quantitative and qualitative
+data, formulating questions, and extract valuable insights using modern
+statistical methods and algorithms.</p>
+</div>
+<div id="notes" class="section level3">
+<h3>Notes</h3>
+<p>Students in this course will be evaluated through mini-assignments
+and a semester-long data science project. Students will gain hands-on
+experience in using simple and readable programming codes in R and
+Python for data processing and creating multivariate data
+visualizations. Students will also develop skills in creating
+reproducible reports, communicate findings effectively, and navigate
+through data ethics.</p>
+</div>
+<div id="learning-outcomes" class="section level3">
+<h3>Learning Outcomes</h3>
+<p>Upon completion of the course, you will be able to:</p>
+<ul>
+<li>Process structured and unstructured data, and produce informative
+data tables and visualizations, as well as able to understand and
+explain the basic structure of data, how it is collected, and evaluate
+its limitations.</li>
+<li>Apply statistical methods, techniques, approaches, and algorithms to
+extract necessary information and insights from data.</li>
+<li>Critique claims and evaluate decisions based on data, and write and
+run simple programming codes for data analysis and visualization.</li>
+<li>Apply data science concepts and methods to solve problems in
+real-world contexts and able to communicate results effectively.</li>
+</ul>
+</div>
+<div id="learning-objectives" class="section level3">
+<h3>Learning Objectives</h3>
+<p>The following learning objectives are designed to build on one
+another, with some overlap. The goal is to help you achieve proficiency
+in these areas.</p>
+<ul>
+<li>Work with a diversity of data which includes spatial, temporal,
+text, and network data.</li>
+<li>Use appropriate exploratory data analysis methods to extract
+knowledge from data.</li>
+<li>Create multivariate data visualizations that are both static and
+interactive.</li>
+<li>Apply modern statistical methods and algorithms to analyze
+data.</li>
+<li>Effectively write stories about data for a non-technical (or
+technical) audience.</li>
+<li>Utilize a reproducible and collaborative workflow for data
+analysis.</li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="topics-schedule" class="section level2">
+<h2>Topics Schedule</h2>
+<blockquote>
+<p>You are required to read the materials, and are strongly encouraged
+to actively participate in class discussions and complete the worksheets
+efficiently to deepen your understanding and succeed in the course.</p>
+</blockquote>
+<p>The “Read” column in the table below contains page numbers (Pg.) or
+chapters (ch.) on which it refers to a label in the Books &amp; Online
+Resources List. For example “Pg. 1-5 <span class="citation">[1]</span>”
+refers to pages 1-5 of the textbook titled “Modern data science with
+R”.</p>
+<div id="tentative-schedule" class="section level3">
+<h3>Tentative Schedule</h3>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="17%" />
+<col width="50%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Week</strong></th>
+<th align="center"><strong>Day</strong></th>
+<th align="center"><strong>Topic</strong></th>
+<th align="center"><strong>Read</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>1</strong></td>
+<td align="center">M 1/13</td>
+<td align="center">Orientation</td>
+<td align="center">Syllabus</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 1/15</td>
+<td align="center">Data Science Life Cycle</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 1/17</td>
+<td align="center">Cloud Computing</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>2</strong></td>
+<td align="center">M 1/20</td>
+<td align="center"><em>MLK Day (no classes, offices closed)</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 1/22</td>
+<td align="center">Reproducible Workflows</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 1/24</td>
+<td align="center">Basics of Data Wrangling</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>3</strong></td>
+<td align="center">M 1/27</td>
+<td align="center">Project Proposal &amp; <br><strong>Project Phase
+1</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 1/29</td>
+<td align="center">Data Wrangling on One Table</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 1/31</td>
+<td align="center">Data Wrangling on Multiple Tables</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>4</strong></td>
+<td align="center">M 2/3</td>
+<td align="center"><strong>Project Phase 2</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 2/5</td>
+<td align="center">Data Reshaping</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 2/7</td>
+<td align="center">Basics of Visualizations</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>5</strong></td>
+<td align="center">M 2/10</td>
+<td align="center"><strong>Project Phase 3</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 2/12</td>
+<td align="center">Transforming Tables for Visualizations</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 2/14</td>
+<td align="center">Advanced Visualizations</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>6</strong></td>
+<td align="center">M 2/17</td>
+<td align="center">1st Progress Report &amp; <br><strong>Project Phase
+4</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 2/19</td>
+<td align="center">Iteration</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 2/21</td>
+<td align="center">Wrangling High-Dimensional Data</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>7</strong></td>
+<td align="center">M 2/24</td>
+<td align="center"><strong>Project Phase 5</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 2/26</td>
+<td align="center">Scaling and Coloring</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 2/28</td>
+<td align="center">Visualizing High-Dimensional Data</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>8</strong></td>
+<td align="center">M 3/3</td>
+<td align="center"><em>Spring Vacation</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 3/5</td>
+<td align="center"><em>Spring Vacation</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 3/7</td>
+<td align="center"><em>Spring Vacation</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>9</strong></td>
+<td align="center">M 3/10</td>
+<td align="center"><strong>Project Phase 6</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 3/12</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 3/14</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>10</strong></td>
+<td align="center">M 3/17</td>
+<td align="center">2nd Progress Report &amp; <br><strong>Project Phase
+7</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 3/19</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 3/21</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>11</strong></td>
+<td align="center">M 3/24</td>
+<td align="center"><strong>Project Phase 8</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 3/26</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 3/28</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>12</strong></td>
+<td align="center">M 3/31</td>
+<td align="center"><strong>Project Phase 9</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 4/2</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 4/4</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>13</strong></td>
+<td align="center">M 4/7</td>
+<td align="center">Final Report &amp; <br><strong>Project Phase
+10</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 4/9</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 4/11</td>
+<td align="center">TBA</td>
+<td align="center">TBA</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>14</strong></td>
+<td align="center">M 4/14</td>
+<td align="center"><strong>Project Phase 11</strong></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">W 4/16</td>
+<td align="center">TBA</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">F 4/18</td>
+<td align="center"><em>Easter vacation</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>15</strong></td>
+<td align="center">M 4/21</td>
+<td align="center"><em>Easter Vacation</em></td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">W 4/23</td>
+<td align="center">Project Period</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">F 4/25</td>
+<td align="center">Project Period</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>16</strong></td>
+<td align="center">Th 5/1</td>
+<td align="center"><strong>Final Project Presentations<br>(1:30 PM to
+3:30 PM)</strong></td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="books-online-resources-lists" class="section level3">
+<h3>Books &amp; Online Resources Lists</h3>
+<div id="refs" class="references csl-bib-body" entry-spacing="0">
+<div id="ref-baumer2017modern" class="csl-entry">
+<div class="csl-left-margin">1. </div><div
+class="csl-right-inline">Baumer, Benjamin S and Kaplan, Daniel T and
+Horton, Nicholas J (2017) <a
+href="https://mdsr-book.github.io/mdsr3e/">Modern data science with
+r</a>, Chapman; Hall/CRC.</div>
+</div>
+<div id="ref-wickham2023r" class="csl-entry">
+<div class="csl-left-margin">2. </div><div
+class="csl-right-inline">Wickham, Hadley and Çetinkaya-Rundel, Mine and
+Grolemund, Garrett (2023) <a href="https://r4ds.hadley.nz/">R for data
+science</a>, " O’Reilly Media, Inc.".</div>
+</div>
+<div id="ref-vanderplas2016python" class="csl-entry">
+<div class="csl-left-margin">3. </div><div
+class="csl-right-inline">VanderPlas, Jake (2016) <a
+href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python data
+science handbook: Essential tools for working with data</a>, " O’Reilly
+Media, Inc.".</div>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="academic-support" class="section level2">
+<h2><strong>Academic Support</strong></h2>
+<div id="help-hours" class="section level3">
+<h3>Help Hours</h3>
+<blockquote>
+<p>Dr. Alex John Quijano</p>
+<ul>
+<li>4:00 PM - 5:00 PM Monday to Friday, Buckley Center 279</li>
+<li><a href="https://calendly.com/alexjohnquijano/helphours"
+target="_blank">One-to-One, Buckley Center 279 or in Teams</a> <br>
+<em>Click on the link to sign-up for a 15-minute session.</em></li>
+</ul>
+</blockquote>
+<p>My walk-in help hours start week 2. Note that you can bring a fellow
+student with you when you sign-up for a session. Just click the “Add
+Guests” link when you sign-up, and add in your fellow student’s UP
+email. If you need more than 15 minutes, you can book at least two
+consecutive sessions.</p>
+</div>
+<div id="the-learning-commons" class="section level3">
+<h3>The Learning Commons</h3>
+<p>You can get academic assistance through Learning Commons tutoring
+services and workshops. The Co-Pilot peer tutoring program provides you
+with opportunities to work with other students to get help in writing,
+math, group projects, and other courses. Schedule an appointment to meet
+with a Co-Pilot (tutor) by visiting the <a
+href="www.up.edu/learningcommons" target="_blank">Learning Commons</a>
+website. You can also meet with a Co-Pilot during drop-in hours. Check
+the Learning Commons website or drop by the Learning Commons in BC 163
+to learn more about their services. Find a tutor at the Learning Commons
+to get support on your academic journey.</p>
+</div>
+<div id="math-resource-center" class="section level3">
+<h3>Math Resource Center</h3>
+<p>Appointment-based tutoring accepts appointments starting week 1 and
+sessions start week 2. Visit the <a
+href="https://www.up.edu/learningcommons/tutoring-services/math-resource-center/index.html"
+target="_blank">Math Resource Center</a> website to sign-up for an
+appointment. Drop-in tutoring is Monday to Thursday, 3:00 PM - 7:00 PM
+in BC 163 and starts week 2. Check the Math Resource Center website or
+drop by the center for more information.</p>
+</div>
+<div id="help-hours-guidelines" class="section level3">
+<h3>Help Hours Guidelines</h3>
+<p>It is strongly recommended that you attend the walk-in help hours or
+set up a one-to-one meeting with the me if you feel like you are falling
+behind during our in-person class activities, or if you just need to
+clarify concepts discussed in class. In order to be more productive
+during a one-to-one meeting (or the walk-in help hours), these are three
+recommendations before you come in:</p>
+<ul>
+<li>List all gaps in knowledge you have (missed concepts) or list all
+concepts that were unclear to you during class. We will address them one
+by one.</li>
+<li>Prepare questions you want answered and be ready to show relevant
+materials.</li>
+<li>Regarding assignments, prepare to show (a) what are the steps you
+have tried and (b) what are the errors you encountered and the
+strategies you have tried.</li>
+</ul>
+<p>Note that these are recommendations so that you can get the most out
+of the help hours allocated for you. If you just want to come in and
+chat about something else, feel free to do so. If the dedicated time for
+one-to-one meeting does not work for you, send me a message to set up an
+appointment.</p>
+</div>
+<div id="collaboration-policy" class="section level3">
+<h3>Collaboration Policy</h3>
+<p>I expect you to participate in the class through lectures, class
+activities, discussions, homework, and other engagements. I also expect
+you to make use of opportunities to get help outside of class (help
+hours, Teams, email, tutoring) if you need help. Concise and specific
+messages are the most helpful so I know how I can best help you.</p>
+<blockquote>
+<p>You are encouraged to participate in discussions with your peers
+regarding assignments. However, each student must take responsibility
+and ownership of their work and submit their work individually, except
+for group projects.</p>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+<div id="assessment" class="section level2">
+<h2><strong>Assessment</strong></h2>
+<div id="assessment-disclosure-statement" class="section level3">
+<h3>Assessment Disclosure Statement</h3>
+<p>Student work products for this course may be used by the University
+for educational quality assurance purposes. For reasons of
+confidentiality, such examples will not include student names.</p>
+</div>
+<div id="standards-based-grading" class="section level3">
+<h3>Standards-Based Grading</h3>
+<p>Learning data science demands focus, rigorous examination of the
+concepts you have encountered, and a process of ongoing refinement and
+improvement. You will be assessed on your proficiency of the concepts
+presented in the data science life cycle. You will have opportunities to
+demonstrate your proficiency, revise your work, and reflect on your
+growth in processing, visualizing, and analyzing complex data sets,
+communicating data stories, and making meaningful data-driven
+conclusions.</p>
+<p>This course uses a standards-based grading system, which emphasizes
+mastery of specific learning objectives. This approach is more precise
+and motivating than traditional grading methods and fosters a more
+equitable learning environment. Key features of standards-based grading
+include:</p>
+<ul>
+<li>A clear focus on mastering defined learning objectives</li>
+<li>The use of diverse assessment methods to evaluate understanding</li>
+<li>Regular, detailed feedback to guide your progress</li>
+<li>Support in setting meaningful goals and tracking your growth</li>
+</ul>
+<p>This system prioritizes learning and personal development, enabling
+you to excel and reach your highest potential.</p>
+</div>
+<div id="general-marking-guide" class="section level3">
+<h3>General Marking Guide</h3>
+<p>Each assignment will be graded according to the general marking guide
+detailed below. You will be given feedback on your assignment and
+learning process to improve your performance. Note that each assignment
+has its own rubric guided by these general guidelines and the
+assignment’s learning objectives.</p>
+<p>Given the following marks, your work:</p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"><strong>Mark</strong></th>
+<th align="left"><strong>Rubric Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Outstanding <br> (O)</strong></td>
+<td align="left">Demonstrates a full understanding of the material,
+clearly and concisely explains concepts, applies them correctly and
+efficiently to solve problems, and may extend the concepts to new
+situations.</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Excellent <br> (E)</strong></td>
+<td align="left">Demonstrates an approximate understanding of the
+material, may have made minor errors but is able to correct them and
+explain the reasoning, solves problems correctly, and may need more time
+or practice to improve efficiency.</td>
+</tr>
+<tr class="odd">
+<td align="right"><strong>Acceptable <br> (A)</strong></td>
+<td align="left">Demonstrates some understanding of the material but
+makes errors, can solve some problems, may need help with more difficult
+ones, and may need to work on improving problem-solving skills and
+reasoning.</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Needs Improvement <br> (NI)</strong></td>
+<td align="left">Shows potential but needs more work, may have made
+several errors, is unable to solve problems, and needs to focus on
+understanding the material and developing problem-solving skills.</td>
+</tr>
+<tr class="odd">
+<td align="right"><strong>Needs Major Improvement <br>
+(NMI)</strong></td>
+<td align="left">Shows little understanding of the material, may have
+made many significant errors, is unable to solve problems, and needs to
+focus on building a foundational understanding of the material.</td>
+</tr>
+<tr class="even">
+<td align="right"><strong>Missing <br> (M)</strong></td>
+<td align="left">Shows incomplete (either entirely or partially) or
+incomprehensible work.</td>
+</tr>
+</tbody>
+</table>
+<p>Note that these are categorical marks (not numerical scores).</p>
+</div>
+<div id="final-course-grades" class="section level3">
+<h3>Final Course Grades</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><strong>Assignment</strong></th>
+<th align="center"><strong>Rank</strong></th>
+<th align="center"><strong>Mark</strong></th>
+<th align="center"><strong>A</strong></th>
+<th align="center"><strong>B</strong></th>
+<th align="center"><strong>C</strong></th>
+<th align="center"><strong>D</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Project Phases</strong></td>
+<td align="center">1</td>
+<td align="center">O</td>
+<td align="center">90%</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="center"></td>
+<td align="center">E</td>
+<td align="center">-</td>
+<td align="center">80%</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="odd">
+<td align="right"></td>
+<td align="center"></td>
+<td align="center">A</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">70%</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="center"></td>
+<td align="center">NI</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">60%</td>
+</tr>
+<tr class="odd">
+<td align="right"><strong>Mini-Assignments</strong></td>
+<td align="center">2</td>
+<td align="center">Completed</td>
+<td align="center">100%</td>
+<td align="center">90%</td>
+<td align="center">80%</td>
+<td align="center">70%</td>
+</tr>
+</tbody>
+</table>
+<p>The above table shows the percent of given assignments. These
+percentages are minimum requirements for each letter grade. The rank
+determines the importance of each assignment where 1 means the highest
+rank and 2 means lowest rank.</p>
+<blockquote>
+<p>If you need more assistance on understanding your overall standing in
+this course, I encourage you to communicate with me directly.</p>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+<div id="assignments" class="section level2">
+<h2><strong>Assignments</strong></h2>
+<div id="submission-guidelines" class="section level3">
+<h3>Submission Guidelines</h3>
+<p>Your work must be labeled correctly and clearly written. All
+mini-assignments and project phases must be uploaded to Moodle as a
+single pdf file or html file.</p>
+<blockquote>
+<p>You need to submit all assignments online through Moodle.</p>
+</blockquote>
+</div>
+<div id="mini-assignments" class="section level3">
+<h3>Mini-Assignments</h3>
+<p>There will be mini-assignments every Wednesday and Friday. The
+purpose of the mini-assignment is for in-class group work and
+activities.</p>
+<blockquote>
+<p>You must submit your mini-assignment individually by end-of-class or
+end-of-day. Your name must exist in your assignment and the names of
+your collaborators.</p>
+</blockquote>
+<p>Mini-assignments are marked mostly on completion, and partially on
+correctness. It will be marked either pass or fail, there will no
+detailed feedback on worksheets, and no opportunities for revisions and
+make-up.</p>
+</div>
+<div id="project-phases" class="section level3">
+<h3>Project Phases</h3>
+<p>TBW</p>
+</div>
+<div id="final-project-presentation" class="section level3">
+<h3>Final Project Presentation</h3>
+<p>TBW</p>
+<blockquote>
+<p>The final project presentations are on:</p>
+<ul>
+<li><strong>Section A:</strong> May 1, Th 1:30 PM - 3:30 PM, Franz Hall
+125</li>
+</ul>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+<div id="expectations" class="section level2">
+<h2><strong>Expectations</strong></h2>
+<div id="deadline-extension-policy" class="section level3">
+<h3>Deadline Extension Policy</h3>
+<p>If you need more time to submit an assignment or a project phase, you
+may request an extension by following these steps:</p>
+<ul>
+<li>Communicate with me at least 12 hours before the deadline.</li>
+<li>Specify the exact day you plan to submit your work or the number of
+extra days you need.</li>
+<li>Please ensure that you adhere to the established timeline for
+submitting assignments, as it is important to maintain fairness and
+avoid over-reliance on extensions.</li>
+</ul>
+<p>Submitting a few hours late is usually not a major issue, as long as
+I receive your work before I begin marking and providing feedback. An
+extension is not required in such cases. Extensions for worksheets will
+only be granted if I decide to extend the deadline for the entire
+class.</p>
+</div>
+<div id="withdrawal-procedures" class="section level3">
+<h3>Withdrawal Procedures</h3>
+<p>It is the student’s responsibility to drop the course if he or she is
+no longer planning on attending the course or filling the other course
+requirements. In order to drop, the student must use and Add/Drop form
+available at the Registration Office. If a student does not properly
+withdraw from a course, he or she may receive an <strong>F</strong> for
+the course. A properly withdrawn student will receive a
+<strong>W</strong>. The last day to withdraw is <strong>Monday, April
+14th</strong>.</p>
+</div>
+<div id="appointment-cancelation-policies" class="section level3">
+<h3>Appointment Cancelation Policies</h3>
+<p>You can cancel your appointments, but it is strongly recommended that
+you cancel 24 hours before your scheduled time so that other students
+can schedule when a spot opens. You can reschedule for a different day
+and time if you need to.</p>
+<p>Please try to show-up to any of your appointments. If you have
+extenuating circumstances, please let me know as soon as possible to
+discuss next steps.</p>
+</div>
+<div id="attendance-and-participation" class="section level3">
+<h3>Attendance and Participation</h3>
+<p>Attendance is not tracked. However, participation is highly
+recommended. You are expected to actively participate in this class.
+Participation includes coming to class on time, being prepared, being
+willing to ask questions and share ideas, setting up study groups
+outside of class, attending tutoring sessions, posting helpful resources
+online, and contributing to the Teams discussion channels. Group and
+individual presentations of ideas is a suggested component of
+participation.</p>
+</div>
+<div id="absences" class="section level3">
+<h3>Absences</h3>
+<p>Generally, students are expected to attend all class sessions
+according to the instructor’s direction. Students who feel unwell should
+NOT attend class in person. These students should inform their
+instructor as soon as possible.</p>
+<p>Should the instructor need to miss class, the course may be
+temporarily conducted remotely. Should the instructor be unable to teach
+for an extended period of time, the respective department or unit will
+find a substitute to continue the course.</p>
+</div>
+<div id="late-assignments" class="section level3">
+<h3>Late Assignments</h3>
+<p>You are expected to turn in all completed assignments on time.
+Circumstances that may disallow you to turn in your work on time - such
+as a medical reason - are understandable. Please let me know if you are
+unable to submit your work and have missed the deadline way beyond its
+original posted date. Because every assignment is an important aspect of
+your learning in this class, we will discuss when you will turn in the
+assignment as well as decide upon an acceptable consequence for your
+turning it in late. I am committed to successfully helping you learn
+from this course.</p>
+</div>
+<div id="incompletes" class="section level3">
+<h3>Incompletes</h3>
+<p>An incomplete “I” will only be considered when the quality of a
+student’s work is satisfactory (C- or better), but for some essential
+reason the course has not been completed by the student. An “I” is
+reserved for emergency situations only. To request an incomplete, the
+student must submit a typed, signed and dated letter stating the
+reason(s) why an incomplete is appropriate. The letter should also
+contain the conditions for the completion of work. Acceptance of the
+request shall be at the discretion of the instructor, Department Chair,
+and/or Dean of the College of Arts &amp; Sciences.</p>
+</div>
+<div id="accessibility-statement" class="section level3">
+<h3>Accessibility Statement</h3>
+<p>The University of Portland strives to make its courses and services
+fully accessible to all students. Students are encouraged to discuss
+with their instructors what might be most helpful in enabling them to
+meet the learning goals of the course. Students who experience a
+disability are also encouraged to use the services of the Office for
+Accessible Education Services (AES), located in the Shepard Academic
+Resource Center (503-943-8985). <strong>If you have an AES Accommodation
+Plan</strong>, you should meet with your instructor to discuss how to
+implement your plan in this class. Requests for alternate location for
+exams and/or extended exam time should, where possible, be made two
+weeks in advance of an exam, and must be made at least one week in
+advance of an exam. Also, if applicable, you should meet with your
+instructor to discuss emergency medical information or how best to
+ensure your safe evacuation from the building in case of fire or other
+emergency. All information that students provide regarding disability or
+accommodation is confidential. All students are responsible for
+completing the required coursework and are held to the same evaluation
+standards specified in the course syllabus.</p>
+</div>
+<div id="code-of-academic-integrity" class="section level3">
+<h3>Code of Academic Integrity</h3>
+<p>The University of Portland is a diverse academic community of
+learners and scholars who are dedicated to freely sharing ideas and
+engaging in respectful discussion of those ideas to discover truth. Such
+pursuits require each person, whether student or faculty, to present
+truthfully our own ideas and give credit to others for the ideas that
+they generate. Thus, cheating on exams, copying another student’s
+assignment, including homework, or using the work of others without
+proper citation are some examples of violating academic integrity.</p>
+<p>Especially for written and oral assignments, students have an ethical
+responsibility to properly cite the authors of any books, articles, or
+other sources that they use. Students should expect to submit
+assignments to Turnitin, a database that ensures assignments are
+original work of the student submitting. Each discipline has guidelines
+for how to give appropriate credit, and instructors will communicate the
+specific guidelines for their discipline. The Clark Library also
+maintains a webpage that provides citation guidelines at <a
+href="libguides.up.edu/cite"
+target="_blank">https://libguides.up.edu/cite</a>.</p>
+<p>The misuse of AI to shortcut course learning outcomes will be treated
+as a violation of academic integrity comparable to plagiarism or
+cheating. Faculty are responsible for including a written “Course AI
+Policy” in their syllabi that clearly states what they consider
+appropriate and inappropriate uses of AI in the context of their
+courses. Students are responsible for using AI in ways that do not
+detract from the established learning outcomes of the course. All
+members of the scholarly community are responsible for demonstrating
+sound judgment in discerning when and how to utilize AI in their work,
+upholding standards of citation, originality, and integrity.</p>
+<p>Please see the University Bulletin for further information: <a
+href="http://up.smartcatalogiq.com/en/2022-2023/bulletin/University-Academic-Regulations/I-Code-of-Academic-Integrity/Guidelines-for-Implementation-of-the-Universitys-Code-of-Academic-Integrity"
+target="_blank">up.smartcatalogiq.com/en/2023-2024/bulletin/</a>.</p>
+</div>
+<div id="course-ai-policy" class="section level3">
+<h3>Course AI Policy</h3>
+<p>The use of generative AI — such as Copilot, Gemini, or ChatGPT — is
+encouraged and allowed in all of its capacity. However, students must
+use these tools ethically and responsibly. To use generative AI
+responsibly in this class, students should grasp underlying concepts,
+acknowledge AI’s assistance, protect data privacy, verify information,
+and uphold academic honor code. AI should be seen as a learning aid, not
+a replacement for critical thinking.</p>
+</div>
+<div id="referencing-and-citation-guidelines" class="section level3">
+<h3>Referencing and Citation Guidelines</h3>
+<p>In your written work for this course, you must cite all sources of
+information that you use, whether they are direct quotes, paraphrases,
+or summaries. The style of citation that you use should be consistent
+throughout your paper. The citation styles for this course are APA or
+CSE.</p>
+<ul>
+<li>APA style is used in the social sciences and psychology. It is
+characterized by parenthetical citations that include the author’s last
+name and the year of publication. For example, “According to Smith
+(2023), the average height of a man in the United States is 5’10”.”</li>
+<li>CSE style is used in the natural sciences and engineering. It is
+characterized by numbered citations that are listed at the end of the
+paper. For example, “[1] Smith, J. (2023). The average height of a man
+in the United States. Journal of Human Biology, 55(2), 123-132.”</li>
+</ul>
+<p>If you are unsure which citation style to use, please consult with
+me. You can also find more information about APA and CSE style in the
+Clark Library citation guidelines: <a
+href="https://libguides.up.edu/cite"
+target="_blank">libguides.up.edu/cite</a></p>
+<p>Plagiarism is the act of using someone else’s work without giving
+them credit. It is a serious academic offense that can result in a
+failing grade or even expulsion from school. By following these
+guidelines, you can help to avoid plagiarism and ensure that your work
+is properly cited.</p>
+</div>
+<div id="mental-health-statement" class="section level3">
+<h3>Mental Health Statement</h3>
+<p>Anyone may sometimes experience problems with their mental health
+that interfere with academic experiences and negatively impact daily
+life. If you or someone you know experiences mental health challenges at
+UP, please contact the <a href="https://www.up.edu/counceling/"
+target="_blank">University of Portland Counseling Center</a> in the
+upper level of Orrico Hall (down the hill from Franz Hall and near
+Mehling Hall) at 503-943-7134 or <a href="mailto:hcc@up.edu"
+target="_blank">hcc@up.edu</a>. Their services are free and
+confidential. In addition, confidential phone counseling is available at
+the Pilot Helpline by calling 503-943-7134 and pressing 3. The
+University of Portland Campus Safety Department (503-943-4444) also has
+personnel trained to respond sensitively to mental health emergencies at
+all hours. Remember that getting help is a smart and courageous thing to
+do – for yourself, for those you care about, and for those who care
+about you. For more information on health and wellness resources at UP
+go to <a href="https://linktr.ee/wellnessUP"
+target="_blank">https://linktr.ee/wellnessUP</a>.</p>
+</div>
+<div id="non-violence-statement" class="section level3">
+<h3>Non-Violence Statement</h3>
+<p>The University of Portland is committed to fostering a safe and
+respectful community free from all forms of violence. Violence of any
+kind, and in particular acts of power-based personal violence, are
+inconsistent with our mission. Together, all UP community members must
+take a stand against violence. Learn more about what interpersonal
+violence looks like, campus and community resources, UP’s prevention
+strategy, and what we as individuals can do to assist on the <a
+href="https://www.up.edu/greendot" target="_blank">Green Dot
+website</a>, <a href="https://www.up.edu/greendot"
+target="_blank">www.up.edu/greendot</a>. Further information and
+reporting options may be found on the <a
+href="https://www.up.edu/titleix" target="_blank">Title IX website</a>,
+<a href="https://www.up.edu/titleix"
+target="_blank">www.up.edu/titleix</a>.</p>
+</div>
+<div id="ethics-of-information" class="section level3">
+<h3>Ethics of Information</h3>
+<p>The University of Portland is a community dedicated to the
+investigation and discovery of processes for thinking ethically and
+encouraging the development of ethical reasoning in the formation of the
+whole person. Using information ethically, as an element in open and
+honest scholarly endeavors, involves moral reasoning to determine the
+right way to access, create, distribute, and employ information,
+including: considerations of intellectual property rights, fair use,
+information bias, censorship, and privacy. More information can be found
+in the Clark Library’s guide to the Ethical Use of Information at <a
+href="https://libguides.up.edu/ethicaluse" target="_blank">Ethical Use
+of Information</a> at <a href="https://libguides.up.edu/ethicaluse"
+target="_blank">libguides.up.edu/ethicaluse</a>.</p>
+</div>
+<div id="diversity-and-inclusion-statement" class="section level3">
+<h3>Diversity and Inclusion Statement</h3>
+<p>In the study of natural and mathematical sciences, often perceived as
+objective disciplines aimed at understanding the world, it is crucial to
+recognize the historical biases embedded within these fields, stemming
+from a limited set of privileged populations. Acknowledging the
+potential existence of overt and covert biases within the course, I
+emphasize that science is a human endeavor necessitating the
+incorporation of diverse experiences in the pursuit of knowledge and
+skill. Valuing every student irrespective of background, origin, race,
+religion, ethnicity, sexual orientation, disability status, etc., I am
+committed to fostering an inclusive climate throughout the course.
+Encouraging open communication about concerns or challenges, I assure
+confidentiality, except for instances of academic integrity violations
+or sexual harassment, which are legally mandated to be reported. Within
+our classroom, diversity and individual differences are celebrated as
+strengths, and the use of mathematics as an analytical tool to challenge
+power, privilege, and oppression is supported. It is our collective
+responsibility to create a welcoming space where ideas can be challenged
+while maintaining respect for individuals.</p>
+<p><br></p>
+</div>
+</div>
+</div>
+</div>
+
+   
+   
+            
+      
+
+  <script>
+    $(document).ready(function () {
+
+			
+ 		
+	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>
