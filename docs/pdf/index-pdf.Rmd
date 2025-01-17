@@ -1,33 +1,35 @@
 ---
-title: "Fundamentals of Data Science"
+title: | 
+  \vspace{-1in}
+  | MTH-391: Fundamentals of Data Science
+  | Syllabus
 subtitle: | 
-  | MTH-391 | Section A
-  | Spring 2025 | University of Portland
-  | *One-Time Course Offering*
+  | Section A | Spring 2025 | Department of Mathematics | University of Portland
 author: | 
-  | Dr. [Alex John Quijano](https://www.alexjohnquijano.com){target='_blank'} [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/){target='_blank'}
-  | Department of Mathematics
-  | University of Portland
-  | 
-  | Made with [R](https://cran.r-project.org/){target='_blank'} and [RMarkdown](https://rmarkdown.rstudio.com/){target='_blank'}
   | Last updated on `r format(Sys.Date(), format='%B %d, %Y')`
-bibliography: references.bib
-csl: mbe.csl
-nocite: '@*'
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[RO,R]{MTH 391A FDS - Syllabus}
+  \fancyfoot[CO,C]{}
+  \fancyfoot[R]{\thepage}
+  \usepackage{float}
+output:
+  bookdown::pdf_document2:
+    toc: no
+    number_section: no
+urlcolor: blue
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+geometry: "left=0.50in,right=0.50in,top=0.75in,bottom=0.75in"
+fontsize: 12pt
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Syllabus
-
 ## **About the Class**
-
-### Course Information
-
-> * Title: MTH 391: Fundamentals of Data Science
-> * Sections: A
 
 ### Instructor Information
 
@@ -48,7 +50,7 @@ This course meets on Mondays, Wednesdays, and Fridays. Wednesdays and Fridays wi
 This course uses the following textbook - which is free to access - for reading and practice.
 
 ```{r echo=FALSE}
-refs <- bibtex::read.bib("references.bib")
+refs <- bibtex::read.bib("../../references.bib")
 ```
 
   * `r capture.output(print(refs["baumer2017modern"]))`
@@ -485,26 +487,5 @@ The University of Portland is a community dedicated to the investigation and dis
 ### Diversity and Inclusion Statement
 
 In the study of natural and mathematical sciences, often perceived as objective disciplines aimed at understanding the world, it is crucial to recognize the historical biases embedded within these fields, stemming from a limited set of privileged populations. Acknowledging the potential existence of overt and covert biases within the course, I emphasize that science is a human endeavor necessitating the incorporation of diverse experiences in the pursuit of knowledge and skill. Valuing every student irrespective of background, origin, race, religion, ethnicity, sexual orientation, disability status, etc., I am committed to fostering an inclusive climate throughout the course. Encouraging open communication about concerns or challenges, I assure confidentiality, except for instances of academic integrity violations or sexual harassment, which are legally mandated to be reported. Within our classroom, diversity and individual differences are celebrated as strengths, and the use of mathematics as an analytical tool to challenge power, privilege, and oppression is supported. It is our collective responsibility to create a welcoming space where ideas can be challenged while maintaining respect for individuals.
-
-<br>
-
-# Materials
-
-> You are required to read the materials, and are strongly encouraged to actively participate in class discussions and complete the worksheets efficiently to deepen your understanding and succeed in the course.
-
-## Class Readings and Presentations
-
-The "Read" column in the table below contains page numbers (Pg.) or chapters (ch.) on which it refers to a label in the Books \& Online Resources List. For example "Pg. 1-5 @baumer2017modern" refers to pages 1-5 of the textbook titled "Modern data science with R".
-
-| **Topic** | **Read** |
-|:---|:---|
-| [Orientation](lessons/1.1-mth391-orientation/1.1-mth391-orientation.html) | Syllabus |
-| [Data Science Life Cycle](lessons/1.2-mth391-data-science-life-cycle/1.2-mth391-data-science-life-cycle.html) | - |
-| [Cloud Computing](lessons/1.3-mth391-cloud-computing/1.3-mth391-cloud-computing.html) | - |
-
-### Books \& Online Resources Lists
-
-::: {#refs}
-:::
 
 <br>

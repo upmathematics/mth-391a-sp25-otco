@@ -22,7 +22,7 @@ library("vembedr")
 :::: {.column width=70%}
 - **Introduce the concept of data science**
 - **Communicate the course learning outcomes**
-- **Activity: Set up R Studio environments**
+- **Activity: Set up Posit Cloud**
 ::::
 
 :::: {.column width=15%}
@@ -90,13 +90,13 @@ embed_url("https://www.youtube.com/watch?v=LFGbWGMsuVY")
 :::: {.column width=45%}
 **Problem/Question Definition:** How positive or negative woudl the following word/phase be to someone when used?
 
-**Dataset Source:** Survey from YouGov.com
+**Dataset Source:** Survey from YouGov
   
 **Objective:** Compare sentiments used when using a word/phrase.
 ::::
 
 :::: {.column width=50%}
-```{r good-and-bad-words, echo=FALSE, fig.cap="", fig.align='center', out.width = '100%'}
+```{r good-and-bad-words, echo=FALSE, fig.cap="", fig.align='center', out.width = '95%'}
 knitr::include_graphics("How-good-is-good-768x834.jpg")
 ```
 ::::
@@ -106,13 +106,30 @@ knitr::include_graphics("How-good-is-good-768x834.jpg")
 
 ## Course Learning Outcomes
 
+:::: {.column width=1%}
+::::
+
+:::: {.column width=48%}
 * Process structured and unstructured data, and produce informative data tables and visualizations, as well as able to understand and explain the basic structure of data, how it is collected, and evaluate its limitations.
 * Apply statistical methods, techniques, approaches, and algorithms to extract necessary information and insights from data.
+::::
+
+:::: {.column width=48%}
 * Critique claims and evaluate decisions based on data, and write and run simple programming codes for data analysis and visualization.
 * Apply data science concepts and methods to solve problems in real-world contexts and able to communicate results effectively.
+::::
 
-## Activity: Set up R Studio environments
+:::: {.column width=1%}
+::::
 
-1. Create an account in [Posit Cloud](https://login.posit.cloud){target="_blank"}.
+## Activity: Set up Posit Cloud
 
-2. Try out your workspace and explore.
+1. Sign-up for a free [Posit Cloud](https://login.posit.cloud/){target="_blank"} account using your UP email. Then, log-in.
+
+2. Enter your email again using this form - [Email Entry for Activity: Setting up Posit Cloud](https://forms.office.com/r/8Rm8Ni7aDG?origin=lprLink){target="_blank"} so I can add you to the course's workspace. You will be invited to this course's Workspace soon. Check your email.
+
+3. Enter the Workspace using the link in the email sent from Posit Cloud. Then, create the following:
+    - A "New RStudio Project" and name is as Exploring R Studio. This "project" uses R.
+    - A "New Jupyter Project" and name is as Exploring Jupyter. This "project" uses Python.
+
+4. For now you can explore Posit Cloud. We will discuss more about this tool as we progress.
