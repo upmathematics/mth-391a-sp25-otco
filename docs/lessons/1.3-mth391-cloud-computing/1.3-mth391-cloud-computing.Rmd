@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = FALSE)
 :::: {.column width=70%}
 - **Introduce R and R Studio**
 - **Introduce the Posit Cloud**
+- **Introduce R Scripting**
 - **Mini-Assignment: Create R Scripts**
 ::::
 
