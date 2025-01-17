@@ -145,7 +145,7 @@ knitr::include_graphics("r-studio-r-scripting.png")
 
 ## Running R on the Console vs Scripting
 
-```{r r-studio-4, echo=FALSE, fig.cap="Running R Commands in Different Ways", fig.align='center', out.width = '50%'}
+```{r r-studio-4, echo=FALSE, fig.cap="Running R Commands in Different Ways", fig.align='center', out.width = '60%'}
 knitr::include_graphics("r-studio-console-vs-scripting.png")
 ```
 
