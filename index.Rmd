@@ -54,9 +54,18 @@ This course uses the following textbook - which is free to access - for reading 
 refs <- bibtex::read.bib("references.bib")
 ```
 
-  * `r capture.output(print(refs["baumer2017modern"]))`
-  * `r capture.output(print(refs["wickham2023r"]))`
-  * `r capture.output(print(refs["vanderplas2016python"]))`
+>  * `r capture.output(print(refs["baumer2017modern"]))`
+>  * `r capture.output(print(refs["wickham2023r"]))`
+>  * `r capture.output(print(refs["vanderplas2016python"]))`
+
+*Amendment 3: The textbook was emphasized.*
+
+### Credit Hours and Prerequisites
+
+* Credit hours: 3
+* Prerequisites: MTH 161 (Elementary Statistics) or MTH 201 (Calculus I) with a grade of C or higher
+
+*Amendment 4: The subsection "Credit Hours and Prerequisites" was added with the number of course credits and prerequisites.*
 
 <br>
 
