@@ -1,5 +1,5 @@
 ---
-title: "MTH391: Fundamentals of Data Science"
+title: "MTH 391: Fundamentals of Data Science"
 subtitle: | 
   | Section A
   | Spring 2025 
