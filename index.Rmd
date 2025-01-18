@@ -1,8 +1,10 @@
 ---
-title: "Fundamentals of Data Science"
+title: "MTH391: Fundamentals of Data Science"
 subtitle: | 
-  | MTH-391 | Section A
-  | Spring 2025 | University of Portland
+  | Section A
+  | Spring 2025 
+  | Department of Mathematics
+  | University of Portland
   | *One-Time Course Offering*
 author: | 
   | Dr. [Alex John Quijano](https://www.alexjohnquijano.com){target='_blank'} [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/){target='_blank'}
@@ -23,11 +25,6 @@ knitr::opts_chunk$set(echo = TRUE)
 # Syllabus
 
 ## **About the Class**
-
-### Course Information
-
-> * Title: MTH 391: Fundamentals of Data Science
-> * Sections: A
 
 ### Instructor Information
 
@@ -501,6 +498,36 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Orientation](lessons/1.1-mth391-orientation/1.1-mth391-orientation.html) | Syllabus |
 | [Data Science Life Cycle](lessons/1.2-mth391-data-science-life-cycle/1.2-mth391-data-science-life-cycle.html) | - |
 | [Cloud Computing](lessons/1.3-mth391-cloud-computing/1.3-mth391-cloud-computing.html) | - |
+| Reproducible Workflows | - |
+| Basics of Data Wrangling | TBA |
+| Data Wrangling on One Table | TBA |
+| Data Wrangling on Multiple Tables | TBA |
+| Using R for Data Wrangling | TBA |
+| Data Reshaping | TBA |
+| Basics of Visualizations | TBA |
+| Using R for Visualizations | TBA |
+| Transforming Tables for Visualizations | TBA |
+| Advanced Visualizations | TBA |
+| Iteration | TBA |
+| Wrangling High-Dimensional Data | TBA |
+| Using Python for Advanced Data Wrangling | TBA |
+| Scaling and Coloring | TBA |
+| Visualizing High-Dimensional Data | TBA |
+| Using Python for Advanced Visualizations | TBA |
+| Wrangling Temporal Data | TBA |
+| Visualizing and Analyzing Temporal Data | TBA |
+| Wrangling Spatial Data | TBA |
+| Visualizing and Analyzing Temporal Data | TBA |
+| Dynamic Visualizations | TBA |
+| Wrangling Network Data | TBA |
+| Visualizing and Analyzing Network Data | TBA |
+| Regular Expressions | TBA |
+| Wrangling Text Data | TBA |
+| Visualizing and Analyzing Text Data | TBA |
+| Introduction to Statistical Learning | TBA |
+| Regression and Classification | TBA |
+| R and Python for Statistical Learning | TBA |
+| Model Selection and Regularization | TBA |
 
 ### Books \& Online Resources Lists
 
