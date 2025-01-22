@@ -6,7 +6,7 @@ date: "January 22, 2025"
 output:
   slidy_presentation:
     font_adjustment: +5
-    footer: "| MTH-361D Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    footer: "| MTH-391D Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
 bibliography: ../../references.bib
 csl: ../../mbe.csl
 ---
