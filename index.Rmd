@@ -58,14 +58,14 @@ refs <- bibtex::read.bib("references.bib")
 >  * `r capture.output(print(refs["wickham2023r"]))`
 >  * `r capture.output(print(refs["vanderplas2016python"]))`
 
-*Amendment 3: The textbook was emphasized.*
+*Amendment 4: The textbook was emphasized.*
 
 ### Credit Hours and Prerequisites
 
 * Credit hours: 3
 * Prerequisites: MTH 161 (Elementary Statistics) or MTH 201 (Calculus I) with a grade of C or higher
 
-*Amendment 4: The subsection "Credit Hours and Prerequisites" was added with the number of course credits and prerequisites.*
+*Amendment 5: The subsection "Credit Hours and Prerequisites" was added with the number of course credits and prerequisites.*
 
 <br>
 
@@ -423,13 +423,25 @@ By following these principles, you will not only meet the project requirements b
 
 ### Deadline Extension Policy
 
-If you need more time to submit an assignment or a project phase, you may request an extension by following these steps:
+If you need more time to submit an assignment, you may request an extension by following these steps:
 
   * Communicate with me at least 12 hours before the deadline.
   * Specify the exact day you plan to submit your work or the number of extra days you need.
   * Please ensure that you adhere to the established timeline for submitting assignments, as it is important to maintain fairness and avoid over-reliance on extensions.
 
-Submitting a few hours late is usually not a major issue, as long as I receive your work before I begin marking and providing feedback. An extension is not required in such cases. Extensions for worksheets will only be granted if I decide to extend the deadline for the entire class.
+Submitting a few hours late is usually not a major issue, as long as I receive your work before I begin marking and providing feedback. An extension is not required in such cases. Extensions for in-class assignments --such as worksheets, mini-assignments, or activities-- will only be granted if I decide to extend the deadline for the entire class.
+
+*Amendment 6: The sentence "If you need more time to submit a homework assignment, you may request an extension by following these steps:" was changed to "If you need more time to submit an assignment, you may request an extension by following these steps:".*
+
+*Amendment 7: The sentence "Extensions for worksheets will only be granted if I decide to extend the deadline for the entire class." was changed to "Extensions for in-class assignments --such as worksheets, mini-assignments, or activities-- will only be granted if I decide to extend the deadline for the entire class."*
+
+### Late Assignments
+
+You are expected to turn in all completed assignments on time. Circumstances that may disallow you to turn in your work on time - such as a medical reason - are understandable. Please let me know if you have missed the deadline way beyond its original posted date without prior communication regarding extensions. Because every assignment is an important aspect of your learning in this class, we will discuss when you will turn in the assignment as well as decide upon an acceptable consequence for your turning it in late. I am committed to successfully helping you learn from this course.
+
+*Amendment 8: The "Late Assignments" subsection was moved.*
+
+*Amendment 9: The sentence "Please let me know if you are unable to submit your work and have missed the deadline way beyond its original posted date." was modified to "Please let me know if you have missed the deadline way beyond its original posted date without prior communication regarding extensions."*
 
 ### Withdrawal Procedures
 
@@ -450,10 +462,6 @@ Attendance is not tracked. However, participation is highly recommended. You are
 Generally, students are expected to attend all class sessions according to the instructor’s direction. Students who feel unwell should NOT attend class in person. These students should inform their instructor as soon as possible. 
 
 Should the instructor need to miss class, the course may be temporarily conducted remotely. Should the instructor be unable to teach for an extended period of time, the respective department or unit will find a substitute to continue the course. 
-
-### Late Assignments
-
-You are expected to turn in all completed assignments on time. Circumstances that may disallow you to turn in your work on time - such as a medical reason - are understandable. Please let me know if you are unable to submit your work and have missed the deadline way beyond its original posted date. Because every assignment is an important aspect of your learning in this class, we will discuss when you will turn in the assignment as well as decide upon an acceptable consequence for your turning it in late. I am committed to successfully helping you learn from this course.
 
 ### Incompletes
 
@@ -519,7 +527,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Orientation](lessons/1.1-mth391-orientation/1.1-mth391-orientation.html) | Syllabus |
 | [Data Science Life Cycle](lessons/1.2-mth391-data-science-life-cycle/1.2-mth391-data-science-life-cycle.html) | - |
 | [Cloud Computing](lessons/1.3-mth391-cloud-computing/1.3-mth391-cloud-computing.html) | - |
-| Reproducible Workflows | - |
+| [Reproducible Workflows](lessons/2.1-mth391-reproducible-workflows/2.1-mth391-reproducible-workflows.html) | - |
 | Basics of Data Wrangling | TBA |
 | Data Wrangling on One Table | TBA |
 | Data Wrangling on Multiple Tables | TBA |

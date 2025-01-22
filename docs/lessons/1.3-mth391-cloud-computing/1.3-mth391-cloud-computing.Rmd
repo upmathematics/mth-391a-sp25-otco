@@ -132,6 +132,8 @@ knitr::include_graphics("basic-parts-of-posit-cloud.png")
 
 ## R Studio Working Directory
 
+**Where does your saved files automatically go?**
+
 ```{r r-studio-2, echo=FALSE, fig.cap="The Working Directory", fig.align='center', out.width = '50%'}
 knitr::include_graphics("r-studio-working-directory.png")
 ```
