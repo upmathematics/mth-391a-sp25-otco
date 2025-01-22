@@ -159,12 +159,12 @@ $\star$ Understanding this difference is key for fixing majority of errors and u
 ::::
 
 :::: {.column width=49%}
-### R
+### R and Python
 
 1. Logical reasoning
 2. Automating repetitive tasks
 3. Programming is an in-demand skill in both industry and academia
-4. Learning R is a gateway for more advanced programming languages
+4. Learning R or Python is a gateway for more advanced programming languages
 5. Learning how to code is a versatile skill and opens up opportunities
 ::::
 
