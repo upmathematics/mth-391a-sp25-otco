@@ -151,11 +151,11 @@ $\star$ Understanding this difference is key for fixing majority of errors and u
 :::: {.column width=49%}
 ### Data Science
 
-1. Informed decision making
-2. Critical thinking
-3. Understanding research
-4. Critical assessment of reports in research and media
-5. Problem-solving
+1. Data processing and Analysis
+2. Critical thinking and problem-solving
+3. Data visualization and communication
+4. Domain knowledge adaptability
+5. Project management and team collaboration
 ::::
 
 :::: {.column width=49%}
