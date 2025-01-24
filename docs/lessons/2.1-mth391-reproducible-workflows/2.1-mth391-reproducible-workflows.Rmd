@@ -79,7 +79,7 @@ knitr::include_graphics("r-studio-console-vs-scripting.png")
 
 :::: {.column width=48%}
 * **Widely Used in Data Science:** Popular in academia, industry, and reporting. Simplifies workflows for analysis, visualization, and documentation.
-* **RMarkdown is required for this course's assignments:** All assignments must be completed in RMarkdown and submitted in both `.Rmd` and `.html` formats. *This ensures that your work is detailed, well-organized, and clearly presented.*
+* **RMarkdown is required for this course's project phase reports:** All project reports must be completed in RMarkdown and submitted in both `.Rmd` and `.html` formats. *This ensures that your work is detailed, well-organized, and clearly presented.*
 ::::
 
 :::: {.column width=1%}
