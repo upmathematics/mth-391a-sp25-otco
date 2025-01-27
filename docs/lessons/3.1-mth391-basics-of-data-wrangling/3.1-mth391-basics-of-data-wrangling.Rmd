@@ -317,10 +317,10 @@ tibble(iris) |>
 ```
 
 ::: {style="color: red"}
-$\star$ Notice that the first line is the data frame itself, then the next line is the verb without without putting it directly into the first argument of the `filter()` verb. This is a common practice of organizing verbs in a pipeline.
+$\star$ Notice that the first line is the data frame itself, then the next line is the verb without putting it directly into the first argument of the `filter()` verb. This is a common practice of organizing verbs in a pipeline.
 :::
 
-## Chaining `dplyr` Verbs Using `|>` (2/3)
+## Chaining `dplyr` Verbs Using `|>` (3/3)
 
 **Advanced Example:** The goal of this example is to transform the `iris` data set where we want to compute the ratio of the variables `Petal.Length` and `Sepal.Length` of the `"setosa"` species.
 
