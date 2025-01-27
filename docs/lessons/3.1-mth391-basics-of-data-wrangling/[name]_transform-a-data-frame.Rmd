@@ -1,0 +1,80 @@
+---
+title: "Transform a Data Frame"
+subtitle: "Fundamentals of Data Science"
+author: "[First name][Last initial]"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Syllabus Reminders
+
+* You must submit your mini-assignment individually by end-of-class or end-of-day. Your name must exist in your mini-assignment and the names of your collaborators.
+* Mini-assignments are marked mostly on completion, and partially on correctness. It will be marked either pass or fail, there will no detailed feedback on mini-assignments, and no opportunities for revisions and make-up.
+
+# Instructions
+
+* For the exercises, please provide your answers in full sentences.
+* Write your answers by replacing the text "[Write your answer here]".
+* Please read the problems fully and carefully before answering.
+* When finished, knit this `.Rmd` to `.html`.
+* Submit this `.Rmd` and the recently knitted `.html`.
+
+# Collaborators
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+# Exercises
+
+## Problem 1
+
+The following code chunk installs the [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/){target="_blank"} package, which contains the `penguins` data set. The R code chunk has an option called `eval=FALSE`, which indicate that --when knitting-- the code chunk will not run. Explain what happens after a knitting attempt if `eval=TRUE`.
+
+::: {style="color: blue;"}
+```{r install-palmerpenguins, eval=FALSE}
+install.packages("palmerpenguins")
+```
+
+[Write your answer here]
+:::
+
+## Problem 2
+
+Load the `palmerpenguins` and the `tidyverse` packages. Are there any warning messages after loading the packages? If so, what does it say and what do you think it means?
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 3
+
+Show a preview of the `penguins` data frame. How many rows and columns are there in the `penguins` data set? Is the data frame a base R data frame or a tibble? Explain your reasoning.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 4
+
+Statistical variables are classified into two main types: numerical and categorical. Numerical variables can be further divided into discrete and continuous subtypes, while categorical variables can be classified as nominal or ordinal.
+
+Each row of the `penguins` data set is an observation of a penguin. What type of statistical variables are there in the columns of the data frame? Explain your reasoning.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 5
+
+Use the `dplyr` package to count the number of penguins in each species in the `penguins` dataset with a length ratio (bill length divided by flipper length) of at least $0.225$ for the year 2008. Display the species counts both before and after transformation.
+
+Make sure to write the R code clearly and include comments explaining the purpose of each step.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::

@@ -4,7 +4,9 @@ author: "MTH-391A Fundamentals of Data Science | Spring 2025 | University of Por
 date: "January 13, 2025"
 output:
   slidy_presentation:
-    font_adjustment: +2
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
 bibliography: ../../references.bib
 csl: ../../apa.csl
 ---
@@ -15,40 +17,77 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Objectives
 
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
 - **Communicate highlights of the Syllabus**
 - **Activity: Introductions**
+::::
+
+:::: {.column width=15%}
+::::
 
 ## Course Information
 
+:::: {.column width=5%}
+::::
+
+:::: {.column width=45%}
 - **Number:** MTH-391
 - **Title:** Fundamentals of Data Science
 - **Section:** A
 - **Term:** Spring 2025
 - **Credits:** 3
+:::: 
+
+:::: {.column width=45%}
 - **Instructor:** Dr. Quijano
 - **Schedule:** Monday, Wednesday, Friday at 1:35 PM to 2:30 PM
 - **Location:** Franz Hall 125
+::::
+
+:::: {.column width=5%}
+::::
 
 ## About the Instructor
 
-### Dr. [Alex John Quijano](alexjohnquijano.com){target="_blank"}
+### Dr. [Alex John Quijano](https://www.alexjohnquijano.com){target="_blank"}
 
+:::: {.column width=1%}
+::::
+
+:::: {.column width=40%}
 - **Office:** Buckley Center 279
 - **Email:** quijano@up.edu
-- **Education and Profession:** Applied Mathematics
+- **Hobbies and Interests:** Movies, anime, musicals, coffee 
+- **Other Facts:** Two cats (orange and black)
+::::
+
+:::: {.column width=57%}
+- **Education:** Applied Mathematics
+- **Profession**: Assistant Professor of Mathematics
 - **Teaching:** Probability and statistics, data science, linear algebra, calculus, differential equations
 - **Research:** Mathematical interdisciplinary research in data science, modeling of natural languages, social and biological systems
-- **Hobbies and Interests:** Movies, anime, musicals, coffee 
-- **Other Facts:** Two cats
+::::
+
+:::: {.column width=1%}
+::::
 
 ## Modes of Communication
 
+:::: {.column width=1%}
+::::
+
+:::: {.column width=48%}
 ### **Teams**
 
 We will be using Teams as the main real-time communication tool for general announcements, question-answering discussions, and direct messages.
 
 > The Teams for this course is [MTH-391A-sp25](https://teams.microsoft.com/l/team/19%3AWFMBF6OwDzF-uJNtQ3ebdzzHaN5eFfxiJMJiYsNg_is1%40thread.tacv2/conversations?groupId=edfc417f-df31-45e1-9bb9-1a6e0bb4a704&tenantId=ea8f3949-231c-40b6-a33f-56873af96f87){target="_blank"}. 
+::::
 
+:::: {.column width=48%}
 ### **Class Website**
 
 The syllabus, tentative topics schedule, and other information are posted on the course website.
@@ -56,20 +95,35 @@ The syllabus, tentative topics schedule, and other information are posted on the
 > You can access the course website at [mth-391a-sp25](https://upmathematics.github.io/mth-391a-sp25-otco/){target="_blank"}.
 
 *Note that the course website can be accessed in Teams.*
+::::
+
+:::: {.column width=1%}
+::::
+
 
 ## Structure and Expectations
 
+:::: {.column width=5%}
+::::
+
+:::: {.column width=45%}
 ### **Class Structure**
 
   - Pre-reading
   - Short lecture
   - Worksheet activity
   - Group presentations or discussions
+::::
 
+:::: {.column width=45%}
 ### **Assignment Expectations**
 
   - Mini-Assignments
   - Project Phases
+::::
+
+:::: {.column width=5%}
+::::
 
 ## Assignments
 
@@ -130,18 +184,16 @@ My walk-in help hours start week 2.
 
 The [Math Resource Center](https://www.up.edu/learningcommons/tutoring-services/math-resource-center/index.html){target="_blank"} offiers walk-in tutoring and appointment-based tutoring.
 
-## Activity
+## Activity:  Introductions
 
-### Introductions
+1. On a piece of paper:
 
-On a piece of paper:
+    * Write your name, year, and major.
+    * Explain:
+        - your background experience in computer programming.
+        - your anxieties and fears about computer programming.
+        - your hobbies.
+    * Write an encouraging message to yourself six weeks from now.
 
-  - Write your name, year, and major.
-  - Discuss your background experience in computer programming.
-  - Discuss your anxieties and fears about computer programming.
-  - Discuss your hobbies.
-  - Write an encouraging message to yourself six weeks from now.
-
-Share what you wrote ot the class.
-
-Submit your work.
+2. Share what you wrote ot the class.
+3. Submit your work.

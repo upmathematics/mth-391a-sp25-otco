@@ -4,14 +4,16 @@ author: "MTH-391A Fundamentals of Data Science | Spring 2025 | University of Por
 date: "January 15, 2025"
 output:
   slidy_presentation:
-    font_adjustment: +2
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
 bibliography: ../../references.bib
 csl: ../../apa.csl
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library("vembedr")
+library(vembedr)
 ```
 
 ## Objectives

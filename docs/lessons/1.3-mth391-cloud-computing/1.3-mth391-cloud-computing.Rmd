@@ -6,7 +6,8 @@ date: "January 17, 2025"
 output:
   slidy_presentation:
     font_adjustment: +5
-    footer: "| MTH-361D Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
 bibliography: ../../references.bib
 csl: ../../mbe.csl
 ---
@@ -154,7 +155,7 @@ knitr::include_graphics("r-studio-console-vs-scripting.png")
 
 ## Mini-Assignment: Create a Simple R Script
 
-1. Go to this course's workspace in Posit Cloud and click the R Studio "Project" named *Mini-Assignment 1: Create a Simple R Script*. This will create a copy for you.
+1. Go to this course's workspace in Posit Cloud and click the R Studio "Project" named *MA1: Create a Simple R Script*. This will create a copy for you.
 
 2. Try rerunning the R script named *simple-r-script_example.R*.
 
