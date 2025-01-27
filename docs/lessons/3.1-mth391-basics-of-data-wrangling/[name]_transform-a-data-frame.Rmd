@@ -45,7 +45,7 @@ install.packages("palmerpenguins")
 
 ## Problem 2
 
-Load the `palmerpenguins` and the `tidyverse` packages. Are there any warning messages after loading the packages? If so, what does it say and what do you think it means?
+Create a code chunk. In this chunk, load the `palmerpenguins` and the `tidyverse` packages. Are there any warning messages after loading the packages? If so, what does it say and what do you think it means?
 
 ::: {style="color: blue;"}
 [Write your answer here]
@@ -53,7 +53,7 @@ Load the `palmerpenguins` and the `tidyverse` packages. Are there any warning me
 
 ## Problem 3
 
-Show a preview of the `penguins` data frame. How many rows and columns are there in the `penguins` data set? Is the data frame a base R data frame or a tibble? Explain your reasoning.
+Create another code chunk. In this chunk, show a preview of the `penguins` data frame. How many rows and columns are there in the `penguins` data set? Is the data frame a base R data frame or a tibble? Explain your reasoning.
 
 ::: {style="color: blue;"}
 [Write your answer here]
@@ -63,7 +63,7 @@ Show a preview of the `penguins` data frame. How many rows and columns are there
 
 Statistical variables are classified into two main types: numerical and categorical. Numerical variables can be further divided into discrete and continuous subtypes, while categorical variables can be classified as nominal or ordinal.
 
-Each row of the `penguins` data set is an observation of a penguin. What type of statistical variables are there in the columns of the data frame? Explain your reasoning.
+Each row of the `penguins` data set is an observation of a penguin. Use your output in the previous problem to answer the following question: What type of statistical variables are there in the columns of the data frame? Explain your reasoning.
 
 ::: {style="color: blue;"}
 [Write your answer here]
@@ -73,7 +73,7 @@ Each row of the `penguins` data set is an observation of a penguin. What type of
 
 Use the `dplyr` package to count the number of penguins in each species in the `penguins` dataset with a length ratio (bill length divided by flipper length) of at least $0.225$ for the year 2008. Display the species counts both before and after transformation.
 
-Make sure to write the R code clearly and include comments explaining the purpose of each step.
+Make sure to write your R code clearly in a code chunk and include comments explaining the purpose of each step.
 
 ::: {style="color: blue;"}
 [Write your answer here]

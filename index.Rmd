@@ -169,40 +169,40 @@ The following learning objectives are designed to build on one another, with som
 | **2** | M 1/20 | _MLK Day (no classes, offices closed)_ |
 |  | W 1/22 | Reproducible Workflows |
 |  | F 1/24 | _Cancelled_ |
-| **3** | M 1/27 | Basics of Data Wrangling & **Project Milestone: Project Proposal & <br>Project Phase 1** |
+| **3** | M 1/27 | Basics of Data Wrangling |
 |  | W 1/29 | Data Wrangling on One Table |
 |  | F 1/31 | Data Wrangling on Multiple Tables |
-| **4** | M 2/3 | Using R for Data Wrangling & <br>**Project Phase 2** |
+| **4** | M 2/3 | Using R for Data Wrangling & **Project Milestone: Project Proposal & <br>Project Phase 1** |
 |  | W 2/5 | Data Reshaping |
 |  | F 2/7 | Basics of Visualizations |
-| **5** | M 2/10 | Using R for Visualizations & <br>**Project Phase 3** |
+| **5** | M 2/10 | Using R for Visualizations & <br>**Project Phase 2** |
 |  | W 2/12 | Transforming Tables for Visualizations |
 |  | F 2/14 | Advanced Visualizations |
-| **6** | M 2/17 | **Project Milestone: 1st Progress Report & <br>Project Phase 4** |
+| **6** | M 2/17 | **Project Milestone: 1st Progress Report & <br>Project Phase 3** |
 |  | W 2/19 | Iteration |
 |  | F 2/21 | Wrangling High-Dimensional Data |
-| **7** | M 2/24 | Using Python for Advanced Data Wrangling & <br>**Project Phase 5** |
+| **7** | M 2/24 | Using Python for Advanced Data Wrangling & <br>**Project Phase 4** |
 |  | W 2/26 | Scaling and Coloring |
 |  | F 2/28 | Visualizing High-Dimensional Data |
 | **8** | M 3/3 | _Spring Vacation_ |
 |  | W 3/5 | _Spring Vacation_ |
 |  | F 3/7 | _Spring Vacation_ |
-| **9** | M 3/10 | Using Python for Advanced Visualizations & <br>**Project Phase 6** |
+| **9** | M 3/10 | Using Python for Advanced Visualizations & <br>**Project Phase 5** |
 |  | W 3/12 | Wrangling Temporal Data |
 |  | F 3/14 | Visualizing and Analyzing Temporal Data |
-| **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 7** |
+| **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 6** |
 |  | W 3/19 | Wrangling Spatial Data |
 |  | F 3/21 | Visualizing and Analyzing Temporal Data |
-| **11** | M 3/24 | Dynamic Visualizations & <br>**Project Phase 8** |
+| **11** | M 3/24 | Dynamic Visualizations & <br>**Project Phase 7** |
 |  | W 3/26 | Wrangling Network Data |
 |  | F 3/28 | Visualizing and Analyzing Network Data |
-| **12** | M 3/31 | Regular Expressions & <br>**Project Phase 9** |
+| **12** | M 3/31 | Regular Expressions & <br>**Project Phase 8** |
 |  | W 4/2 | Wrangling Text Data |
 |  | F 4/4 | Visualizing and Analyzing Text Data |
-| **13** | M 4/7 | **Project Milestone: Final Report & <br>Project Phase 10** |
+| **13** | M 4/7 | **Project Milestone: Final Report & <br>Project Phase 9** |
 |  | W 4/9 | Introduction to Statistical Learning |
 |  | F 4/11 | Regression and Classification |
-| **14** | M 4/14 | R and Python for Statistical Learning & <br>**Project Phase 11** |
+| **14** | M 4/14 | R and Python for Statistical Learning & <br>**Project Phase 10** |
 |  | W 4/16 | Model Selection and Regularization |
 |  | F 4/18 | _Easter vacation_ |
 | **15** | M 4/21 | _Easter Vacation_ |
