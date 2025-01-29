@@ -1,12 +1,12 @@
 ---
 title: "Basics of Data Wrangling"
 subtitle: "Fundamentals of Data Science"
-author: "MTH-391D | Spring 2025 | University of Portland"
+author: "MTH-391A | Spring 2025 | University of Portland"
 date: "January 27, 2025"
 output:
   slidy_presentation:
     font_adjustment: +5
-    footer: "| MTH-391D Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
     css: ../_style.css
 bibliography: ../../references.bib
 csl: ../../mbe.csl

@@ -529,7 +529,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Cloud Computing](lessons/1.3-mth391-cloud-computing/1.3-mth391-cloud-computing.html) | - |
 | [Reproducible Workflows](lessons/2.1-mth391-reproducible-workflows/2.1-mth391-reproducible-workflows.html) | - |
 | [Basics of Data Wrangling](lessons/3.1-mth391-basics-of-data-wrangling/3.1-mth391-basics-of-data-wrangling.html) | Ch. 3 @wickham2023r |
-| Data Wrangling on One Table | Ch. 4 @baumer2017modern |
+| [Data Wrangling on One Table (Part I)](lessons/3.2-mth391-data-wrangling-on-one-table-part-i/3.2-mth391-data-wrangling-on-one-table-part-i.html) | Ch. 4 @baumer2017modern |
 | Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern |
 | Using R for Data Wrangling | TBA |
 | Data Reshaping | TBA |

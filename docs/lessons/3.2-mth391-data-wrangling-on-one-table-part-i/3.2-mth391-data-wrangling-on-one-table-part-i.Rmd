@@ -1,0 +1,174 @@
+---
+title: "Data Wrangling on One Table (Part I)"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "January 29, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Develop proficiency in summarising one data frame**
+- **Introduce a Strategy and best practice on summarising a data frame**
+- **Activity: Summarise a Data Frame**
+::::
+
+:::: {.column width=15%}
+::::
+
+## Previously... (1/2)
+
+:::: {.column width=49%}
+**R Packages:** `tidyverse` is a collection of packages suited for data processing and visualization, which includes `tibble` and `dplyr` packages.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+```{r tidyverse-hex, echo=FALSE, fig.cap="", fig.align='center', out.width = '60%'}
+knitr::include_graphics("tidyverse.png")
+```
+::::
+
+:::: {.column width=49%}
+**Tibbles:** Tibbles are special kinds of data frames using the `tibble` package in `tidyverse`.
+
+```{r tibble-df-view, echo=FALSE, fig.cap="", fig.align='center', out.width = '90%'}
+knitr::include_graphics("data-frame-tibble.png")
+```
+::::
+
+## Previously... (2/2)
+
+**Chaining `dplyr` Verbs Using `|>`**
+
+**Advanced Example:** The goal of this example is to transform the `iris` data set where we want to compute the ratio of the variables `Petal.Length` and `Sepal.Length` of the `"setosa"` species.
+
+```{r echo=TRUE, eval=FALSE}
+tibble(iris) |> 
+  # rule 1: choose only the "setosa" species
+  filter(Species == "setosa") |> 
+  # rule 2: pick the variables sepal length and petal length
+  select(Sepal.Length,Petal.Length) |> 
+  # rule 3: create a new variable called length_ratio
+  mutate(length_ratio = Petal.Length/Sepal.Length)
+```
+
+## `dplyr` Verbs for Tidying Data {.smaller}
+
+**`dplyr` functions that operates on rows and columns.**
+
+| **Verb** | **Purpose** | **Example** |
+|:---|:------|:------|
+| `group_by()` | Groups rows by one or more variables, allowing operations to be performed within groups. | `group_by(data,category)` |
+| `summarise()` | Reduces multiple rows into a single summary row per group. | `summarise(data,mean_variable = mean(variable))` |
+
+::: {style="color: red"}
+$\star$ The `group_by()` and `summarise()` usually goes together if you need to compute descriptive statistics of each category of a categorical variable.
+:::
+
+## `dplyr` Verbs for Tidying Data: Example {.smaller}
+
+### Define Data Frame as a Tibble
+
+```{r echo=TRUE, eval=TRUE}
+iris_tibble <- tibble(iris)
+```
+
+### Summarising by Nesting Verbs
+
+::: {style="color: red"}
+$\star$ Here, you are nesting the functions `group_by()` and `summarise()` to compute the means of each species.
+:::
+
+```{r echo=TRUE, eval=FALSE}
+summarise(group_by(iris_tibble,Species),mean_sepal_length = mean(Sepal.Length))
+```
+
+### Summarising by Piping Verbs
+
+::: {style="color: red"}
+$\star$ Here, you are using the piping operator `%>%`, where you don't need to nest the verbs, and the verbs are written in a logical sequence line-by-line.
+:::
+
+```{r echo=TRUE, eval=FALSE}
+iris_tibble %>% 
+  # Step 1: group by species
+  group_by(Species) %>% 
+  # step 2: Calculate the mean of the sepal length variable
+  summarise(mean_sepal_length = mean(Sepal.Length))
+```
+
+::: {style="color: red"}
+$\star$ Note that you need to know the variable names of the tibble by examining the tibble first, usually by using the `glimpse()` function.
+:::
+
+## Summarising the Entire `iris` Tibble
+
+::: {style="color: red"}
+$\star$ Here, summarising the entire tibble means that you are using all rows to compute descriptive statistics, which results in another tibble with 1 row and the number of defined summary variables.
+:::
+
+```{r echo=TRUE, eval=FALSE}
+iris_tibble |> 
+  # summarise data using the mean of the numerical variables
+  summarise(
+    N = n(), # count total number of rows
+    mean_sepal_length = mean(Sepal.Length), # compute mean of sepal length
+    mean_sepal_width = mean(Sepal.Width), # compute mean of sepal width
+    mean_petal_length = mean(Petal.Length), # compute mean of petal length
+    mean_petal_width = mean(Petal.Width), # compute mean of petal width
+  )
+```
+
+::: {style="color: blue"}
+$\dagger$ Try out the given code sequence, but instead of using `mean()` try `median()` and `var()`, and add the Interquartile Range (IQR) using `iqr()`.
+:::
+
+## Summarising the `iris` Tibble by Species
+
+::: {style="color: red"}
+$\star$ Here, summarising the tibble by species means that you are grouping the rows by species first and then summarising to compute descriptive statistics, which results in another tibble with 3 rows (for 3 species) and the number of defined summary variables. 
+:::
+
+```{r echo=TRUE, eval=FALSE}
+iris_tibble |> 
+  # group the tibble by species
+  group_by(Species) |> 
+  # summarise data using the mean and number of observations for each species
+  summarise(
+    N = n(), # count total number of rows
+    mean_sepal_length = mean(Sepal.Length), # compute mean of sepal length
+    mean_sepal_width = mean(Sepal.Width), # compute mean of sepal width
+    mean_petal_length = mean(Petal.Length), # compute mean of petal length
+    mean_petal_width = mean(Petal.Width), # compute mean of petal width
+  )
+```
+
+## Activity: Summarise Data by Category
+
+The purpose of this activity is for you to start developing a proficiency in transforming a data frame using `dplyr` verbs.
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA4: Summarise Data by Category*.
+
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+
+3. Change the author in the YAML header.
+
+4. Read the provided instructions.
+
+5. Answer all exercise problems on the designated sections.

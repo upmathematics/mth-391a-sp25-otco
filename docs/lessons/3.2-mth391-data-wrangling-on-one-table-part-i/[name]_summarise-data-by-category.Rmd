@@ -1,0 +1,56 @@
+---
+title: "Summarise Data by Category"
+subtitle: "Fundamentals of Data Science"
+author: "[First name][Last initial]"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Syllabus Reminders
+
+* You must submit your worksheet individually by end-of-class or end-of-day. Your name must exist in your worksheet and the names of your collaborators.
+* Worksheets are marked mostly on completion, and partially on correctness. It will be marked either pass or fail, there will no detailed feedback on worksheets, and no opportunities for revisions and make-up.
+
+# Instructions
+
+* For the exercises, please provide your answers in full sentences.
+* Write your answers by replacing the text "[Write your answer here]".
+* Please read the problems fully and carefully before answering.
+* When finished, knit this `.Rmd` to `.html`.
+* Submit this `.Rmd` and the recently knitted `.html`.
+
+# Collaborators
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+# Exercises
+
+## Problem 1
+
+Create a code chunk. In this chunk, load the `palmerpenguins` and the `tidyverse` packages.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 2
+
+Examine the `penguins` tibble. There are four categorical variables. What are they and what are the unique categories of each variable? Create a code chunk that uses the `distinct()` verb on the `penguins` tibble with the piping operator `%>%`.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 3
+
+Create a code chunk and use the verbs `group_by()` and `summarise()` to calculate the mean (`mean()`) and median (`median()`) body mass of each species in the `penguins` tibble. Make sure you use the piping operator `%>%` for readable and efficient data processing.
+
+::: {style="color: blue;"}
+[Write your answer here]
+:::
