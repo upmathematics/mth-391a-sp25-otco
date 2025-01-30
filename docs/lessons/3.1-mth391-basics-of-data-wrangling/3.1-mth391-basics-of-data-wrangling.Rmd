@@ -130,7 +130,7 @@ $\dagger$ Try the above code sequence in your console. Then, install a different
 :::
 
 ::: {style="color: red"}
-$\star$ Knitting an RMarkdown with this function in a code chunk will give you an error. You need to run it directly on the console.
+$\star$ Knitting an RMarkdown with this function in a code chunk will probably give you an error or warning message. You need to run it directly on the console.
 :::
 ::::
 
@@ -205,7 +205,7 @@ $\star$ A base R data frame can be converted to a tibble data frame using the `t
 ## Differences of R Data Frames and Tibbles {.smaller}
 
 | **Feature** | **R Data Frames** | **Tibbles** |
-|---:|------|------|
+|---:|:------|:------|
 | *Printing* | Full display | Abbreviated, neat display |
 | *Subsetting* | Returns vectors | Always returns tibbles |
 | *String Handling* | Strings can become factors | Strings remain characters |
@@ -265,33 +265,33 @@ $\star$ Here, the `glimpse()` function is used to simplify the output of the sub
 
 **`dplyr` functions that operates on rows.**
 
-| **Verb** | **Purpose** | **Example** |
-|:---|:------|:------|
-| `filter()` | Chooses rows based on conditions | `filter(data, col1 > 10)` |
-| `arrange()` | Reorders rows | `arrange(data, col1)` |
-| `distinct()` | Finds all the unique rows | `distinct(data, col1)` |
-| `count()` | Finds all unique rows, then counts the number of occurrences | `count(data, col1)` |
+| **Verb** | **Purpose** & **Example** |
+|:--|:--------|
+| `filter()` | Chooses rows based on conditions <br><br>`filter(data, col1 > 10)` |
+| `arrange()` | Reorders rows <br><br>`arrange(data, col1)` |
+| `distinct()` | Finds all the unique rows <br><br>`distinct(data, col1)` |
+| `count()` | Finds all unique rows, then counts the number of occurrences <br><br>`count(data, col1)` |
 
 ::: {style="color: red"}
-$\star$ Notice that the data frame `data` in the examples are always in the first argument in the verbs. *The `filter()` verb uses logical operators, which we will discuss later in detail.*
+$\star$ Notice that the data frame `data` in the examples are always in the first argument in the verbs. *The `filter()` verb uses logical operators, which we will discuss more in detail.*
 :::
 
 ## Core Verbs for Columns of `dplyr` {.smaller}
 
 **`dplyr` functions that operates on columns.**
 
-| **Verb** | **Purpose** | **Example** |
-|:---|:------|:------|
-| `mutate()` | Adds or modifies columns | `mutate(data, new_col = col1-col2)` |
-| `select()` | Chooses specific columns | `select(data, col1, col2)` |
-| `rename()` | Renames specific columns | `rename(data, 1loc = col1)` |
-| `relocate()` | Moves columns to the front | `relocate(data, col1)` |
+| **Verb** | **Purpose** & **Example** |
+|:--|:--------|
+| `mutate()` | Adds or modifies columns <br><br>`mutate(data, new_col = col1-col2)` |
+| `select()` | Chooses specific columns <br><br>`select(data, col1, col2)` |
+| `rename()` | Renames specific columns <br><br>`rename(data, 1loc = col1)` |
+| `relocate()` | Moves columns to the front <br><br>`relocate(data, col1)` |
 
 ::: {style="color: red"}
 $\star$ The `=` signs in column verbs are not logical operators. Only the `filter()` verb uses the logical operators.
 :::
 
-## Chaining `dplyr` Verbs Using `|>` (1/3)
+## Chaining `dplyr` Verbs Using `|>`
 
 :::: {.column width=15%}
 ::::
@@ -307,12 +307,18 @@ $\star$ The `=` signs in column verbs are not logical operators. Only the `filte
 :::: {.column width=15%}
 ::::
 
-## Chaining `dplyr` Verbs Using `|>` (2/3)
+## Example: Filter One Table Using `|>`
+
+**Define Data Frame as a Tibble**
+
+```{r echo=TRUE, eval=TRUE}
+iris_tibble <- tibble(iris)
+```
 
 **Simple Example.** The following code sequence filters the `iris` data frame (in tibble form) to include only the "setosa" species.
 
 ```{r echo=TRUE, eval=FALSE}
-tibble(iris) |> 
+iris_tibble |> 
   filter(Species == "setosa")
 ```
 
@@ -320,29 +326,29 @@ tibble(iris) |>
 $\star$ Notice that the first line is the data frame itself, then the next line is the verb without putting it directly into the first argument of the `filter()` verb. This is a common practice of organizing verbs in a pipeline.
 :::
 
-## Chaining `dplyr` Verbs Using `|>` (3/3)
+## Example: Transform One Table Using `|>`
 
-**Advanced Example:** The goal of this example is to transform the `iris` data set where we want to compute the ratio of the variables `Petal.Length` and `Sepal.Length` of the `"setosa"` species.
+**Advanced Example:** The goal of this example is to transform the `iris` dataset by computing the ratio of `Petal.Length` to `Sepal.Length` for observations belonging to the "setosa" species.
 
 ```{r echo=TRUE, eval=FALSE}
-tibble(iris) |> 
+iris_tibble |> 
   # rule 1: choose only the "setosa" species
   filter(Species == "setosa") |> 
-  # rule 2: pick the variables sepal length and petal length
+  # rule 2: pick the columns Sepal.Length and Petal.Length
   select(Sepal.Length,Petal.Length) |> 
-  # rule 3: create a new variable called length_ratio
+  # rule 3: create a new column called length_ratio
   mutate(length_ratio = Petal.Length/Sepal.Length)
 ```
 
 ::: {style="color: blue"}
-$\dagger$ Try the above code sequence in your console and try mixing the order of the verbs. Do you still have the same results using the original order of rules? If not, why?
+$\dagger$ Try the above code sequence in your console with the `virginica` species, and compute the ratio of `Petal.Width` to `Sepal.Width`.
 :::
 
 ::: {style="color: red"}
-$\star$  The verbs don't explicitly include the resulting data frames as the first argument because the pipe operator assumes it as the input for each verb in the sequence.
+$\star$ The verbs do not explicitly take the resulting data frames as the first argument because the pipe operator automatically passes the output of the previous step as the input to the next verb in the sequence.
 :::
 
-## A Strategy and Best Practice
+## Data Transformation Strategy and Best Practice
 
 **What is a strategy and best practice on transforming a data frame?**
 
@@ -350,26 +356,30 @@ $\star$  The verbs don't explicitly include the resulting data frames as the fir
 2. Know the end goal of transformation by visioning what it should look like.
 3. Figure out what verbs are appropriate to use.
 4. Vision a sequence of verbs that would lead you to the end goal.
-5. Implement the verbs in code line-by-line, then make adjustments.
+5. Implement the verbs in code line-by-line, check the output, then make adjustments.
 
 ## In-Class Demonstration
 
-**Case Example:** Using the `iris` data set, we want to know how many rows (or observations) for each species that have length ratio greater than $0.80$ and width ratio greater than $0.5$. Here, the ratio is defined as petal over sepal variables.
+**Case example:** Using the `iris` dataset, we want to determine the number of rows (or observations) for each species where the length ratio exceeds $0.80$ and the width ratio exceeds $0.50$. The length ratio is defined as `Petal.Length` divided by `Sepal.Length`, and the width ratio is defined as `Petal.Width` divided by `Sepal.Width`.
 
 :::: {.column width=49%}
-**The original number of rows of each species is shown below.**
+**The original number of rows pre-transformation**
 
 ```{r}
-tibble(iris) |> 
+# counting sequence
+iris_species_count <- iris_tibble |> 
   count(Species)
+# display result
+iris_species_count
 ```
 ::::
 
 :::: {.column width=49%}
-**The end result is the following data frame.**
+**Post-transformation results**
 
 ```{r}
-tibble(iris) |> 
+# transformation sequence
+iris_trans <- iris_tibble |> 
   # compute all ratios using lengths and widths
   mutate(ratio_length = Petal.Length/Sepal.Length,
          ratio_width = Petal.Width/Sepal.Width) |> 
@@ -380,11 +390,13 @@ tibble(iris) |>
          ratio_width > 0.50) |> 
   # count the number of rows on what's left
   count(Species)
+# display result
+iris_trans
 ```
 ::::
 
 ::: {style="color: blue"}
-$\dagger$ The task here is to replicate the shown data frames using the `dplyr` verbs.
+$\dagger$ The goal of the demonstration is to replicate the shown data frames using the `dplyr` verbs.
 :::
 
 ## Activity: Transform a Data Frame
@@ -392,11 +404,7 @@ $\dagger$ The task here is to replicate the shown data frames using the `dplyr` 
 The purpose of this activity is for you to start developing a proficiency in transforming a data frame using `dplyr` verbs.
 
 1. Log-in to Posit Cloud and open the R Studio assignment *MA3: Transform a Data Frame*.
-
 2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
-
 3. Change the author in the YAML header.
-
 4. Read the provided instructions.
-
 5. Answer all exercise problems on the designated sections.

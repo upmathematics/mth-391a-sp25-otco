@@ -170,10 +170,10 @@ The following learning objectives are designed to build on one another, with som
 |  | W 1/22 | Reproducible Workflows |
 |  | F 1/24 | _Cancelled_ |
 | **3** | M 1/27 | Basics of Data Wrangling |
-|  | W 1/29 | Data Wrangling on One Table |
-|  | F 1/31 | Data Wrangling on Multiple Tables |
-| **4** | M 2/3 | Using R for Data Wrangling & **Project Milestone: Project Proposal & <br>Project Phase 1** |
-|  | W 2/5 | Data Reshaping |
+|  | W 1/29 | Summarising One Table |
+|  | F 1/31 | Reshaping One Table |
+| **4** | M 2/3 | **Project Milestone: Project Proposal & <br>Project Phase 1** |
+|  | W 2/5 | Data Wrangling on Multiple Tables |
 |  | F 2/7 | Basics of Visualizations |
 | **5** | M 2/10 | Using R for Visualizations & <br>**Project Phase 2** |
 |  | W 2/12 | Transforming Tables for Visualizations |
@@ -529,10 +529,9 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Cloud Computing](lessons/1.3-mth391-cloud-computing/1.3-mth391-cloud-computing.html) | - |
 | [Reproducible Workflows](lessons/2.1-mth391-reproducible-workflows/2.1-mth391-reproducible-workflows.html) | - |
 | [Basics of Data Wrangling](lessons/3.1-mth391-basics-of-data-wrangling/3.1-mth391-basics-of-data-wrangling.html) | Ch. 3 @wickham2023r |
-| [Data Wrangling on One Table (Part I)](lessons/3.2-mth391-data-wrangling-on-one-table-part-i/3.2-mth391-data-wrangling-on-one-table-part-i.html) | Ch. 4 @baumer2017modern |
+| [Summarising One Table](lessons/3.2-mth391-summarising-one-table/3.2-mth391-summarising-one-table.html) | Ch. 4 @baumer2017modern |
+| Reshaping One Table | Ch. 5 @wickham2023r |
 | Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern |
-| Using R for Data Wrangling | TBA |
-| Data Reshaping | TBA |
 | Basics of Visualizations | TBA |
 | Using R for Visualizations | TBA |
 | Transforming Tables for Visualizations | TBA |

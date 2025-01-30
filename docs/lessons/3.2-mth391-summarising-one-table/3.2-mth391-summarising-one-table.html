@@ -9,7 +9,7 @@
   <meta name="date" content="2025-01-29" />
   <meta name="copyright" content="| MTH-391A Spring 2025 | &lt;a href=&#39;../../index.html&#39;&gt;Back to the Course Website&lt;/a&gt;" />
   <meta name="font-size-adjustment" content="5" />
-  <title>Data Wrangling on One Table (Part I)</title>
+  <title>Summarising One Table</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -525,7 +525,7 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Data Wrangling on One Table (Part I)</h1>
+  <h1 class="title">Summarising One Table</h1>
   <h1 class="subtitle">Fundamentals of Data Science</h1>
   <p class="author">
 MTH-391A | Spring 2025 | University of Portland
@@ -570,15 +570,15 @@ using the <code>tibble</code> package in <code>tidyverse</code>.</p>
 <p><strong>Chaining <code>dplyr</code> Verbs Using
 <code>|&gt;</code></strong></p>
 <p><strong>Advanced Example:</strong> The goal of this example is to
-transform the <code>iris</code> data set where we want to compute the
-ratio of the variables <code>Petal.Length</code> and
-<code>Sepal.Length</code> of the <code>&quot;setosa&quot;</code> species.</p>
+transform the <code>iris</code> dataset by computing the ratio of
+<code>Petal.Length</code> to <code>Sepal.Length</code> for observations
+belonging to the “setosa” species.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">tibble</span>(iris) <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="co"># rule 1: choose only the &quot;setosa&quot; species</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="co"># rule 2: pick the variables sepal length and petal length</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="co"># rule 2: pick the columns Sepal.Length and Petal.Length</span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length,Petal.Length) <span class="sc">|&gt;</span> </span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="co"># rule 3: create a new variable called length_ratio</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="co"># rule 3: create a new column called length_ratio</span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">length_ratio =</span> Petal.Length<span class="sc">/</span>Sepal.Length)</span></code></pre></div>
 </div>
 <div id="dplyr-verbs-for-tidying-data" class="slide section level2 smaller">
@@ -587,29 +587,27 @@ ratio of the variables <code>Petal.Length</code> and
 columns.</strong></p>
 <table>
 <colgroup>
-<col width="22%" />
-<col width="38%" />
-<col width="38%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left"><strong>Verb</strong></th>
-<th align="left"><strong>Purpose</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th align="left"><strong>Purpose</strong> &amp;
+<strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><code>group_by()</code></td>
-<td align="left">Groups rows by one or more variables, allowing
-operations to be performed within groups.</td>
-<td align="left"><code>group_by(data,category)</code></td>
+<td align="left">Groups rows by one or more columns, allowing operations
+to be performed within groups.
+<br><br><code>group_by(data,category)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>summarise()</code></td>
 <td align="left">Reduces multiple rows into a single summary row per
-group.</td>
-<td align="left"><code>summarise(data,mean_variable = mean(variable))</code></td>
+group. <br><br><code>summarise(data,new_var = function(var))</code></td>
 </tr>
 </tbody>
 </table>
@@ -620,96 +618,82 @@ together if you need to compute descriptive statistics of each category
 of a categorical variable.</p>
 </div>
 </div>
-<div id="dplyr-verbs-for-tidying-data-example" class="slide section level2 smaller">
-<h1 class="smaller"><code>dplyr</code> Verbs for Tidying Data:
-Example</h1>
-<h3 id="define-data-frame-as-a-tibble">Define Data Frame as a
-Tibble</h3>
+<div id="example-summarising-one-table-by-group" class="slide section level2">
+<h1>Example: Summarising One Table by Group</h1>
+<p><strong>Define Data Frame as a Tibble</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>iris_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(iris)</span></code></pre></div>
-<h3 id="summarising-by-nesting-verbs">Summarising by Nesting Verbs</h3>
+<p><strong>Summarising by Nesting Verbs</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">summarise</span>(<span class="fu">group_by</span>(iris_tibble,Species),<span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
 <div style="color: red">
 <p><span class="math inline">\(\star\)</span> Here, you are nesting the
 functions <code>group_by()</code> and <code>summarise()</code> to
-compute the means of each species.</p>
+compute the mean of the <code>Sepal.Length</code> column in each
+category of the <code>Species</code> column.</p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">summarise</span>(<span class="fu">group_by</span>(iris_tibble,Species),<span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
-<h3 id="summarising-by-piping-verbs">Summarising by Piping Verbs</h3>
+<p><strong>Summarising by Piping Verbs</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>iris_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="co"># Step 1: group by species</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="co"># Step 2: Calculate the mean of the Sepal.Length column</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="co">#  - mean_sepal_length is the new column for the calculated mean</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
 <div style="color: red">
 <p><span class="math inline">\(\star\)</span> Here, you are using the
-piping operator <code>%&gt;%</code>, where you don’t need to nest the
+piping operator <code>|&gt;</code>, where you don’t need to nest the
 verbs, and the verbs are written in a logical sequence line-by-line.</p>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>iris_tibble <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="co"># Step 1: group by species</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="co"># step 2: Calculate the mean of the sepal length variable</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length))</span></code></pre></div>
-<div style="color: red">
-<p><span class="math inline">\(\star\)</span> Note that you need to know
-the variable names of the tibble by examining the tibble first, usually
-by using the <code>glimpse()</code> function.</p>
 </div>
+<div id="data-summarization-strategy-and-best-practice" class="slide section level2">
+<h1>Data Summarization Strategy and Best Practice</h1>
+<p><strong>What is a strategy and best practice on summarising a data
+frame?</strong></p>
+<ol style="list-style-type: decimal">
+<li>Understand your data frame, its variables, the variable types, and
+how many rows.</li>
+<li>Know the end goal of the summary such as knowing what computations
+on numerical (or categorical) variables.</li>
+<li>Figure out what categorical variables –if any– you need to group for
+the summarizations.</li>
+<li>Vision the ordering of categorical variables on which to group by
+before summarising.</li>
+<li>Implement the verbs in code line-by-line, check the output, then
+make adjustments.</li>
+</ol>
 </div>
-<div id="summarising-the-entire-iris-tibble" class="slide section level2">
-<h1>Summarising the Entire <code>iris</code> Tibble</h1>
-<div style="color: red">
-<p><span class="math inline">\(\star\)</span> Here, summarising the
-entire tibble means that you are using all rows to compute descriptive
-statistics, which results in another tibble with 1 row and the number of
-defined summary variables.</p>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>iris_tibble <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="co"># summarise data using the mean of the numerical variables</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    <span class="at">N =</span> <span class="fu">n</span>(), <span class="co"># count total number of rows</span></span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="co"># compute mean of sepal length</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="at">mean_sepal_width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="co"># compute mean of sepal width</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    <span class="at">mean_petal_length =</span> <span class="fu">mean</span>(Petal.Length), <span class="co"># compute mean of petal length</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="at">mean_petal_width =</span> <span class="fu">mean</span>(Petal.Width), <span class="co"># compute mean of petal width</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  )</span></code></pre></div>
+<div id="in-class-demonstrations" class="slide section level2">
+<h1>In-Class Demonstrations</h1>
+<p><strong>Case example:</strong> Using the <code>iris</code> dataset,
+we want to compute the mean of each numerical variable for each species
+and count the number of rows per species.</p>
+<p><strong>Post-summarisation results</strong></p>
+<pre><code>## # A tibble: 3 × 6
+##   Species        N mean_sepal_length mean_sepal_width mean_petal_length
+##   &lt;fct&gt;      &lt;int&gt;             &lt;dbl&gt;            &lt;dbl&gt;             &lt;dbl&gt;
+## 1 setosa        50              5.01             3.43              1.46
+## 2 versicolor    50              5.94             2.77              4.26
+## 3 virginica     50              6.59             2.97              5.55
+## # ℹ 1 more variable: mean_petal_width &lt;dbl&gt;</code></pre>
 <div style="color: blue">
-<p><span class="math inline">\(\dagger\)</span> Try out the given code
-sequence, but instead of using <code>mean()</code> try
-<code>median()</code> and <code>var()</code>, and add the Interquartile
-Range (IQR) using <code>iqr()</code>.</p>
+<p><span class="math inline">\(\dagger\)</span> The goal of the
+demonstration is to replicate the shown result using the
+<code>group_by()</code> and <code>summarise()</code> verbs.</p>
 </div>
-</div>
-<div id="summarising-the-iris-tibble-by-species" class="slide section level2">
-<h1>Summarising the <code>iris</code> Tibble by Species</h1>
-<div style="color: red">
-<p><span class="math inline">\(\star\)</span> Here, summarising the
-tibble by species means that you are grouping the rows by species first
-and then summarising to compute descriptive statistics, which results in
-another tibble with 3 rows (for 3 species) and the number of defined
-summary variables.</p>
-</div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>iris_tibble <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="co"># group the tibble by species</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="co"># summarise data using the mean and number of observations for each species</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="at">N =</span> <span class="fu">n</span>(), <span class="co"># count total number of rows</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length), <span class="co"># compute mean of sepal length</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="at">mean_sepal_width =</span> <span class="fu">mean</span>(Sepal.Width), <span class="co"># compute mean of sepal width</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="at">mean_petal_length =</span> <span class="fu">mean</span>(Petal.Length), <span class="co"># compute mean of petal length</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="at">mean_petal_width =</span> <span class="fu">mean</span>(Petal.Width), <span class="co"># compute mean of petal width</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="activity-summarise-data-by-category" class="slide section level2">
 <h1>Activity: Summarise Data by Category</h1>
 <p>The purpose of this activity is for you to start developing a
-proficiency in transforming a data frame using <code>dplyr</code>
-verbs.</p>
+proficiency in summarising a data frame using the
+<code>group_by()</code> and <code>summarise()</code> verbs.</p>
 <ol style="list-style-type: decimal">
-<li><p>Log-in to Posit Cloud and open the R Studio assignment <em>MA4:
-Summarise Data by Category</em>.</p></li>
-<li><p>Make sure you are in the current working directory. Rename the
+<li>Log-in to Posit Cloud and open the R Studio assignment <em>MA4:
+Summarise Data by Category</em>.</li>
+<li>Make sure you are in the current working directory. Rename the
 <code>.Rmd</code> file by replacing <code>[name]</code> with your name
 using the format <code>[First name][Last initial]</code>. Then, open the
-<code>.Rmd</code> file.</p></li>
-<li><p>Change the author in the YAML header.</p></li>
-<li><p>Read the provided instructions.</p></li>
-<li><p>Answer all exercise problems on the designated sections.</p></li>
+<code>.Rmd</code> file.</li>
+<li>Change the author in the YAML header.</li>
+<li>Read the provided instructions.</li>
+<li>Answer all exercise problems on the designated sections.</li>
 </ol>
 </div>
 

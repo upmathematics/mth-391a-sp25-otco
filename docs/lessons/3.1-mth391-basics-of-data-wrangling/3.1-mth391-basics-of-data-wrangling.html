@@ -678,8 +678,8 @@ sequence in your console. Then, install a different package called
 </div>
 <div style="color: red">
 <p><span class="math inline">\(\star\)</span> Knitting an RMarkdown with
-this function in a code chunk will give you an error. You need to run it
-directly on the console.</p>
+this function in a code chunk will probably give you an error or warning
+message. You need to run it directly on the console.</p>
 </div>
 </div>
 </div>
@@ -765,42 +765,42 @@ function. The <code>iris</code> data set is a built-in data in the
 <h1 class="smaller">Differences of R Data Frames and Tibbles</h1>
 <table>
 <colgroup>
-<col width="25%" />
-<col width="37%" />
-<col width="37%" />
+<col width="22%" />
+<col width="38%" />
+<col width="38%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="right"><strong>Feature</strong></th>
-<th><strong>R Data Frames</strong></th>
-<th><strong>Tibbles</strong></th>
+<th align="left"><strong>R Data Frames</strong></th>
+<th align="left"><strong>Tibbles</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="right"><em>Printing</em></td>
-<td>Full display</td>
-<td>Abbreviated, neat display</td>
+<td align="left">Full display</td>
+<td align="left">Abbreviated, neat display</td>
 </tr>
 <tr class="even">
 <td align="right"><em>Subsetting</em></td>
-<td>Returns vectors</td>
-<td>Always returns tibbles</td>
+<td align="left">Returns vectors</td>
+<td align="left">Always returns tibbles</td>
 </tr>
 <tr class="odd">
 <td align="right"><em>String Handling</em></td>
-<td>Strings can become factors</td>
-<td>Strings remain characters</td>
+<td align="left">Strings can become factors</td>
+<td align="left">Strings remain characters</td>
 </tr>
 <tr class="even">
 <td align="right"><em>Column Names</em></td>
-<td>Allows partial matching</td>
-<td>No partial matching, clearer errors</td>
+<td align="left">Allows partial matching</td>
+<td align="left">No partial matching, clearer errors</td>
 </tr>
 <tr class="odd">
 <td align="right"><em>Error Messages</em></td>
-<td>Less informative</td>
-<td>More user-friendly</td>
+<td align="left">Less informative</td>
+<td align="left">More user-friendly</td>
 </tr>
 </tbody>
 </table>
@@ -873,38 +873,36 @@ tibbles, and databases.</li>
 rows.</strong></p>
 <table>
 <colgroup>
-<col width="22%" />
-<col width="38%" />
-<col width="38%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left"><strong>Verb</strong></th>
-<th align="left"><strong>Purpose</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th align="left"><strong>Purpose</strong> &amp;
+<strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><code>filter()</code></td>
-<td align="left">Chooses rows based on conditions</td>
-<td align="left"><code>filter(data, col1 &gt; 10)</code></td>
+<td align="left">Chooses rows based on conditions
+<br><br><code>filter(data, col1 &gt; 10)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>arrange()</code></td>
-<td align="left">Reorders rows</td>
-<td align="left"><code>arrange(data, col1)</code></td>
+<td align="left">Reorders rows
+<br><br><code>arrange(data, col1)</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>distinct()</code></td>
-<td align="left">Finds all the unique rows</td>
-<td align="left"><code>distinct(data, col1)</code></td>
+<td align="left">Finds all the unique rows
+<br><br><code>distinct(data, col1)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>count()</code></td>
 <td align="left">Finds all unique rows, then counts the number of
-occurrences</td>
-<td align="left"><code>count(data, col1)</code></td>
+occurrences <br><br><code>count(data, col1)</code></td>
 </tr>
 </tbody>
 </table>
@@ -912,7 +910,7 @@ occurrences</td>
 <p><span class="math inline">\(\star\)</span> Notice that the data frame
 <code>data</code> in the examples are always in the first argument in
 the verbs. <em>The <code>filter()</code> verb uses logical operators,
-which we will discuss later in detail.</em></p>
+which we will discuss more in detail.</em></p>
 </div>
 </div>
 <div id="core-verbs-for-columns-of-dplyr" class="slide section level2 smaller">
@@ -921,37 +919,36 @@ which we will discuss later in detail.</em></p>
 columns.</strong></p>
 <table>
 <colgroup>
-<col width="22%" />
-<col width="38%" />
-<col width="38%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left"><strong>Verb</strong></th>
-<th align="left"><strong>Purpose</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th align="left"><strong>Purpose</strong> &amp;
+<strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><code>mutate()</code></td>
-<td align="left">Adds or modifies columns</td>
-<td align="left"><code>mutate(data, new_col = col1-col2)</code></td>
+<td align="left">Adds or modifies columns
+<br><br><code>mutate(data, new_col = col1-col2)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>select()</code></td>
-<td align="left">Chooses specific columns</td>
-<td align="left"><code>select(data, col1, col2)</code></td>
+<td align="left">Chooses specific columns
+<br><br><code>select(data, col1, col2)</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>rename()</code></td>
-<td align="left">Renames specific columns</td>
-<td align="left"><code>rename(data, 1loc = col1)</code></td>
+<td align="left">Renames specific columns
+<br><br><code>rename(data, 1loc = col1)</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>relocate()</code></td>
-<td align="left">Moves columns to the front</td>
-<td align="left"><code>relocate(data, col1)</code></td>
+<td align="left">Moves columns to the front
+<br><br><code>relocate(data, col1)</code></td>
 </tr>
 </tbody>
 </table>
@@ -961,9 +958,8 @@ in column verbs are not logical operators. Only the
 <code>filter()</code> verb uses the logical operators.</p>
 </div>
 </div>
-<div id="chaining-dplyr-verbs-using-13" class="slide section level2">
-<h1>Chaining <code>dplyr</code> Verbs Using <code>|&gt;</code>
-(1/3)</h1>
+<div id="chaining-dplyr-verbs-using" class="slide section level2">
+<h1>Chaining <code>dplyr</code> Verbs Using <code>|&gt;</code></h1>
 <div class="column" style="width:15%;">
 
 </div>
@@ -980,14 +976,15 @@ frame.</li>
 
 </div>
 </div>
-<div id="chaining-dplyr-verbs-using-23" class="slide section level2">
-<h1>Chaining <code>dplyr</code> Verbs Using <code>|&gt;</code>
-(2/3)</h1>
+<div id="example-filter-one-table-using" class="slide section level2">
+<h1>Example: Filter One Table Using <code>|&gt;</code></h1>
+<p><strong>Define Data Frame as a Tibble</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>iris_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(iris)</span></code></pre></div>
 <p><strong>Simple Example.</strong> The following code sequence filters
 the <code>iris</code> data frame (in tibble form) to include only the
 “setosa” species.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">tibble</span>(iris) <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>iris_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>)</span></code></pre></div>
 <div style="color: red">
 <p><span class="math inline">\(\star\)</span> Notice that the first line
 is the data frame itself, then the next line is the verb without putting
@@ -995,34 +992,34 @@ it directly into the first argument of the <code>filter()</code> verb.
 This is a common practice of organizing verbs in a pipeline.</p>
 </div>
 </div>
-<div id="chaining-dplyr-verbs-using-33" class="slide section level2">
-<h1>Chaining <code>dplyr</code> Verbs Using <code>|&gt;</code>
-(3/3)</h1>
+<div id="example-transform-one-table-using" class="slide section level2">
+<h1>Example: Transform One Table Using <code>|&gt;</code></h1>
 <p><strong>Advanced Example:</strong> The goal of this example is to
-transform the <code>iris</code> data set where we want to compute the
-ratio of the variables <code>Petal.Length</code> and
-<code>Sepal.Length</code> of the <code>&quot;setosa&quot;</code> species.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">tibble</span>(iris) <span class="sc">|&gt;</span> </span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  <span class="co"># rule 1: choose only the &quot;setosa&quot; species</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  <span class="co"># rule 2: pick the variables sepal length and petal length</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length,Petal.Length) <span class="sc">|&gt;</span> </span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="co"># rule 3: create a new variable called length_ratio</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">length_ratio =</span> Petal.Length<span class="sc">/</span>Sepal.Length)</span></code></pre></div>
+transform the <code>iris</code> dataset by computing the ratio of
+<code>Petal.Length</code> to <code>Sepal.Length</code> for observations
+belonging to the “setosa” species.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>iris_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="co"># rule 1: choose only the &quot;setosa&quot; species</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">&quot;setosa&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="co"># rule 2: pick the columns Sepal.Length and Petal.Length</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length,Petal.Length) <span class="sc">|&gt;</span> </span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  <span class="co"># rule 3: create a new column called length_ratio</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">length_ratio =</span> Petal.Length<span class="sc">/</span>Sepal.Length)</span></code></pre></div>
 <div style="color: blue">
 <p><span class="math inline">\(\dagger\)</span> Try the above code
-sequence in your console and try mixing the order of the verbs. Do you
-still have the same results using the original order of rules? If not,
-why?</p>
+sequence in your console with the <code>virginica</code> species, and
+compute the ratio of <code>Petal.Width</code> to
+<code>Sepal.Width</code>.</p>
 </div>
 <div style="color: red">
-<p><span class="math inline">\(\star\)</span> The verbs don’t explicitly
-include the resulting data frames as the first argument because the pipe
-operator assumes it as the input for each verb in the sequence.</p>
+<p><span class="math inline">\(\star\)</span> The verbs do not
+explicitly take the resulting data frames as the first argument because
+the pipe operator automatically passes the output of the previous step
+as the input to the next verb in the sequence.</p>
 </div>
 </div>
-<div id="a-strategy-and-best-practice" class="slide section level2">
-<h1>A Strategy and Best Practice</h1>
+<div id="data-transformation-strategy-and-best-practice" class="slide section level2">
+<h1>Data Transformation Strategy and Best Practice</h1>
 <p><strong>What is a strategy and best practice on transforming a data
 frame?</strong></p>
 <ol style="list-style-type: decimal">
@@ -1032,20 +1029,20 @@ how many rows.</li>
 like.</li>
 <li>Figure out what verbs are appropriate to use.</li>
 <li>Vision a sequence of verbs that would lead you to the end goal.</li>
-<li>Implement the verbs in code line-by-line, then make
-adjustments.</li>
+<li>Implement the verbs in code line-by-line, check the output, then
+make adjustments.</li>
 </ol>
 </div>
 <div id="in-class-demonstration" class="slide section level2">
 <h1>In-Class Demonstration</h1>
-<p><strong>Case Example:</strong> Using the <code>iris</code> data set,
-we want to know how many rows (or observations) for each species that
-have length ratio greater than <span class="math inline">\(0.80\)</span>
-and width ratio greater than <span class="math inline">\(0.5\)</span>.
-Here, the ratio is defined as petal over sepal variables.</p>
+<p><strong>Case example:</strong> Using the <code>iris</code> dataset,
+we want to determine the number of rows (or observations) for each
+species where the length ratio exceeds <span class="math inline">\(0.80\)</span> and the width ratio exceeds <span class="math inline">\(0.50\)</span>. The length ratio is defined as
+<code>Petal.Length</code> divided by <code>Sepal.Length</code>, and the
+width ratio is defined as <code>Petal.Width</code> divided by
+<code>Sepal.Width</code>.</p>
 <div class="column" style="width:49%;">
-<p><strong>The original number of rows of each species is shown
-below.</strong></p>
+<p><strong>The original number of rows pre-transformation</strong></p>
 <pre><code>## # A tibble: 3 × 2
 ##   Species        n
 ##   &lt;fct&gt;      &lt;int&gt;
@@ -1054,7 +1051,7 @@ below.</strong></p>
 ## 3 virginica     50</code></pre>
 </div>
 <div class="column" style="width:49%;">
-<p><strong>The end result is the following data frame.</strong></p>
+<p><strong>Post-transformation results</strong></p>
 <pre><code>## # A tibble: 2 × 2
 ##   Species        n
 ##   &lt;fct&gt;      &lt;int&gt;
@@ -1062,8 +1059,9 @@ below.</strong></p>
 ## 2 virginica     40</code></pre>
 </div>
 <div style="color: blue">
-<p><span class="math inline">\(\dagger\)</span> The task here is to
-replicate the shown data frames using the <code>dplyr</code> verbs.</p>
+<p><span class="math inline">\(\dagger\)</span> The goal of the
+demonstration is to replicate the shown data frames using the
+<code>dplyr</code> verbs.</p>
 </div>
 </div>
 <div id="activity-transform-a-data-frame" class="slide section level2">
@@ -1072,15 +1070,15 @@ replicate the shown data frames using the <code>dplyr</code> verbs.</p>
 proficiency in transforming a data frame using <code>dplyr</code>
 verbs.</p>
 <ol style="list-style-type: decimal">
-<li><p>Log-in to Posit Cloud and open the R Studio assignment <em>MA3:
-Transform a Data Frame</em>.</p></li>
-<li><p>Make sure you are in the current working directory. Rename the
+<li>Log-in to Posit Cloud and open the R Studio assignment <em>MA3:
+Transform a Data Frame</em>.</li>
+<li>Make sure you are in the current working directory. Rename the
 <code>.Rmd</code> file by replacing <code>[name]</code> with your name
 using the format <code>[First name][Last initial]</code>. Then, open the
-<code>.Rmd</code> file.</p></li>
-<li><p>Change the author in the YAML header.</p></li>
-<li><p>Read the provided instructions.</p></li>
-<li><p>Answer all exercise problems on the designated sections.</p></li>
+<code>.Rmd</code> file.</li>
+<li>Change the author in the YAML header.</li>
+<li>Read the provided instructions.</li>
+<li>Answer all exercise problems on the designated sections.</li>
 </ol>
 </div>
 
