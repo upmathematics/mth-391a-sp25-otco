@@ -70,7 +70,7 @@ tibble(iris) |>
 
 ## `dplyr` Verbs for Tidying Data {.smaller}
 
-**`dplyr` functions that operates on rows and columns.**
+**`dplyr` functions that operates on rows and columns**
 
 | **Verb** | **Purpose** & **Example** |
 |:--|:--------|
