@@ -678,6 +678,15 @@ categories as Columns.</p>
 </div>
 <div class="column" style="width:50%;">
 <p><strong>Reshaped tibble</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># using the subset create a new variable to save the reshaped data</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>titanic_wide_class <span class="ot">&lt;-</span> titanic_tibble <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="co"># reshape the data frame as a table</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="st">&quot;Class&quot;</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  )</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co"># show results</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>titanic_wide_class</span></code></pre></div>
 <pre><code>## # A tibble: 8 × 7
 ##   Sex    Age   Survived `1st` `2nd` `3rd`  Crew
 ##   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;

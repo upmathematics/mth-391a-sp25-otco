@@ -146,7 +146,7 @@ glimpse(titanic_tibble)
 :::: {.column width=50%}
 **Reshaped tibble**
 
-```{r}
+```{r echo=TRUE,eval=TRUE}
 # using the subset create a new variable to save the reshaped data
 titanic_wide_class <- titanic_tibble |> 
   # reshape the data frame as a table
