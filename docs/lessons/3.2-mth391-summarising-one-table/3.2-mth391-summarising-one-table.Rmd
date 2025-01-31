@@ -56,10 +56,16 @@ knitr::include_graphics("data-frame-tibble.png")
 
 **Chaining `dplyr` Verbs Using `|>`**
 
+**Define Data Frame as a Tibble**
+
+```{r echo=TRUE, eval=FALSE}
+iris_tibble <- tibble(iris)
+```
+
 **Advanced Example:** The goal of this example is to transform the `iris` dataset by computing the ratio of `Petal.Length` to `Sepal.Length` for observations belonging to the "setosa" species.
 
 ```{r echo=TRUE, eval=FALSE}
-tibble(iris) |> 
+iris_tibble |> 
   # rule 1: choose only the "setosa" species
   filter(Species == "setosa") |> 
   # rule 2: pick the columns Sepal.Length and Petal.Length

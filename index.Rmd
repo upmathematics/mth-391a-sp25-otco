@@ -530,7 +530,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Reproducible Workflows](lessons/2.1-mth391-reproducible-workflows/2.1-mth391-reproducible-workflows.html) | - |
 | [Basics of Data Wrangling](lessons/3.1-mth391-basics-of-data-wrangling/3.1-mth391-basics-of-data-wrangling.html) | Ch. 3 @wickham2023r |
 | [Summarising One Table](lessons/3.2-mth391-summarising-one-table/3.2-mth391-summarising-one-table.html) | Ch. 4 @baumer2017modern |
-| Reshaping One Table | Ch. 5 @wickham2023r |
+| [Reshaping One Table](lessons/3.3-mth391-reshaping-one-table/3.3-mth391-reshaping-one-table.html) | Ch. 5 @wickham2023r |
 | Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern |
 | Basics of Visualizations | TBA |
 | Using R for Visualizations | TBA |
