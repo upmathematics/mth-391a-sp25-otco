@@ -179,7 +179,7 @@ The following learning objectives are designed to build on one another, with som
 |  | W 2/12 | Transforming Tables for Visualizations |
 |  | F 2/14 | Advanced Visualizations |
 | **6** | M 2/17 | **Project Milestone: 1st Progress Report & <br>Project Phase 3** |
-|  | W 2/19 | Iteration |
+|  | W 2/19 | Iteration and Function |
 |  | F 2/21 | Wrangling High-Dimensional Data |
 | **7** | M 2/24 | Using Python for Advanced Data Wrangling & <br>**Project Phase 4** |
 |  | W 2/26 | Scaling and Coloring |
@@ -192,7 +192,7 @@ The following learning objectives are designed to build on one another, with som
 |  | F 3/14 | Visualizing and Analyzing Temporal Data |
 | **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 6** |
 |  | W 3/19 | Wrangling Spatial Data |
-|  | F 3/21 | Visualizing and Analyzing Temporal Data |
+|  | F 3/21 | Visualizing and Analyzing Spatial Data |
 | **11** | M 3/24 | Dynamic Visualizations & <br>**Project Phase 7** |
 |  | W 3/26 | Wrangling Network Data |
 |  | F 3/28 | Visualizing and Analyzing Network Data |
@@ -531,12 +531,14 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Basics of Data Wrangling](lessons/3.1-mth391-basics-of-data-wrangling/3.1-mth391-basics-of-data-wrangling.html) | Ch. 3 @wickham2023r |
 | [Summarising One Table](lessons/3.2-mth391-summarising-one-table/3.2-mth391-summarising-one-table.html) | Ch. 4 @baumer2017modern |
 | [Reshaping One Table](lessons/3.3-mth391-reshaping-one-table/3.3-mth391-reshaping-one-table.html) | Ch. 5 @wickham2023r |
+| [Project Milestone: Project Proposal](lessons/4.1-mth391-project-milestone-project-proposal/4.1-mth391-project-milestone-project-proposal.html) | - |
 | Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern |
 | Basics of Visualizations | TBA |
 | Using R for Visualizations | TBA |
 | Transforming Tables for Visualizations | TBA |
 | Advanced Visualizations | TBA |
-| Iteration | TBA |
+| Project Milestone: 1st Progress Report | - |
+| Iteration and Function | TBA |
 | Wrangling High-Dimensional Data | TBA |
 | Using Python for Advanced Data Wrangling | TBA |
 | Scaling and Coloring | TBA |
@@ -544,18 +546,21 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | Using Python for Advanced Visualizations | TBA |
 | Wrangling Temporal Data | TBA |
 | Visualizing and Analyzing Temporal Data | TBA |
+| Project Milestone: 2nd Progress Report | - |
 | Wrangling Spatial Data | TBA |
-| Visualizing and Analyzing Temporal Data | TBA |
+| Visualizing and Analyzing Spatial Data | TBA |
 | Dynamic Visualizations | TBA |
 | Wrangling Network Data | TBA |
 | Visualizing and Analyzing Network Data | TBA |
 | Regular Expressions | TBA |
 | Wrangling Text Data | TBA |
 | Visualizing and Analyzing Text Data | TBA |
+| Project Milestone: Final Report | - |
 | Introduction to Statistical Learning | TBA |
 | Regression and Classification | TBA |
 | R and Python for Statistical Learning | TBA |
 | Model Selection and Regularization | TBA |
+| Final Project Presentations | - |
 
 ### Books \& Online Resources Lists
 

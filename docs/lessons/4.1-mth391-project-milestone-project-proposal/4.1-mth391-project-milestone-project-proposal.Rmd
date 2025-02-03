@@ -1,0 +1,198 @@
+---
+title: "Project Milestone: Project Proposal"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "February 3, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Develop an understanding of the project expectations**
+- **Know the different choices of project data sets**
+- **Choose a data set and start working on project proposals**
+- **Activity: Getting Started with your Project**
+::::
+
+:::: {.column width=15%}
+::::
+
+## Previously... 
+
+The guiding principle of data science is the data science life cycle.
+
+```{r data-science-life-cycle, echo=FALSE, fig.cap="The Data Science Life Cycle", fig.align='center', out.width = '50%'}
+knitr::include_graphics("data-science-lifecycle.png")
+```
+
+## Project Expectations
+
+**Purpose of Project Phases**
+
+* Breaks the semester-long project into manageable tasks
+* Ensures incremental progress and structured development
+
+**Presentation Requirements**
+  
+* *Format:* 3-minute presentation with 3 well-designed slides
+* *Focus Areas:*
+  
+  1. **Tasks:** Define objectives, problem, and targeted outcomes
+  2. **Progress Achieved:** Highlight key work completed and challenges addressed
+  3. **Next Tasks:** Outline upcoming steps, hurdles, and contingency plans
+
+**Best Practices**
+
+* Use visual aids (charts, graphs, images) for clarity
+* Keep content concise and focused
+* Maintain professional and engaging delivery
+
+## Project Milstone vs Phase
+
+**Project Phases**
+
+* Represent minor stages in a project.
+* Each phase involves specific tasks contributing to the overall project.
+
+**Project Milestones**
+
+* Checkpoints that confirm progress and alignment with objectives.
+* Do not involve tasks but indicate completion of a phase or key achievement.
+
+::: {style="color: red"}
+$\star$ **Key Difference:** Phases are ongoing work while Milestones are completion markers
+:::
+
+## Data Sets (1/10): Survivor
+
+```{r survivor, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("survivor.png")
+```
+
+Source: [`surivoR`](https://github.com/doehm/survivoR){target="_blank"}
+
+## Data Sets (2/10): Flights
+
+```{r anyflights, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("anyflights.png")
+```
+
+Source: [`anyflights`](https://github.com/simonpcouch/anyflights){target="_blank"}
+
+## Data Sets (3/10): Census
+
+```{r tidycensus, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("tidycensus.png")
+```
+
+Source: [`tidycensus`](https://walker-data.com/tidycensus/){target="_blank"}
+
+## Data Sets (4/10): Jeopardy
+
+```{r jeopardy, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("jeopardy.png")
+```
+
+Source: [200,000+ Jeopardy! Questions](https://www.kaggle.com/datasets/tunguz/200000-jeopardy-questions){target="_blank"}
+
+## Data Sets (5/10): Spotify Songs
+
+```{r spotify, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("spotify.png")
+```
+
+Source: [Spotify Million Song Dataset (Kaggle)](https://www.kaggle.com/datasets/notshrirang/spotify-million-song-dataset){target="_blank"}
+
+## Data Sets (6/10): Fake News
+
+```{r fake-news, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("fake-news.png")
+```
+
+Source: [Fake News detection dataset (Kaggle)](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets){target="_blank"}
+
+## Data Sets (7/10): Spam Emails
+
+```{r spam-emails, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("spam-emails.png")
+```
+
+Source: [E-Mail classification NLP (Kaggle)](https://www.kaggle.com/datasets/datatattle/email-classification-nlp){target="_blank"}
+
+## Data Sets (8/10): Apps
+
+:::: {.column width=49%}
+```{r apple-apps, echo=FALSE, fig.cap="", fig.align='center', out.width = '90%'}
+knitr::include_graphics("apple-apps.png")
+```
+::::
+
+:::: {.column width=50%}
+```{r google-play-apps, echo=FALSE, fig.cap="", fig.align='center', out.width = '90%'}
+knitr::include_graphics("google-play-apps.png")
+```
+::::
+
+Source 1: [Apple AppStore Apps (Kaggle)](https://www.kaggle.com/datasets/gauthamp10/apple-appstore-apps){target="_blank"}
+Source 2: [Google Play Store Apps (Kaggle)](https://www.kaggle.com/datasets/lava18/google-play-store-apps){target="_blank"}
+
+## Data Sets (9/10): Movies
+
+```{r movies, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("movies.png")
+```
+
+Source: [IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/){target="_blank"}
+
+## Data Sets (10/10): Twitter
+
+```{r twitter, echo=FALSE, fig.cap="", fig.align='center', out.width = '50%'}
+knitr::include_graphics("twitter.png")
+```
+
+Source: [Twitter Hashtag 94 Data](https://github.com/stressosaurus/processed-data-twitter-hashtag94){target="_blank"}
+
+## Project Proposal
+
+**Frame your data science project, establish objectives, and outline the approach to solving it. Requirements:**
+
+* Clearly define the problem or research question.
+* Specify the dataset(s) to be used and their relevance.
+* Outline the methods or techniques to be employed (e.g., exploratory data analysis, modeling, visualization).
+    
+**While you think about your proposal, here are key contents that must exist in your overall project:**
+
+* Data wrangling of a main data set and multiple secondary related data sets
+* Data visualization of common plots and with at least one of each type such as temporal, spatial, and network plots
+* (Optional) Mathematical/Statistical modeling and/or inference
+
+## Activity: Getting Started with your Project
+
+1. Log-in to Posit Cloud and open the R Studio assignment `Project AlexQ`.
+2. Replace the project name `Project AlexQ` to your name using the format `Project [First name][Last initial]`.
+3. Create a new RMarkdown file and modify it with your name. Remove the default texts.
+4. Choose one data set in the given list. In your Rmarkdown file, provide the following information:
+
+    * Define your problem or research question
+    * Specify the dataset(s) to be used and their relevance
+    * Outline the methods or techniques to be employed
+
+5. When finished, knit your `.Rmd` to `.html`, and create a 3-slide presentation that summarizes your report, then Submit your work to Moodle.
+    
+::: {style="color: red;"}
+$\star$ Your report (`.Rmd`, `.html`, and the 3-slide presentation) for this milestone will be due on the next milestone of the project. The in-between phases will serve as check-ins.
+:::
