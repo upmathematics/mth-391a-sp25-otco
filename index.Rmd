@@ -173,9 +173,9 @@ The following learning objectives are designed to build on one another, with som
 |  | W 1/29 | Summarising One Table |
 |  | F 1/31 | Reshaping One Table |
 | **4** | M 2/3 | **Project Milestone: Project Proposal & <br>Project Phase 1** |
-|  | W 2/5 | Data Wrangling on Multiple Tables |
-|  | F 2/7 | Basics of Visualizations |
-| **5** | M 2/10 | Using R for Visualizations & <br>**Project Phase 2** |
+|  | W 2/5 | _Cancelled_ |
+|  | F 2/7 |Data Wrangling on Multiple Tables |
+| **5** | M 2/10 | Basics of Visualizations & <br>**Project Phase 2** |
 |  | W 2/12 | Transforming Tables for Visualizations |
 |  | F 2/14 | Advanced Visualizations |
 | **6** | M 2/17 | **Project Milestone: 1st Progress Report & <br>Project Phase 3** |
@@ -520,7 +520,7 @@ In the study of natural and mathematical sciences, often perceived as objective 
 
 ## Class Readings and Presentations
 
-The "Read" column in the table below contains page numbers (Pg.) or chapters (ch.) on which it refers to a label in the Books \& Online Resources List. For example "Pg. 1-5 @baumer2017modern" refers to pages 1-5 of the textbook titled "Modern data science with R".
+The "Read" column in the table below contains page numbers (Pg.) or chapters (ch.) on which it refers to a label in the Books \& Online Resources List. For example "Pg. 1-5 @baumer2017modern" refers to pages 1-5 of the textbook titled *Modern data science with R*.
 
 | **Topic** | **Read** |
 |:---|:---|
@@ -532,9 +532,8 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Summarising One Table](lessons/3.2-mth391-summarising-one-table/3.2-mth391-summarising-one-table.html) | Ch. 4 @baumer2017modern |
 | [Reshaping One Table](lessons/3.3-mth391-reshaping-one-table/3.3-mth391-reshaping-one-table.html) | Ch. 5 @wickham2023r |
 | [Project Milestone: Project Proposal](lessons/4.1-mth391-project-milestone-project-proposal/4.1-mth391-project-milestone-project-proposal.html) | - |
-| Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern |
+| Data Wrangling on Multiple Tables | Ch. 5 @baumer2017modern & Ch. 7 @wickham2023r |
 | Basics of Visualizations | TBA |
-| Using R for Visualizations | TBA |
 | Transforming Tables for Visualizations | TBA |
 | Advanced Visualizations | TBA |
 | Project Milestone: 1st Progress Report | - |
