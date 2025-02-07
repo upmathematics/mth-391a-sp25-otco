@@ -208,8 +208,6 @@ $\dagger$ The goal of the demonstration is to use the `pivot_longer()` function 
 
 ## Activity: Reshape Data by Category
 
-The purpose of this activity is for you to start developing a proficiency in reshaping a data frame using the `pivot_longer()` and `pivot_wider()` verbs.
-
 1. Log-in to Posit Cloud and open the R Studio assignment *MA5: Reshape Data by Category*.
 2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
 3. Change the author in the YAML header.

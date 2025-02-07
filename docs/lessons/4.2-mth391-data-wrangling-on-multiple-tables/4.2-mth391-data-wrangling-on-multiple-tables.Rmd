@@ -1,8 +1,8 @@
 ---
-title: "Data Wranling on Multiple Tables"
+title: "Data Wrangling on Multiple Tables"
 subtitle: "Fundamentals of Data Science"
 author: "MTH-391A | Spring 2025 | University of Portland"
-date: "February 5, 2025"
+date: "February 7, 2025"
 output:
   slidy_presentation:
     font_adjustment: +5
@@ -22,19 +22,118 @@ knitr::opts_chunk$set(echo = FALSE)
 ::::
 
 :::: {.column width=70%}
-- 
-- **Activity: **
+- **Know how to load external data files in R**
+- **Develop an understanding of combining data frames**
+- **Activity: Combine Datasets**
 ::::
 
 :::: {.column width=15%}
 ::::
 
-## Previously... 
+## Loading an External Data Set
 
+**Load packages**
 
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+```
 
+**Importing a  (CSV) `.csv` file**
 
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+birthdays <- read_csv("birthdays.csv",col_names=TRUE)
+```
 
-## Activity: 
+::: {style="color: red;"}
+$\star$ Note that you need to have the `birthdays.csv` file in your working directory.
+:::
 
+**Importing a (Excel) `.xlxs` file**
 
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+us_capitals <- read_excel("usa-state-capitals.xlsx", sheet = "owssvr")
+```
+
+::: {style="color: red;"}
+$\star$ Note that you need to have the `usa-state-capitals.xlsx` file in your working directory.
+:::
+
+## Other File Types
+
+| *Verb* | *Function* |
+|:---|:------|
+| `read_tsv()` | Reads tab-delimited files |
+| `read_delim()` | Reads in files with any delimiter, attempting to automatically guess the delimiter if you don’t specify it |
+
+::: {style="color: red;"}
+$\star$ Note that data sets are commonly saved as CSV and Excel files but there are other filetypes (such as shapefiles) that require special functions, which we will discuss soon.
+:::
+
+## View the Imported Data Sets
+
+:::: {.column width=49%}
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+birthdays
+```
+::::
+
+:::: {.column width=50%}
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+us_capitals
+```
+::::
+
+::: {style="color: red;"}
+$\star$ It looks like the `state` variable in the `birthdays` data frame have categories matching the `ST` variable in the `us_capital` data frame.
+:::
+
+## Using `inner_join()`
+
+**Joining `birthdays` and `us_capital` by matching the state abbreviations**
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+states_joined <- birthdays |>
+  inner_join(us_capitals, by = c("state" = "ST"))
+states_joined
+```
+
+::: {style="color: red;"}
+$\star$ The result contains only those rows that have matches in both tables.
+:::
+
+## Using `left_join()`
+
+**Joining `us_capitals` into `birthdays` by matching the state abbreviations**
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+states_leftjoined <- birthdays |>
+  left_join(us_capitals, by = c("state" = "ST"))
+states_leftjoined
+```
+
+::: {style="color: red;"}
+$\star$ The rows of the first table are always returned, regardless of whether there is a match in the second table.
+:::
+
+## Using `right_join()`
+
+**Joining `birthdays` into `us_capitals` by matching the state abbreviations**
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+states_rightjoined <- birthdays |>
+  right_join(us_capitals, by = c("state" = "ST"))
+states_rightjoined
+```
+
+::: {style="color: red;"}
+$\star$ Notice here the there result is the same the using the `inner_join()` because the `us_capital` only includes all 50 states while the `birthdays` include all 50 states plus DC.
+:::
+
+## Activity: Combine Datasets
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA6: Combine Datasets*.
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+3. Change the author in the YAML header.
+4. Read the provided instructions.
+5. Answer all exercise problems on the designated sections.

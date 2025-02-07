@@ -6,10 +6,10 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="MTH-391A | Spring 2025 | University of Portland" />
-  <meta name="date" content="2025-02-05" />
+  <meta name="date" content="2025-02-07" />
   <meta name="copyright" content="| MTH-391A Spring 2025 | &lt;a href=&#39;../../index.html&#39;&gt;Back to the Course Website&lt;/a&gt;" />
   <meta name="font-size-adjustment" content="5" />
-  <title>Data Wranling on Multiple Tables</title>
+  <title>Data Wrangling on Multiple Tables</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,6 +17,134 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
   <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -397,12 +525,12 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Data Wranling on Multiple Tables</h1>
+  <h1 class="title">Data Wrangling on Multiple Tables</h1>
   <h1 class="subtitle">Fundamentals of Data Science</h1>
   <p class="author">
 MTH-391A | Spring 2025 | University of Portland
   </p>
-  <p class="date">February 5, 2025</p>
+  <p class="date">February 7, 2025</p>
 </div>
 <div id="objectives" class="slide section level2">
 <h1>Objectives</h1>
@@ -411,19 +539,207 @@ MTH-391A | Spring 2025 | University of Portland
 </div>
 <div class="column" style="width:70%;">
 <ul>
-<li></li>
-<li><strong>Activity: </strong></li>
+<li><strong>Know how to load external data files in R</strong></li>
+<li><strong>Develop an understanding of combining data
+frames</strong></li>
+<li><strong>Activity: Combine Datasets</strong></li>
 </ul>
 </div>
 <div class="column" style="width:15%;">
 
 </div>
 </div>
-<div id="previously" class="slide section level2">
-<h1>Previously…</h1>
+<div id="loading-an-external-data-set" class="slide section level2">
+<h1>Loading an External Data Set</h1>
+<p><strong>Load packages</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code></pre></div>
+<p><strong>Importing a (CSV) <code>.csv</code> file</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>birthdays <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;birthdays.csv&quot;</span>,<span class="at">col_names=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> Note that you need to have
+the <code>birthdays.csv</code> file in your working directory.</p>
 </div>
-<div id="activity" class="slide section level2">
-<h1>Activity:</h1>
+<p><strong>Importing a (Excel) <code>.xlxs</code> file</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>us_capitals <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;usa-state-capitals.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;owssvr&quot;</span>)</span></code></pre></div>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> Note that you need to have
+the <code>usa-state-capitals.xlsx</code> file in your working
+directory.</p>
+</div>
+</div>
+<div id="other-file-types" class="slide section level2">
+<h1>Other File Types</h1>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><em>Verb</em></th>
+<th align="left"><em>Function</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>read_tsv()</code></td>
+<td align="left">Reads tab-delimited files</td>
+</tr>
+<tr class="even">
+<td align="left"><code>read_delim()</code></td>
+<td align="left">Reads in files with any delimiter, attempting to
+automatically guess the delimiter if you don’t specify it</td>
+</tr>
+</tbody>
+</table>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> Note that data sets are
+commonly saved as CSV and Excel files but there are other filetypes
+(such as shapefiles) that require special functions, which we will
+discuss soon.</p>
+</div>
+</div>
+<div id="view-the-imported-data-sets" class="slide section level2">
+<h1>View the Imported Data Sets</h1>
+<div class="column" style="width:49%;">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>birthdays</span></code></pre></div>
+<pre><code>## # A tibble: 372,555 × 7
+##    state  year month   day date       wday  births
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt;
+##  1 AK     1969     1     1 1969-01-01 Wed       14
+##  2 AL     1969     1     1 1969-01-01 Wed      174
+##  3 AR     1969     1     1 1969-01-01 Wed       78
+##  4 AZ     1969     1     1 1969-01-01 Wed       84
+##  5 CA     1969     1     1 1969-01-01 Wed      824
+##  6 CO     1969     1     1 1969-01-01 Wed      100
+##  7 CT     1969     1     1 1969-01-01 Wed       90
+##  8 DC     1969     1     1 1969-01-01 Wed       88
+##  9 DE     1969     1     1 1969-01-01 Wed       32
+## 10 FL     1969     1     1 1969-01-01 Wed      288
+## # ℹ 372,545 more rows</code></pre>
+</div>
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>us_capitals</span></code></pre></div>
+<pre><code>## # A tibble: 50 × 5
+##    State       ST    Capital     Longitude Latitude
+##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt;
+##  1 Alabama     AL    Montgomery      -86.3     32.4
+##  2 Alaska      AK    Juneau         -134.      58.3
+##  3 Arizona     AZ    Phoenix        -112.      33.4
+##  4 Arkansas    AR    Little Rock     -92.3     34.7
+##  5 California  CA    Sacramento     -121.      38.6
+##  6 Colorado    CO    Denver         -105.      39.7
+##  7 Connecticut CT    Hartford        -72.7     41.8
+##  8 Delaware    DE    Dover           -75.5     39.2
+##  9 Florida     FL    Tallahassee     -84.3     30.4
+## 10 Georgia     GA    Atlanta         -84.4     33.7
+## # ℹ 40 more rows</code></pre>
+</div>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> It looks like the
+<code>state</code> variable in the <code>birthdays</code> data frame
+have categories matching the <code>ST</code> variable in the
+<code>us_capital</code> data frame.</p>
+</div>
+</div>
+<div id="using-inner_join" class="slide section level2">
+<h1>Using <code>inner_join()</code></h1>
+<p><strong>Joining <code>birthdays</code> and <code>us_capital</code> by
+matching the state abbreviations</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>states_joined <span class="ot">&lt;-</span> birthdays <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">inner_join</span>(us_capitals, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span> <span class="ot">=</span> <span class="st">&quot;ST&quot;</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>states_joined</span></code></pre></div>
+<pre><code>## # A tibble: 365,250 × 11
+##    state  year month   day date       wday  births State       Capital Longitude
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+##  1 AK     1969     1     1 1969-01-01 Wed       14 Alaska      Juneau     -134. 
+##  2 AL     1969     1     1 1969-01-01 Wed      174 Alabama     Montgo…     -86.3
+##  3 AR     1969     1     1 1969-01-01 Wed       78 Arkansas    Little…     -92.3
+##  4 AZ     1969     1     1 1969-01-01 Wed       84 Arizona     Phoenix    -112. 
+##  5 CA     1969     1     1 1969-01-01 Wed      824 California  Sacram…    -121. 
+##  6 CO     1969     1     1 1969-01-01 Wed      100 Colorado    Denver     -105. 
+##  7 CT     1969     1     1 1969-01-01 Wed       90 Connecticut Hartfo…     -72.7
+##  8 DE     1969     1     1 1969-01-01 Wed       32 Delaware    Dover       -75.5
+##  9 FL     1969     1     1 1969-01-01 Wed      288 Florida     Tallah…     -84.3
+## 10 GA     1969     1     1 1969-01-01 Wed      250 Georgia     Atlanta     -84.4
+## # ℹ 365,240 more rows
+## # ℹ 1 more variable: Latitude &lt;dbl&gt;</code></pre>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> The result contains only
+those rows that have matches in both tables.</p>
+</div>
+</div>
+<div id="using-left_join" class="slide section level2">
+<h1>Using <code>left_join()</code></h1>
+<p><strong>Joining <code>us_capitals</code> into <code>birthdays</code>
+by matching the state abbreviations</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>states_leftjoined <span class="ot">&lt;-</span> birthdays <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">left_join</span>(us_capitals, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span> <span class="ot">=</span> <span class="st">&quot;ST&quot;</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>states_leftjoined</span></code></pre></div>
+<pre><code>## # A tibble: 372,555 × 11
+##    state  year month   day date       wday  births State       Capital Longitude
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+##  1 AK     1969     1     1 1969-01-01 Wed       14 Alaska      Juneau     -134. 
+##  2 AL     1969     1     1 1969-01-01 Wed      174 Alabama     Montgo…     -86.3
+##  3 AR     1969     1     1 1969-01-01 Wed       78 Arkansas    Little…     -92.3
+##  4 AZ     1969     1     1 1969-01-01 Wed       84 Arizona     Phoenix    -112. 
+##  5 CA     1969     1     1 1969-01-01 Wed      824 California  Sacram…    -121. 
+##  6 CO     1969     1     1 1969-01-01 Wed      100 Colorado    Denver     -105. 
+##  7 CT     1969     1     1 1969-01-01 Wed       90 Connecticut Hartfo…     -72.7
+##  8 DC     1969     1     1 1969-01-01 Wed       88 &lt;NA&gt;        &lt;NA&gt;         NA  
+##  9 DE     1969     1     1 1969-01-01 Wed       32 Delaware    Dover       -75.5
+## 10 FL     1969     1     1 1969-01-01 Wed      288 Florida     Tallah…     -84.3
+## # ℹ 372,545 more rows
+## # ℹ 1 more variable: Latitude &lt;dbl&gt;</code></pre>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> The rows of the first
+table are always returned, regardless of whether there is a match in the
+second table.</p>
+</div>
+</div>
+<div id="using-right_join" class="slide section level2">
+<h1>Using <code>right_join()</code></h1>
+<p><strong>Joining <code>birthdays</code> into <code>us_capitals</code>
+by matching the state abbreviations</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>states_rightjoined <span class="ot">&lt;-</span> birthdays <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">right_join</span>(us_capitals, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;state&quot;</span> <span class="ot">=</span> <span class="st">&quot;ST&quot;</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>states_rightjoined</span></code></pre></div>
+<pre><code>## # A tibble: 365,250 × 11
+##    state  year month   day date       wday  births State       Capital Longitude
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+##  1 AK     1969     1     1 1969-01-01 Wed       14 Alaska      Juneau     -134. 
+##  2 AL     1969     1     1 1969-01-01 Wed      174 Alabama     Montgo…     -86.3
+##  3 AR     1969     1     1 1969-01-01 Wed       78 Arkansas    Little…     -92.3
+##  4 AZ     1969     1     1 1969-01-01 Wed       84 Arizona     Phoenix    -112. 
+##  5 CA     1969     1     1 1969-01-01 Wed      824 California  Sacram…    -121. 
+##  6 CO     1969     1     1 1969-01-01 Wed      100 Colorado    Denver     -105. 
+##  7 CT     1969     1     1 1969-01-01 Wed       90 Connecticut Hartfo…     -72.7
+##  8 DE     1969     1     1 1969-01-01 Wed       32 Delaware    Dover       -75.5
+##  9 FL     1969     1     1 1969-01-01 Wed      288 Florida     Tallah…     -84.3
+## 10 GA     1969     1     1 1969-01-01 Wed      250 Georgia     Atlanta     -84.4
+## # ℹ 365,240 more rows
+## # ℹ 1 more variable: Latitude &lt;dbl&gt;</code></pre>
+<div style="color: red;">
+<p><span class="math inline">\(\star\)</span> Notice here the there
+result is the same the using the <code>inner_join()</code> because the
+<code>us_capital</code> only includes all 50 states while the
+<code>birthdays</code> include all 50 states plus DC.</p>
+</div>
+</div>
+<div id="activity-combine-datasets" class="slide section level2">
+<h1>Activity: Combine Datasets</h1>
+<ol style="list-style-type: decimal">
+<li>Log-in to Posit Cloud and open the R Studio assignment <em>MA6:
+Combine Datasets</em>.</li>
+<li>Make sure you are in the current working directory. Rename the
+<code>.Rmd</code> file by replacing <code>[name]</code> with your name
+using the format <code>[First name][Last initial]</code>. Then, open the
+<code>.Rmd</code> file.</li>
+<li>Change the author in the YAML header.</li>
+<li>Read the provided instructions.</li>
+<li>Answer all exercise problems on the designated sections.</li>
+</ol>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
