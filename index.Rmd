@@ -533,7 +533,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Reshaping One Table](lessons/3.3-mth391-reshaping-one-table/3.3-mth391-reshaping-one-table.html) | Ch. 5 @wickham2023r |
 | [Project Milestone: Project Proposal](lessons/4.1-mth391-project-milestone-project-proposal/4.1-mth391-project-milestone-project-proposal.html) | - |
 | [Data Wrangling on Multiple Tables](lessons/4.2-mth391-data-wrangling-on-multiple-tables/4.2-mth391-data-wrangling-on-multiple-tables.html) | Ch. 5 @baumer2017modern & Ch. 7 @wickham2023r |
-| Basics of Visualizations | TBA |
+| [Basics of Visualizations](lessons/5.1-mth391-basics-of-visualizations/5.1-mth391-basics-of-visualizations.html) | Ch. 1 @wickham2023r & Ch. 2 @baumer2017modern |
 | Transforming Tables for Visualizations | TBA |
 | Advanced Visualizations | TBA |
 | Project Milestone: 1st Progress Report | - |
