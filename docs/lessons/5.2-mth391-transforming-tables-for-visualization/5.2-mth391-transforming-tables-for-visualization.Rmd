@@ -1,0 +1,255 @@
+---
+title: "Transforming Tables for Visualizations"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "February 12, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(gridExtra)
+library(ggmosaic)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Learn how to combine the `tidyverse` verbs and `ggplot2` geometries to visualize numerical and categorical data effectively**
+- **Activity: Explore Different Visualization Techniques**
+::::
+
+:::: {.column width=15%}
+::::
+
+## Previously... (1/2)
+
+**Chaining `dplyr` Verbs Using `|>`**
+
+**Load Packages**
+
+```{r eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+**Define Data Frame as a Tibble**
+
+```{r echo=TRUE, eval=TRUE}
+iris_tibble <- tibble(iris)
+```
+
+**Advanced Example:** The goal of this example is to transform the `iris` dataset by computing the ratio of `Petal.Length` to `Sepal.Length` for observations belonging to the "setosa" species.
+
+```{r echo=TRUE, eval=FALSE}
+iris_tibble |>  
+  # rule 1: choose only the "setosa" species
+  filter(Species == "setosa") |>  
+  # rule 2: pick the columns Sepal.Length and Petal.Length
+  select(Sepal.Length,Petal.Length) |>  
+  # rule 3: create a new column called length_ratio
+  mutate(length_ratio = Petal.Length/Sepal.Length)
+```
+
+## Previously... (2/2)
+
+**Visualizing Numerical Data using `ggplot2`**
+
+**Example:** Plotting lengths by species in the `iris` data set.
+
+```{r echo=TRUE, eval=TRUE, fig.align='center', out.width='100%'}
+# establish data and variables
+ggplot(iris_tibble, 
+       aes(x = Sepal.Length, 
+           y = Petal.Length,
+           color = Species)) +
+  # draw scatter plot
+  geom_point() + 
+  # add theme layer
+  theme_grey()
+```
+::::
+
+## Case Study 1: Titanic Data Set
+
+The the **Titanic Data Set** is a popular dataset in data science. It contains information about the passengers aboard the Titanic and is often used for survival prediction.
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+# The titanic.csv data is from https://www.kaggle.com/datasets/aliaamiri/titanic-passengers-and-crew-complete-list
+titanic <- read_csv("titanic.csv") |> 
+  mutate(age = round(age,0),
+         # recode the "crew" class of the class categorical variable using the `case_when` function
+         class = case_when(
+           class == "deck crew" ~ "crew",
+           class == "engineering crew" ~ "crew",
+           class == "restaurant staff" ~ "crew",
+           class == "victualling crew" ~ "crew",
+           TRUE ~ class
+         ))
+glimpse(titanic)
+```
+
+## Presenting Tables
+
+To present tables effectively, we can use `kable` from the `knitr` package.
+
+**Load Package**
+
+```{r echo=TRUE, eval=TRUE}
+library(knitr)
+```
+
+**Example:** The contingency table below shows the distribution of survival and different classes of passengers on the Titanic.
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+titanic_surv_class <- titanic |> select(survived,class) |> 
+  group_by(survived,class) |> 
+  summarise(total = n(),
+            .groups = 'drop')
+kable(xtabs(total ~ survived + class, titanic_surv_class))
+```
+
+## Bar Plots
+
+A **bar plot** is a common way to display a single categorical variable. A bar plot where proportions instead of frequencies are shown is called a **relative frequency bar plot**.
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%', fig.width=6,fig.height=3}
+p1 <- ggplot(titanic,aes(x=survived)) + 
+  geom_bar() + 
+  ggtitle("Frequencies") + 
+  theme_minimal()
+p2 <- ggplot(titanic,aes(x=survived)) + 
+  geom_bar(aes(y=..count../sum(..count..))) + 
+  ylab("proportion") + 
+  ggtitle("Relative Frequencies") + 
+  theme_minimal()
+grid.arrange(p1, p2, ncol=2)
+```
+
+## Bar Plots with Two Variables
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%', fig.width=12,fig.height=4}
+p1 <- ggplot(titanic,aes(x=class,fill=survived)) + 
+  geom_bar() + 
+  scale_fill_manual(values=c("yes" = "blue", "no" = "red")) + 
+  ggtitle("Stacked") + 
+  theme_minimal()
+p2 <- ggplot(titanic,aes(x=class,fill=survived)) + 
+  geom_bar(position="dodge") + 
+  scale_fill_manual(values=c("yes" = "blue", "no" = "red")) + 
+  ggtitle("Side-by-Side") + 
+  theme_minimal()
+p3 <- ggplot(titanic,aes(x=class,fill=survived)) + 
+  geom_bar(position="fill") + 
+  scale_fill_manual(values=c("yes" = "blue", "no" = "red")) + 
+  ggtitle("Standardized") + 
+  theme_minimal()
+grid.arrange(p1, p2, p3, ncol=3)
+```
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** Each visualization provides a different perspective: Stacked helps compare total passengers across classes. Side-by-Side helps compare survival counts directly. Standardized helps compare survival rates across classes.
+::::
+
+## Mosaic Plots
+
+A **mosaic plot** is a graphical representation of categorical data, displaying proportions and relationships between multiple categorical variables using a tiled area chart.
+
+:::: {.column width=49%}
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%', fig.width=4,fig.height=4}
+ggplot(titanic) + 
+  geom_mosaic(aes(x=product(class,survived), fill = survived)) + 
+  scale_fill_brewer(palette = 1) +
+  theme_mosaic() + 
+  theme(legend.position = "none")
+```
+::::
+
+:::: {.column width=50%}
+**Features:** 
+
+* Each tile represents a combination of categories from two or more categorical variables.
+* The area of each tile is proportional to the frequency or probability of that combination.
+* Provides an intuitive way to analyze relationships, such as independence or associations between categorical variables.
+::::
+
+## Pie Charts
+
+A **pie chart** is a circular statistical graphic divided into slices to illustrate numerical proportions of a whole.
+
+:::: {.column width=50%}
+**Features:** 
+
+* Each slice represents a category’s proportion relative to the whole dataset.
+* The total sum of all slices equals 100%.
+* Useful for showing part-to-whole relationships.
+::::
+
+:::: {.column width=49%}
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%', fig.width=5,fig.height=5}
+p1 <- ggplot(titanic |> filter(class=="1st"), aes(x="", y=survived, fill=survived)) +
+  geom_bar(stat="identity", width=1) +
+  scale_fill_brewer(palette = 1) +
+  coord_polar("y", start=0) + 
+  ggtitle("1st Class") + 
+  theme_void()
+p2 <- ggplot(titanic |> filter(class=="2nd"), aes(x="", y=survived, fill=survived)) +
+  geom_bar(stat="identity", width=1) +
+  scale_fill_brewer(palette = 1) +
+  coord_polar("y", start=0) + 
+  ggtitle("2nd Class") + 
+  theme_void()
+p3 <- ggplot(titanic |> filter(class=="3rd"), aes(x="", y=survived, fill=survived)) +
+  geom_bar(stat="identity", width=1) +
+  scale_fill_brewer(palette = 1) +
+  coord_polar("y", start=0) + 
+  ggtitle("3rd Class") + 
+  theme_void()
+p4 <- ggplot(titanic |> filter(class=="crew"), aes(x="", y=survived, fill=survived)) +
+  geom_bar(stat="identity", width=1) +
+  scale_fill_brewer(palette = 1) +
+  coord_polar("y", start=0) + 
+  ggtitle("Crew") + 
+  theme_void()
+grid.arrange(p1, p2, p3, p4, nrow=2, ncol=2)
+```
+::::
+
+## Comparing Categorical Data to Numerical Data
+
+**Example:** Age distribution among class passengers and survival. 
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%', fig.width=8,fig.height=4}
+ggplot(titanic,aes(y=class,x=age, fill=survived)) + 
+  geom_boxplot() + 
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+```
+
+## Adding More Variables
+
+**Example:** Age distribution among class passengers and survival. 
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%', fig.width=8,fig.height=4}
+ggplot(titanic,aes(y=fare,x=age, color=survived, pch = gender)) + 
+  geom_point() + 
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+```
+
+## Activity: Visualized Multiple Variables
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA8: Visualized Multiple Variables*.
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+3. Change the author in the YAML header.
+4. Read the provided instructions.
+5. Answer all exercise problems on the designated sections.
