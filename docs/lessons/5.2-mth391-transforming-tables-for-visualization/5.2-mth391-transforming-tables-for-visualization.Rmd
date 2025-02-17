@@ -246,9 +246,9 @@ ggplot(titanic,aes(y=fare,x=age, color=survived, pch = gender)) +
   theme_minimal()
 ```
 
-## Activity: Visualized Multiple Variables
+## Activity: Visualize Multiple Variables
 
-1. Log-in to Posit Cloud and open the R Studio assignment *MA8: Visualized Multiple Variables*.
+1. Log-in to Posit Cloud and open the R Studio assignment *MA8: Visualize Multiple Variables*.
 2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
 3. Change the author in the YAML header.
 4. Read the provided instructions.

@@ -177,8 +177,8 @@ The following learning objectives are designed to build on one another, with som
 |  | F 2/7 |Data Wrangling on Multiple Tables |
 | **5** | M 2/10 | Basics of Visualizations & <br>**Project Phase 2** |
 |  | W 2/12 | Transforming Tables for Visualizations |
-|  | F 2/14 | Advanced Visualizations |
-| **6** | M 2/17 | **Project Milestone: 1st Progress Report & <br>Project Phase 3** |
+|  | F 2/14 | _Cancelled_ |
+| **6** | M 2/17 | Advanced Visualizations, <br>**Project Milestone: 1st Progress Report & <br>Project Phase 3** |
 |  | W 2/19 | Iteration and Function |
 |  | F 2/21 | Wrangling High-Dimensional Data |
 | **7** | M 2/24 | Using Python for Advanced Data Wrangling & <br>**Project Phase 4** |
@@ -447,11 +447,13 @@ You are expected to turn in all completed assignments on time. Circumstances tha
 
 It is the student's responsibility to drop the course if he or she is no longer planning on attending the course or filling the other course requirements. In order to drop, the student must use and Add/Drop form available at the Registration Office. If a student does not properly withdraw from a course, he or she may receive an **F** for the course. A properly withdrawn student will receive a **W**. The last day to withdraw is **Monday, April 14th**.
 
-### Appointment Cancelation Policies
+### Appointment Cancellation Policy
 
 You can cancel your appointments, but it is strongly recommended that you cancel 24 hours before your scheduled time so that other students can schedule when a spot opens. You can reschedule for a different day and time if you need to.
 
 Please try to show-up to any of your appointments. If you have extenuating circumstances, please let me know as soon as possible to discuss next steps.
+
+*Amendment 10: The title was changed from "Appointment Cancelation Policies" to "Appointment Cancellation Policy".*
 
 ### Attendance and Participation
 
