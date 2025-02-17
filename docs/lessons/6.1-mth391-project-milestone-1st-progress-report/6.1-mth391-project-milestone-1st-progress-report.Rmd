@@ -1,0 +1,103 @@
+---
+title: "Project Milestone: 1st Progress Report"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "February 17, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Activity: Project Proposal Presentations**
+- **Discuss the expectations of the next project milestone**
+::::
+
+:::: {.column width=15%}
+::::
+
+## Activity: Project Proposal Presentations
+
+- Presentations will be done in alphabetical order of last name
+- Each student will present for 3 minutes
+- Each presentation allows a 5 minute discussion about the presentation
+
+## 1st Progress Report
+
+**1st Progress Report:** Summarize early work on data acquisition, cleaning, and exploratory data analysis. 
+
+**Requirements:**
+
+- Description of datasets obtained, including sources and key features.
+- Initial data cleaning steps (e.g., handling missing values, removing duplicates).
+- Preliminary insights from data exploration (e.g., summary statistics, visualizations).
+- Updates on challenges encountered (e.g., data quality issues) and resolutions.
+
+::: {style="color: red;"}
+$\star$ Your report (`.Rmd`, `.html`, and the 3-slide presentation) for this milestone will be due on the next milestone of the project. The in-between phases will serve as check-ins.
+:::
+
+## Data Acquisition & Cleaning (1/2)
+
+**Data Acquisition**
+
+- Sources and key variables
+- generate new variables using the data
+- cross referencing multiple data sets
+
+**Initial Data Cleaning Steps**
+
+- Handled missing values
+- Removed duplicates to ensure data integrity
+- Standardized formats for categorical variables
+- Addressed outliers
+
+## Data Acquisition & Cleaning (2/2)
+
+**Challenges**
+
+- Incomplete records
+- Inconsistent categorical labels
+- Big data (large sample size)
+- Coding syntax and logical errors
+
+**Questions/Tasks:**
+
+- Are there any other data sources you should consider?
+- What additional cleaning steps might be needed for consistency?
+
+## Exploratory Data Analysis (1/2)
+
+**Preliminary Insights**
+
+- Summary Statistics
+- Trends & Patterns
+- Noted seasonal variations
+- Visualizations
+
+## Exploratory Data Analysis (2/2)
+
+**Challenges**
+
+- Data imbalance and high variance
+- Too much information in one visualization
+- Coding syntax and logical errors
+  
+**Questions/Tasks**
+
+- What additional features should you explore?
+- Are there any patterns that require deeper analysis?
+- Should we apply techniques to improve insights?
