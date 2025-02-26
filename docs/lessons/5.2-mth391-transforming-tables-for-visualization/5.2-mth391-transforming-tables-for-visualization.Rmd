@@ -26,7 +26,7 @@ library(ggmosaic)
 
 :::: {.column width=70%}
 - **Learn how to combine the `tidyverse` verbs and `ggplot2` geometries to visualize numerical and categorical data effectively**
-- **Activity: Explore Different Visualization Techniques**
+- **Activity: Visualize Multiple Variables**
 ::::
 
 :::: {.column width=15%}
