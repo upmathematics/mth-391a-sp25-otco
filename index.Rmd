@@ -183,11 +183,11 @@ The following learning objectives are designed to build on one another, with som
 |  | F 2/21 | Functions <br>_Asynchronous_ |
 | **7** | M 2/24 | Wrangling High-Dimensional Data & <br>**Project Phase 4** |
 |  | W 2/26 | Scaling and Coloring |
-|  | F 2/28 | Visualizing High-Dimensional Data |
+|  | F 2/28 | _Cancelled_ |
 | **8** | M 3/3 | _Spring Vacation_ |
 |  | W 3/5 | _Spring Vacation_ |
 |  | F 3/7 | _Spring Vacation_ |
-| **9** | M 3/10 | Advanced Visualizations & <br>**Project Phase 5** |
+| **9** | M 3/10 | Visualizing High-Dimensional Data, & <br>Advanced Visualizations & <br>**Project Phase 5** |
 |  | W 3/12 | Wrangling Temporal Data |
 |  | F 3/14 | Visualizing and Analyzing Temporal Data |
 | **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 6** |
