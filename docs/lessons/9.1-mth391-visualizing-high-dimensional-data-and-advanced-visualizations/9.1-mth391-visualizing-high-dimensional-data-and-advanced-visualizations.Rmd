@@ -1,0 +1,371 @@
+---
+title: "Visualizing High-Dimensional Data & <br>Advanced Visualizations"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "March 10, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gridExtra)
+library(GGally)
+library(ggdendro)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Understand challenges in visualizing high-dimensional data**
+- **Introduce the method of Principal Component Analysis**
+- **Learn how PCA reduces dimensionality while preserving variance**
+- **Activity: Visualize High-Dimensional Data**
+::::
+
+:::: {.column width=15%}
+::::
+
+## What is High-Dimensional Data?
+
+**High-dimensional data** refers to datasets with a large number of variables (features/dimensions) relative to the number of observations.
+
+**Challenges:**
+
+* *Curse of Dimensionality:* As dimensions increase, data becomes sparse, making patterns harder to detect.
+* *Difficult to Visualize:* We can easily plot 2D or 3D data, but what about 100+ dimensions?
+* *Computational Complexity:* More features mean increased storage, processing, and algorithmic complexity.
+
+**Methods:**
+
+* *Dimensionality Reduction:* Reducing dimensions help to simplify high-dimensional datasets, making patterns more interpretable while improving efficiency (e.g. Principal Component Analysis).
+
+## Why Dimensionality Reduction?
+
+**Identify Patterns & Relationships**
+  
+* Helps uncover hidden structures in complex datasets.
+* Useful for data compression, visualization, and feature selection.
+
+**Reduce Noise & Redundancy**
+
+* Eliminates irrelevant or highly correlated features.
+* Makes data easier to interpret and less computationally expensive.
+
+## Case Study I
+
+**United States Data Sets**
+
+* The `usdata` package: Data on the States and Counties of the United States
+* The `usa` package: Updated US facts
+
+**Load Packages**
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(usdata)
+library(usa)
+```
+
+## Simple Example: The `facts` and `state_stats` Data Set (1/2)
+
+:::: {.column width=49%}
+```{r echo=TRUE}
+facts_sub <- facts %>% 
+  select(name,life_exp,college) %>% 
+  mutate(region=state.region)
+state_stats_sub <- state_stats %>% 
+  select(abbr,state,income,med_income,poverty,unempl,land_area,pop2010)
+
+df <- facts_sub %>% 
+  left_join(state_stats_sub,by=c("name" = "state")) %>% 
+  filter(!name %in% c("District of Columbia", "Puerto Rico")) %>%
+  select(-name) %>% 
+  mutate(pop_density = pop2010/land_area) %>% 
+  select(-land_area,-pop2010)
+glimpse(df)
+```
+::::
+
+:::: {.column width=50%}
+* Each row is a state (or an observation), excluding DC.
+* Seven numerical 
+  - `life_exp` | Life expectancy in years
+  - `college` | Percent adult population with at least a bachelor's degree or greater
+  - `income` | Average income per capita
+  - `med_income` | Median household income
+  - `poverty` | Poverty rate
+  - `unempl` | Unemployment rate
+  - `pop_density` | Population density, which is `pop2010` / `land_area`
+* Two categorical variable.
+  - `abbr` | State abbreviation
+  - `region` | Census region to which each state belongs
+::::
+
+## Simple Example: The `facts` and `state_stats` Data Set (2/2)
+
+:::: {.column width=50%}
+```{r a, message=FALSE, warning=FALSE, fig.width=12, fig.height=8, out.width='100%'}
+ggpairs(df[,c("life_exp","college","income","med_income","poverty","unempl","pop_density","region")],aes(colour = region,alpha=0.75)) + 
+theme(axis.text.x=element_blank(), 
+      axis.ticks.x=element_blank(), 
+      axis.text.y=element_blank(), 
+      axis.ticks.y=element_blank()) 
+```
+::::
+
+:::: {.column width=49%}
+* We can only visualize one to two variables at a time
+* Categorical variables can be added through colors or shapes
+::::
+
+::: {style="color: blue;"}
+$\dagger$ Can we visualize or represent all features in a two-dimensional space?
+::::
+
+## Principal Component Analysis: R Example (1/3)
+
+**Computing the Principal Components**
+
+```{r echo=TRUE}
+# select the numerical variables
+sub_num <- df %>% 
+  select(-abbr,-region)
+
+# apply principal component analysis
+pca_res <- prcomp(sub_num, center = TRUE, scale = TRUE)
+
+# convert principal component into a data frame and merge the categorical variables
+pc <- tibble(data.frame(pca_res$x,
+                        abbr=df$abbr,
+                        region=df$region))
+
+# view principal components
+glimpse(pc)
+```
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** The results of the PCA are called principal components or new variables. a linear combination of the original variables.
+::::
+
+## Principal Component Analysis: R Example (2/3)
+
+**Variance Explained**
+
+:::: {.column width=50%}
+```{r echo=TRUE}
+# get standard deviations
+sd <- pca_res$sdev
+
+# create tibble of percent variances
+ve <- tibble(pc = seq(1,length(sd)),
+             ve = sd/sum(sd),
+             cumve = cumsum(ve))
+```
+::::
+
+:::: {.column width=49%}
+```{r b, echo=FALSE, fig.width=5, fig.height=2, fig.align='center', out.width='100%'}
+# visualize percent variances
+p1 <- ggplot(ve,aes(x=pc,y=ve)) + 
+  geom_point() + 
+  geom_line() + 
+  xlab("principal component") + 
+  ylab("variance") + 
+  theme_minimal()
+p2 <- ggplot(ve,aes(x=pc,y=cumve)) + 
+  geom_point() + 
+  geom_line() + 
+  xlab("principal component") + 
+  ylab("cumulative variance") + 
+  theme_minimal()
+grid.arrange(p1,p2,ncol=2)
+```
+::::
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** Percent variance explained shows how much variability each principal component captures, while cumulative variance shows the total variability retained across components.
+::::
+
+## Principal Component Analysis: R Example (3/3)
+
+**Visualize the Dominant Principal Components**
+
+:::: {.column width=60%}
+```{r c, message=FALSE, warning=FALSE, fig.width=7, fig.height=4, out.width='100%'}
+ggplot(pc,aes(x=PC1,y=PC2,color=region,label=abbr)) + 
+  geom_label(alpha=0.50) + 
+  stat_ellipse(aes(x=PC1, y=PC2,color=region, group=region),type = "t")
+```
+::::
+
+:::: {.column width=39%}
+* Points that are far apart indicate greater differences, while clusters suggest similarities within states
+* Clustering of points may reveal inherent state similarities
+* If clusters intersect, then it means these groups of states are similar
+::::
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** PCA plot is to visualize high-dimensional data by projecting it onto principal components that capture the most variance, revealing patterns, groupings, and relationships among data points.
+::::
+
+## Principal Component Analysis (1/2)
+
+**Principal Component Analysis (PCA)** is a technique used to reduce the number of variables in a dataset while preserving as much important information as possible.
+
+:::: {.column width=50%}
+* Why use PCA?
+  
+  - Simplifies complex data
+  - Helps visualize high-dimensional data
+  - Removes redundant information
+::::  
+  
+:::: {.column width=49%}
+* How does it work?
+
+  - Finds new axes (principal components) that best capture variation in data
+  - First principal component captures the most variance
+  - Each following component captures the next most variance, and so on
+::::
+
+## Principal Component Analysis (2/2)
+
+:::: {.column width=50%}
+* When to use PCA?
+
+  - Relationships between variables are mostly linear
+  - When you have too many features (variables) and want to simplify the dataset
+  - Useful when working with datasets that have many correlated variables
+  - Helps in cases where data has a lot of noise
+  - Useful for pre-processing data sets for advanced models
+::::
+
+:::: {.column width=49%}
+* When not to use PCA?
+
+  - When interpretability is important—PCA transforms features into combinations, making them hard to interpret.
+  - When original features are already independent—PCA won’t provide much benefit.
+  - When data is not linear—PCA captures linear relationships, so nonlinear structures may require other techniques
+::::
+
+## Advanced Example: The `digits` data set (1/4)
+
+**Loading the `digits` data set** (using Python)
+
+:::: {.column width=49%}
+```{python echo=TRUE}
+# load packages
+from sklearn import datasets
+import pandas as pd
+
+# load the `digits` data set
+digits = datasets.load_digits()
+df_digits = pd.DataFrame(digits.data, 
+                         columns=digits.feature_names)
+```
+::::
+
+:::: {.column width=50%}
+* The `digits` data set loaded from the`datasets` package in Python
+* The `digits` data set consists of 1,797 grayscale images of handwritten digits.
+* Each image is 8-by-8 pixels and has an associated label denoting which digit the image represents (0-9).
+* The `digits.data` contains the pixels information as variables
+* The `digits.feature_names` contains the names of the variables
+* The `digits.target` contains the digit labels
+::::
+
+## Advanced Example: The `digits` data set (2/4)
+
+**Example digits in the `digits` data set**
+
+```{python d, echo=FALSE, message=FALSE, warning=FALSE}
+import matplotlib.pyplot as plt
+p, axes = plt.subplots(nrows=1, ncols=10, figsize=(10, 3))
+for ax, image, label in zip(axes, digits.images, digits.target):
+    ax.set_axis_off()
+    ax.imshow(image, cmap=plt.cm.gray_r, interpolation="nearest")
+    ax.set_title("%i" % label)
+plt.show()
+```
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** The images are 8-by-8 pixels in grayscale, which means there are 64 variables that represents an image containing handwritten digits.
+::::
+
+## Advanced Example: The `digits` data set (3/4)
+
+**Principal Component Analysis** (using Python)
+
+:::: {.column width=49%}
+```{python echo=TRUE}
+# load packages
+from sklearn.decomposition import PCA
+
+# apply PCA with defined number of components
+pca = PCA(n_components=2)
+
+# extract principal components
+pca_result = pca.fit_transform(df_digits)
+
+# convert results into a dataframe and merge the digit labels
+digits_pca = pd.DataFrame(pca_result)
+digits_pca = digits_pca.rename(columns={0: "PC1", 1: "PC2"})
+digits_pca['digit'] = (digits.target)
+
+# save results
+digits_pca.to_csv("digits_pca.csv",header=True,index=False)
+```
+::::
+
+:::: {.column width=50%}
+* The function `PCA` form the `sklearn.decomposition` package establishes the method
+* The function `fit_transform` computes the principal components and then applies the transformation to project the data onto the new principal components
+::::
+
+::: {style="color: red;"}
+$\star$ **Key Idea:** Use Python for data sub-setting and complex computations (such as PCA) for large complex data sets.
+::::
+
+## Advanced Example: The `digits` data set (4/4)
+
+**Visualize the Principal Components of the `digits` data set** (using R)
+
+:::: {.column width=60%}
+```{r e, message=FALSE, warning=FALSE, fig.width=7, fig.height=5, out.width='100%'}
+# load the pca results of the digits data set
+digits_pca <- read_csv("digits_pca.csv") %>% 
+  mutate(digit = factor(digit))
+
+# visualize principal components of the digits
+ggplot(digits_pca,aes(x=PC1,y=PC2,color=digit)) + 
+  geom_point() + 
+  stat_ellipse(aes(x=PC1, y=PC2,color=digit, group=digit),type = "t") + 
+  scale_color_brewer(palette = "Set3")
+```
+:::
+
+:::: {.column width=39%}
+*  Using PCA, we reduced the high-dimensional data of hand-written digit images into two dimensions
+* The plot shows us the similarities within the hand-written digits (or clusters)
+* If two clusters are intersecting, then it usually means that these hand-written digits can look similar an appearance.
+::::
+
+## Activity: Visualize High-Dimensional Data
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA13: Visualize High-Dimensional Data*.
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+3. Change the author in the YAML header.
+4. Read the provided instructions.
+5. Answer all exercise problems on the designated sections.

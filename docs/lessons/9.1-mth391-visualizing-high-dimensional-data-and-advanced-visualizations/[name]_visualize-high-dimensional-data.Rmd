@@ -1,7 +1,7 @@
 ---
-title: "Visualize Numerical Data"
+title: "Visualize High-Dimensional Data"
 subtitle: "Fundamentals of Data Science"
-author: "[First name][Last initial]"
+author: "[name]"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -30,7 +30,6 @@ The following R packages have already been loaded for you, so there's no need to
 ```{r message=FALSE, warning=FALSE}
 # load packages
 library(tidyverse)
-library(palmerpenguins)
 ```
 
 # Collaborators
@@ -43,19 +42,11 @@ library(palmerpenguins)
 
 ## Problem 1
 
-Examine the `penguins` tibble. You may notice that there are `NA` values, which means missing data. Use the `drop_na()` function to remove all rows that has missing values on any column. Here, you may use chaining to pipe the tibble into `drop_na()`, and save the new tibble as a new R variable. How many rows was removed in the data set?
-
 ::: {style="color: blue;"}
 [Write your answer here]
 :::
 
 ## Problem 2
-
-Replicate the following plot. Use the `NA` omitted `penguins` tibble you established in Problem 1. Use the `ggplot2` function `geom_point()`.
-
-```{r penguins-flipper-vs-bill-length, echo=FALSE, fig.align='center', out.width = '70%'}
-knitr::include_graphics("penguins-flipper-vs-bill-length.png")
-```
 
 ::: {style="color: blue;"}
 [Write your answer here]
@@ -63,19 +54,17 @@ knitr::include_graphics("penguins-flipper-vs-bill-length.png")
 
 ## Problem 3
 
-Use the `ggplot()` function `geom_histogram()` to replicate the following plot using the `NA` omitted `penguins` tibble you established in Problem 2. You may need to adjust the `bins` option in `geom_histogram()` to match the plot.
-
-```{r penguins-flipper-length-distribution, echo=FALSE, fig.align='center', out.width = '70%'}
-knitr::include_graphics("penguins-flipper-length-distribution.png")
-```
-
 ::: {style="color: blue;"}
 [Write your answer here]
 :::
 
 ## Problem 4
 
-Create two plots similar to Problems 2 and 3, but instead of using the `species`, use the `sex` variable to group the numerical variables.
+::: {style="color: blue;"}
+[Write your answer here]
+:::
+
+## Problem 5
 
 ::: {style="color: blue;"}
 [Write your answer here]

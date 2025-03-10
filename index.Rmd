@@ -187,7 +187,7 @@ The following learning objectives are designed to build on one another, with som
 | **8** | M 3/3 | _Spring Vacation_ |
 |  | W 3/5 | _Spring Vacation_ |
 |  | F 3/7 | _Spring Vacation_ |
-| **9** | M 3/10 | Visualizing High-Dimensional Data, & <br>Advanced Visualizations & <br>**Project Phase 5** |
+| **9** | M 3/10 | Visualizing High-Dimensional Data, <br>Advanced Visualizations & <br>**Project Phase 5** |
 |  | W 3/12 | Wrangling Temporal Data |
 |  | F 3/14 | Visualizing and Analyzing Temporal Data |
 | **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 6** |
@@ -541,11 +541,10 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | Iteration and Conditional Statements | [Pyflo](https://pyflo.net/){target="_blank"}: Guided Projects 1 and 2 |
 | Functions | [Pyflo](https://pyflo.net/){target="_blank"}: Guided Projects 3 and 4 |
 | Wrangling High-Dimensional Data | Ch. 3.1 - 3.3 @vanderplas2016python |
-| Visualizing High-Dimensional Data | - |
 | Scaling and Coloring | - |
-| Advanced Visualizations | TBA |
-| Wrangling Temporal Data | TBA |
-| Visualizing and Analyzing Temporal Data | TBA |
+| [Visualizing High-Dimensional Data & Advanced Visualizations](lessons/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations.html) | - |
+| Wrangling Temporal Data | - |
+| Visualizing and Analyzing Temporal Data | - |
 | Project Milestone: 2nd Progress Report | - |
 | Wrangling Spatial Data | TBA |
 | Visualizing and Analyzing Spatial Data | TBA |
