@@ -30,6 +30,7 @@ The following R packages have already been loaded for you, so there's no need to
 ```{r message=FALSE, warning=FALSE}
 # load packages
 library(tidyverse)
+library(palmerpenguins)
 ```
 
 # Collaborators
@@ -42,11 +43,15 @@ library(tidyverse)
 
 ## Problem 1
 
+Apply Principal Component Analysis (PCA) to compute the components of the four numerical variables `bill_length_mm`, `bill_depth_mm`, `flipper_length_mm`, and `body_mass_g` in the `penguins` data set.
+
 ::: {style="color: blue;"}
 [Write your answer here]
 :::
 
 ## Problem 2
+
+Plot the explained variance and the cumulative explained variance.
 
 ::: {style="color: blue;"}
 [Write your answer here]
@@ -54,17 +59,27 @@ library(tidyverse)
 
 ## Problem 3
 
+What is the total variance explained for the top two principal components? What does it mean? Explain your reasoning.
+
 ::: {style="color: blue;"}
 [Write your answer here]
 :::
 
 ## Problem 4
 
+Visualize the two principal components computed in Problem (1) using three separate scatter plots. In each plot, the points should be colored based on the following categorical variables:
+
+* `species`
+* `island`
+* `sex`
+
 ::: {style="color: blue;"}
 [Write your answer here]
 :::
 
 ## Problem 5
+
+Explain your observations in each plot in Problem (4), and describe their differences.
 
 ::: {style="color: blue;"}
 [Write your answer here]

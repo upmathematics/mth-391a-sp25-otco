@@ -390,7 +390,8 @@ here]”.</li>
 no need to load them yourself—they will be used in the problem sets. If
 you need any additional packages, you can load them here as well.</p>
 <pre class="r"><code># load packages
-library(tidyverse)</code></pre>
+library(tidyverse)
+library(palmerpenguins)</code></pre>
 </div>
 <div id="collaborators" class="section level1">
 <h1>Collaborators</h1>
@@ -402,30 +403,48 @@ library(tidyverse)</code></pre>
 <h1>Exercises</h1>
 <div id="problem-1" class="section level2">
 <h2>Problem 1</h2>
+<p>Apply Principal Component Analysis (PCA) to compute the components of
+the four numerical variables <code>bill_length_mm</code>,
+<code>bill_depth_mm</code>, <code>flipper_length_mm</code>, and
+<code>body_mass_g</code> in the <code>penguins</code> data set.</p>
 <div style="color: blue;">
 <p>[Write your answer here]</p>
 </div>
 </div>
 <div id="problem-2" class="section level2">
 <h2>Problem 2</h2>
+<p>Plot the explained variance and the cumulative explained
+variance.</p>
 <div style="color: blue;">
 <p>[Write your answer here]</p>
 </div>
 </div>
 <div id="problem-3" class="section level2">
 <h2>Problem 3</h2>
+<p>What is the total variance explained for the top two principal
+components? What does it mean? Explain your reasoning.</p>
 <div style="color: blue;">
 <p>[Write your answer here]</p>
 </div>
 </div>
 <div id="problem-4" class="section level2">
 <h2>Problem 4</h2>
+<p>Visualize the two principal components computed in Problem (1) using
+three separate scatter plots. In each plot, the points should be colored
+based on the following categorical variables:</p>
+<ul>
+<li><code>species</code></li>
+<li><code>island</code></li>
+<li><code>sex</code></li>
+</ul>
 <div style="color: blue;">
 <p>[Write your answer here]</p>
 </div>
 </div>
 <div id="problem-5" class="section level2">
 <h2>Problem 5</h2>
+<p>Explain your observations in each plot in Problem (4), and describe
+their differences.</p>
 <div style="color: blue;">
 <p>[Write your answer here]</p>
 </div>
