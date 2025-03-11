@@ -1,0 +1,95 @@
+---
+title: "Wrangling Temporal Data"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "March 12, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gridExtra)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- 
+- **Activity: **
+::::
+
+:::: {.column width=15%}
+::::
+
+## What is Temporal Data?
+
+**Temporal data** refers to data that is associated with time, meaning it captures changes, trends, or patterns over a period.
+
+**Key Characteristics:**
+
+* *Time-Stamped:* Each data point is linked to a specific time (e.g., a date or timestamp).
+* *Sequential Order:* The order of data points matters, as it reflects change over time.
+* *Trends & Patterns:* Useful for analyzing progression, seasonality, or recurring behaviors.
+
+## Case Study I
+
+**New York City Flights**
+
+* The `nycflights13` package: On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013
+* The `nycflights23` package: Similar to `nycflights13` but in 2023
+
+**Load Packages**
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(nycflights13)
+library(nycflights23)
+```
+
+**Data Frames**
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# rename the data frames since both packages have identical data frame names
+flights13 <- nycflights13::flights
+flights23 <- nycflights23::flights
+```
+
+## Time as a Dimension/Variable
+
+
+
+## Time is Relative
+
+
+
+## Time Formats
+
+
+
+## Wrangling Time Variables
+
+
+
+## Organizing Time for Analysis
+
+
+
+## Activity: 
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA14: *.
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+3. Change the author in the YAML header.
+4. Read the provided instructions.
+5. Answer all exercise problems on the designated sections.

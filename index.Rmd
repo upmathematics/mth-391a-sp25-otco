@@ -543,7 +543,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | Wrangling High-Dimensional Data | Ch. 3.1 - 3.3 @vanderplas2016python |
 | Scaling and Coloring | - |
 | [Visualizing High-Dimensional Data & Advanced Visualizations](lessons/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations.html) | - |
-| Wrangling Temporal Data | - |
+| Wrangling Temporal Data | Ch. 17 @wickham2023r |
 | Visualizing and Analyzing Temporal Data | - |
 | Project Milestone: 2nd Progress Report | - |
 | Wrangling Spatial Data | TBA |
