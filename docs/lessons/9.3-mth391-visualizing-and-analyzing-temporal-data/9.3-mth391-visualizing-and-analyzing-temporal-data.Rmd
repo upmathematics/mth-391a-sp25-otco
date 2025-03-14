@@ -2,7 +2,7 @@
 title: "Visualizing and Analyzing Temporal Data"
 subtitle: "Fundamentals of Data Science"
 author: "MTH-391A | Spring 2025 | University of Portland"
-date: "March 12, 2025"
+date: "March 14, 2025"
 output:
   slidy_presentation:
     font_adjustment: +5
