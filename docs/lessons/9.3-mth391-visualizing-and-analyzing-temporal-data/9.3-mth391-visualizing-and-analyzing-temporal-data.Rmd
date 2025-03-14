@@ -1,0 +1,231 @@
+---
+title: "Visualizing and Analyzing Temporal Data"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "March 12, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gridExtra)
+set.seed(42)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Know how to visualize time-series in multiple ways**
+- **Develop an understanding on how different time-series visualizations affect interpretation.**
+- **Activity: Visualize and Interpret Time-Series**
+::::
+
+:::: {.column width=15%}
+::::
+
+## Previously... (1/2)
+
+**Date/Time Ambiguity and Formats**
+
+:::: {.column width=49%}
+**Example Dates**
+
+```{r echo=TRUE}
+# year-month-day
+ymd("2017-01-31")
+
+# month-day-year
+mdy("January 31st, 2017")
+
+# day-month-year
+dmy("31-Jan-2017")
+```
+::::
+
+:::: {.column width=50%}
+**Converting String Dates into date/time format**
+
+* Identify the order in which year, month, and day appear in your dates
+* Arrange “y”, “m”, and “d” in the same order
+* That gives you the name of the function that will parse your date into the [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html){target="_blank"}, an international standard for writing date/time.
+::::
+
+## Previously... (2/2)
+
+**Time Granularity and Time-Zones**
+
+* **Granularity Matters:** The level of detail or precision used to represent time in a given context
+    - Seconds, minutes, hours, days, weeks, months, years, decades, etc.
+    - Semesters (fall, spring)
+    - Seasons (winter, spring, summer, fall)
+    - TV Show seasons or movie sequels
+    - Election cycles
+* **Time Zones Shift Meaning:** Be mindful of time-zones
+    - A "morning sale" in New York City, USA isn’t morning in Manila, Philippines
+
+## Case Study I
+
+**New York City Flights**
+
+* The `nycflights13` package: On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013
+* The `nycflights23` package: Similar to `nycflights13` but in 2023
+
+:::: {.column width=49%}
+**Load Packages**
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(nycflights13)
+library(nycflights23)
+```
+::::
+
+:::: {.column width=50%}
+**Data Frames**
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# bind the two data frames
+flights <- nycflights13::flights %>% 
+  rbind(nycflights23::flights)
+
+# show size
+dim(flights)
+```
+::::
+
+## Variables of Interest
+
+Each row in the `flights` tibble is a unique flight from NYC.
+
+* `date_time` | date and time of departure, which can be decomposed into parts (`year`, `month`, `day`, `hour`)
+* `carrier` | type of airline
+* `origin` | origin airport in New York (JFK, LGA or EWR)
+* `dest` | destination airport (e.g. ATL, LAX, PDX)
+* `dep_delay` | Departure delays, in minutes. Negative times represent early departures/arrivals.
+
+```{r echo=FALSE}
+# create subset
+flights_sub <- flights |> 
+  mutate(date_time = make_datetime(year,month,day,hour)) |> 
+  select(date_time,carrier,origin,dest,dep_delay,year,month,day,hour)
+```
+
+```{r echo=TRUE}
+# view random sample
+flights_sub |> 
+  sample_n(3)
+```
+
+## How to Get Started on Exploring Temporal Data
+
+The main **goal of time-series data** is to analyze how a variable or set of variables evolve over time. This typically involves identifying patterns and trends.
+
+**How many flights occurred in 2013 and 2023?**
+
+```{r echo=FALSE, fig.width=4,fig.height=3, fig.align='center'}
+ggplot(flights_sub,aes(x=factor(year))) + 
+  geom_bar() + 
+  xlab("year") + 
+  ylab("count")
+```
+
+## Increase Granularity
+
+**What is the number of fights per month?**
+
+```{r echo=FALSE, fig.width=6,fig.height=2, fig.align='center', out.width='100%'}
+ggplot(flights,aes(x=factor(month),fill=factor(year))) + 
+  geom_bar(position="dodge") + 
+  xlab("month") + 
+  ylab("count") + 
+  guides(fill=guide_legend(title="year"))
+```
+
+## Incorporate Other Variables
+
+**What is median departure delay per month coming out of each NYC airport?**
+
+```{r echo=FALSE, fig.width=6,fig.height=3, fig.align='center', out.width='100%'}
+flight_median_delay <- flights %>% 
+  drop_na() %>%
+  group_by(year,month,origin) %>% 
+  summarise(median_delay = median(dep_delay),
+            .groups="drop")
+
+ggplot(flight_median_delay,aes(x=month,y=median_delay,color=origin)) + 
+  geom_point() + 
+  geom_line() + 
+  xlab("month") + 
+  ylab("median departure delay") + 
+  facet_wrap(~year,nrow=3,scales="fixed") +
+  guides(color=guide_legend(title="origin")) + 
+  scale_x_continuous(breaks=seq(1,12,1))
+```
+
+## More Precision
+
+**What is the median daily delay during the summer months?**
+
+```{r echo=FALSE, fig.width=8,fig.height=4, fig.align='center', out.width='100%'}
+flight_median_delay_byday <- flights %>% 
+  drop_na() %>%
+  group_by(year,month,day,origin) %>% 
+  summarise(median_delay = median(dep_delay),
+            .groups="drop")
+
+ggplot(flight_median_delay_byday %>% filter(month %in% c(6,7,8,9),origin=="JFK"),aes(x=factor(day),y=median_delay,color=factor(month),group=factor(month))) + 
+  geom_point() + 
+  geom_line() + 
+  scale_color_brewer(palette = "RdYlGn") + 
+  xlab("day of the month") + 
+  ylab("median delay") + 
+  facet_wrap(~year,nrow=3,scales="fixed") + 
+  guides(color=guide_legend(title="origin")) 
+```
+
+## A Stragety on Visualizing Time-Series Data
+
+**Effective Methods for Analyzing Trends Over Time**
+
+1. **Define the Objective**
+  
+  - What insights are you looking for?
+  - Are you analyzing trends, seasonality, anomalies, or forecasting?
+  
+2. **Choose the Right Visualization Type**
+
+  - Line graphs: Best for continuous trends over time
+  - Bar Plots: Good for comparing discrete time intervals
+  - Boxplots: Helps visualizing distributions for comparing discrete time intervals
+  
+3. **Data Preprocessing**
+
+  - Handle missing values.
+  - Aggregate data to appropriate time intervals (hourly, daily, monthly).
+  - Normalize or scale data if necessary.
+  
+4. **Enhance Readability**
+  
+  - Use consistent time intervals on the x-axis.
+  - Add annotations for significant events.
+  - Utilize color coding for multiple time series.
+
+## Activity: Visualize Time-Series
+
+1. Log-in to Posit Cloud and open the R Studio assignment *MA15: Visualize Time-Series*.
+2. Make sure you are in the current working directory. Rename the `.Rmd` file by replacing `[name]` with your name using the format `[First name][Last initial]`. Then, open the `.Rmd` file.
+3. Change the author in the YAML header.
+4. Read the provided instructions.
+5. Answer all exercise problems on the designated sections.

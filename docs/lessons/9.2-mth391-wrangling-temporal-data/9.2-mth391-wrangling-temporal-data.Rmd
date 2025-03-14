@@ -28,7 +28,7 @@ set.seed(42)
 ::::
 
 :::: {.column width=70%}
-- **Develop an understanding how time is encoded**
+- **Develop an understanding on how time is encoded**
 - **Know how to work with date/time variables**
 - **Activity: Working with Date/Time Variables**
 ::::
@@ -53,13 +53,16 @@ set.seed(42)
 * The `nycflights13` package: On-time data for all flights that departed NYC (i.e. JFK, LGA or EWR) in 2013
 * The `nycflights23` package: Similar to `nycflights13` but in 2023
 
+:::: {.column width=49%}
 **Load Packages**
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 library(nycflights13)
 library(nycflights23)
 ```
+::::
 
+:::: {.column width=50%}
 **Data Frames**
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
@@ -70,6 +73,7 @@ flights <- nycflights13::flights %>%
 # show size
 dim(flights)
 ```
+::::
 
 ## Time as a Dimension/Variable
 
@@ -161,7 +165,7 @@ read_csv(dates, col_types = cols(date = col_date("%m/%d/%y")))
 **Reading a CSV and set the dates into `Year / Month / Day` format**
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-example_dates <- read_csv(dates,col_types=cols(date=col_date("%m/%d/%y")))
+example_dates <- read_csv(dates,col_types=cols(date=col_date("%y/%m/%d")))
 example_dates
 ```
 
@@ -266,18 +270,16 @@ flights_sub |>
   sample_n(3) # view random sample
 ```
 
-## Time is Relative
+## Time Granularity and Time-Zones
 
-* **Granularity Matters:** context defines time
-    - seconds, minutes, hours, days, weeks, months, years, decades, etc.
-    - semesters
-    - seasons (winter, spring, summer, fall)
-    - tv Show seasons or movie sequels
-    - election cycles
+* **Granularity Matters:** The level of detail or precision used to represent time in a given context
+    - Seconds, minutes, hours, days, weeks, months, years, decades, etc.
+    - Semesters (fall, spring)
+    - Seasons (winter, spring, summer, fall)
+    - TV Show seasons or movie sequels
+    - Election cycles
 * **Time Zones Shift Meaning:** Be mindful of time-zones
     - A "morning sale" in New York City, USA isn’t morning in Manila, Philippines
-* **Sequential Time Isn't Always Linear:**
-    - course progress (MTH 161,MTH 261,MTH361)
 
 ## Activity: Working with Date/Time Variables
 
