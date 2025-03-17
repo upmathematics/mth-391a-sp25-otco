@@ -545,7 +545,7 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Visualizing High-Dimensional Data & Advanced Visualizations](lessons/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations/9.1-mth391-visualizing-high-dimensional-data-and-advanced-visualizations.html) | - |
 | [Wrangling Temporal Data](lessons/9.2-mth391-wrangling-temporal-data/9.2-mth391-wrangling-temporal-data.html) | Ch. 17 @wickham2023r |
 | [Visualizing and Analyzing Temporal Data](lessons/9.3-mth391-visualizing-and-analyzing-temporal-data/9.3-mth391-visualizing-and-analyzing-temporal-data.html) | - |
-| Project Milestone: 2nd Progress Report | - |
+| [Project Milestone: 2nd Progress Report](lessons/10.1-mth391-project-milestone-2nd-project-report/10.1-mth391-project-milestone-2nd-project-report.html) | - |
 | Wrangling Spatial Data | TBA |
 | Visualizing and Analyzing Spatial Data | TBA |
 | Dynamic Visualizations | TBA |

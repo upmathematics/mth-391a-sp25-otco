@@ -1,0 +1,81 @@
+---
+title: "Project Milestone: 2nd Progress Report"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "March 17, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Activity: 1st Progress Report Presentations**
+- **Discuss the expectations of the next project milestone**
+::::
+
+:::: {.column width=15%}
+::::
+
+## 1st Progress Report
+
+**1st Progress Report:** Summarize early work on data acquisition, cleaning, and exploratory data analysis. 
+
+**Requirements:**
+
+- Description of datasets obtained, including sources and key features.
+- Initial data cleaning steps (e.g., handling missing values, removing duplicates).
+- Preliminary insights from data exploration (e.g., summary statistics, visualizations).
+- Updates on challenges encountered (e.g., data quality issues) and resolutions.
+
+## Activity: 1st Progress Report Presentations
+
+- Presentations will be done in alphabetical order of last name
+- Each student will present for 3 minutes
+- Each presentation allows a 5 minute discussion about the presentation
+
+## 2nd Progress Report
+
+**2nd Progress Report:** Focus on finalizing data visualizations, exploratory analyses, and refining data preparation, with modeling as a secondary consideration.
+
+**Requirements:**
+
+- Comprehensive set of data visualizations that clearly convey trends, patterns, and key insights.
+- Advanced exploratory analyses, including correlations, feature engineering, or hypothesis testing.
+- Validation of the dataset's readiness for modeling (e.g., addressing imbalances, normalization, feature selection).
+- Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models rather than optimization.
+- Discussion of insights derived from visualizations and how they influence modeling decisions.
+
+::: {style="color: red;"}
+$\star$ Your report (`.Rmd`, `.html`, and the 3-slide presentation) for this milestone will be due on the next milestone of the project. The in-between phases will serve as check-ins.
+:::
+
+## Finalizing Data Visualizations
+
+* What are the key trends, patterns, and insights you have identified so far in your data?
+* Which visualizations have been most effective at conveying these trends?
+* Have you used histograms, boxplots, scatterplots, or other types of plots to explore the relationships between variables?
+* How do the visualizations help inform your questions established in your project proposal?
+
+## Early Discussion of Results
+
+* What insights have you gained from your initial data exploration?
+* Are there any surprising findings from exploration? How might they influence further analyses?
+* How do you plan to proceed with additional exploration and refinement based on these early results?
+
+## Reflection
+
+* How does the progress align with your overall project goals?
+* What challenges have you faced in this milestone, and how do you plan to overcome them in future phases?
