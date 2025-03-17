@@ -350,10 +350,11 @@ Each milestone includes a written report and reflects the expectations of a typi
     
 * **2nd Progress Report:** Focus on finalizing data visualizations, exploratory analyses, and refining data preparation, with modeling as a secondary consideration. Requirements:
     - Comprehensive set of data visualizations that clearly convey trends, patterns, and key insights.
-    - Advanced exploratory analyses, including correlations, feature engineering, or hypothesis testing.
-    - Validation of the dataset's readiness for modeling (e.g., addressing imbalances, normalization, feature selection).
-    - Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models rather than optimization.
+    - Advanced exploratory analyses, including temporal plots, spatial maps, and network graphs.
+    - Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models.
     - Discussion of insights derived from visualizations and how they influence modeling decisions.
+
+*Amendment 11* The requirements for the 2nd Progress Report were modified.
 
 * **Final Report:** Deliver a comprehensive document summarizing the entire data science project, from problem definition to final insights. Requirements:
     - Overview of objectives and methods.

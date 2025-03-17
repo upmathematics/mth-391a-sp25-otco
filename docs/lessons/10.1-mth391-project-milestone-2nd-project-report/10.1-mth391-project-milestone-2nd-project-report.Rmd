@@ -53,9 +53,8 @@ knitr::opts_chunk$set(echo = FALSE)
 **Requirements:**
 
 - Comprehensive set of data visualizations that clearly convey trends, patterns, and key insights.
-- Advanced exploratory analyses, including correlations, feature engineering, or hypothesis testing.
-- Validation of the dataset's readiness for modeling (e.g., addressing imbalances, normalization, feature selection).
-- Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models rather than optimization.
+- Advanced exploratory analyses, including temporal plots, spatial maps, and network graphs.
+- Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models.
 - Discussion of insights derived from visualizations and how they influence modeling decisions.
 
 ::: {style="color: red;"}
