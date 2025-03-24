@@ -547,8 +547,8 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Wrangling Temporal Data](lessons/9.2-mth391-wrangling-temporal-data/9.2-mth391-wrangling-temporal-data.html) | Ch. 17 @wickham2023r |
 | [Visualizing and Analyzing Temporal Data](lessons/9.3-mth391-visualizing-and-analyzing-temporal-data/9.3-mth391-visualizing-and-analyzing-temporal-data.html) | - |
 | [Project Milestone: 2nd Progress Report](lessons/10.1-mth391-project-milestone-2nd-project-report/10.1-mth391-project-milestone-2nd-project-report.html) | - |
-| Wrangling Spatial Data | TBA |
-| Visualizing and Analyzing Spatial Data | TBA |
+| Wrangling Spatial Data | Ch. 17 @baumer2017modern |
+| Visualizing and Analyzing Spatial Data | - |
 | Dynamic Visualizations | TBA |
 | Wrangling Network Data | TBA |
 | Visualizing and Analyzing Network Data | TBA |
