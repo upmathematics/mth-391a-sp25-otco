@@ -193,7 +193,7 @@ The following learning objectives are designed to build on one another, with som
 | **10** | M 3/17 | **Project Milestone: 2nd Progress Report & <br>Project Phase 6** |
 |  | W 3/19 | Wrangling Spatial Data |
 |  | F 3/21 | Visualizing and Analyzing Spatial Data |
-| **11** | M 3/24 | Dynamic Visualizations & <br>**Project Phase 7** |
+| **11** | M 3/24 | _Cancelled_ & <br>**Project Phase 7** |
 |  | W 3/26 | Wrangling Network Data |
 |  | F 3/28 | Visualizing and Analyzing Network Data |
 | **12** | M 3/31 | Regular Expressions & <br>**Project Phase 8** |
