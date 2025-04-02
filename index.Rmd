@@ -194,11 +194,11 @@ The following learning objectives are designed to build on one another, with som
 |  | W 3/19 | Wrangling Spatial Data |
 |  | F 3/21 | Visualizing and Analyzing Spatial Data |
 | **11** | M 3/24 | _Cancelled_ & <br>**Project Phase 7** |
-|  | W 3/26 | Wrangling Network Data |
-|  | F 3/28 | Visualizing and Analyzing Network Data |
+|  | W 3/26 | Wrangling Text Data |
+|  | F 3/28 | Visualizing and Analyzing Text Data |
 | **12** | M 3/31 | Regular Expressions & <br>**Project Phase 8** |
-|  | W 4/2 | Wrangling Text Data |
-|  | F 4/4 | Visualizing and Analyzing Text Data |
+|  | W 4/2 | Wrangling Network Data |
+|  | F 4/4 | Visualizing and Analyzing Network Data |
 | **13** | M 4/7 | **Project Milestone: Final Report & <br>Project Phase 9** |
 |  | W 4/9 | Introduction to Statistical Learning |
 |  | F 4/11 | Regression and Classification |
@@ -549,12 +549,10 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | [Project Milestone: 2nd Progress Report](lessons/10.1-mth391-project-milestone-2nd-project-report/10.1-mth391-project-milestone-2nd-project-report.html) | - |
 | Wrangling Spatial Data | Ch. 17 @baumer2017modern |
 | Visualizing and Analyzing Spatial Data | - |
-| Dynamic Visualizations | TBA |
+| Wrangling Text Data | Ch. 19 @baumer2017modern |
+| Visualizing and Analyzing Text Data | - |
 | Wrangling Network Data | TBA |
 | Visualizing and Analyzing Network Data | TBA |
-| Regular Expressions | TBA |
-| Wrangling Text Data | TBA |
-| Visualizing and Analyzing Text Data | TBA |
 | Project Milestone: Final Report | - |
 | Introduction to Statistical Learning | TBA |
 | Regression and Classification | TBA |
