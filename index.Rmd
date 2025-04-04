@@ -199,15 +199,15 @@ The following learning objectives are designed to build on one another, with som
 | **12** | M 3/31 | Regular Expressions & <br>**Project Phase 8** |
 |  | W 4/2 | Wrangling Network Data |
 |  | F 4/4 | Visualizing and Analyzing Network Data |
-| **13** | M 4/7 | **Project Milestone: Final Report & <br>Project Phase 9** |
+| **13** | M 4/7 | Regression and Classification |
 |  | W 4/9 | Introduction to Statistical Learning |
-|  | F 4/11 | Regression and Classification |
-| **14** | M 4/14 | R and Python for Statistical Learning & <br>**Project Phase 10** |
-|  | W 4/16 | Model Selection and Regularization |
+|  | F 4/11 | **Project Milestone: Final Report & <br>Project Phase 9** |
+| **14** | M 4/14 | Project Period  |
+|  | W 4/16 | Project Period |
 |  | F 4/18 | _Easter vacation_ |
 | **15** | M 4/21 | _Easter Vacation_ |
 |  | W 4/23 | Project Period |
-|  | F 4/25 | Project Period |
+|  | F 4/25 | Project Period & <br>**Project Phase 10** |
 | **16** | Th 5/1 | **Final Project Presentations<br>(1:30 PM to 3:30 PM)** |
 
 <br>
