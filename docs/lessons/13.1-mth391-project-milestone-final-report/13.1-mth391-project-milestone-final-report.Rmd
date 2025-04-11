@@ -1,0 +1,87 @@
+---
+title: "Project Milestone: Final Report"
+subtitle: "Fundamentals of Data Science"
+author: "MTH-391A | Spring 2025 | University of Portland"
+date: "March 17, 2025"
+output:
+  slidy_presentation:
+    font_adjustment: +5
+    footer: "| MTH-391A Spring 2025 | <a href='../../index.html'>Back to the Course Website</a>"
+    css: ../_style.css
+bibliography: ../../references.bib
+csl: ../../mbe.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+:::: {.column width=15%}
+::::
+
+:::: {.column width=70%}
+- **Activity: 2nd Progress Report Presentations**
+- **Discuss the expectations of the final report**
+::::
+
+:::: {.column width=15%}
+::::
+
+## 2nd Progress Report
+
+**2nd Progress Report:** Focus on finalizing data visualizations, exploratory analyses, and refining data preparation, with modeling as a secondary consideration.
+
+**Requirements:**
+
+- Comprehensive set of data visualizations that clearly convey trends, patterns, and key insights.
+- Advanced exploratory analyses, including temporal plots, spatial maps, and network graphs.
+- Initial modeling attempts, with a focus on establishing a baseline or proof-of-concept models.
+- Discussion of insights derived from visualizations and how they influence modeling decisions.
+
+## Activity: 2nd Progress Report Presentations
+
+- Presentations will be done in alphabetical order of last name
+- Each student will present for 3 minutes
+- Each presentation allows a 5 minute discussion about the presentation
+
+## Final Report
+
+**Final Report:** Deliver a comprehensive document summarizing the entire data science project, from problem definition to final insights.
+
+**Requirements:**
+
+- Overview of objectives and methods.
+- Detailed findings, including final model performance and validation results.
+- Key insights drawn from analyses, supported by visualizations.
+- Discussion of the project’s impact, limitations, and potential future work.
+
+::: {style="color: red;"}
+**The final project reports --which includes all report files (e.g. `.Rmd`, `.html`, all relevant files, etc.) and the presentation slides-- are due on the last day of classes, April 25.**
+:::
+
+## Examples of Final Reports
+
+Here are some examples of final reports of students from previous semesters:
+
+* [Plays and Musicals Throughout the Age of Broadway](https://reed-statistics.github.io/math241-spring2022/projects/final-reports/final-report-2/2-plays-and-musicals-throughout-the-age-of-broadway.html){target="_blank"}
+* [Investigating New York Times News Bias](https://reed-statistics.github.io/math241-spring2022/projects/final-reports/final-report-6/6-investigating-new-york-times-news-bias.html){target="_blank"}
+* [Foreign Views in Lenta.ru News Articles](https://reed-statistics.github.io/math241-spring2022/projects/final-reports/final-report-7/7-foreign-views-in-lentaru-news-articles.html){target="_blank"}
+* [The World (of music) According to Spotify](https://reed-statistics.github.io/math241-spring2022/projects/final-reports/final-report-9/9-the-world-of-music-according-to-spotify.html){target="_blank"}
+* [Examining Global Energy Consumption and Production](https://reed-statistics.github.io/math241-spring2022/projects/final-reports/final-report-11/11-examining-global-energy-consumption-and-production.html){target="_blank"}
+
+## Final Presentation
+
+**Project Presentation:** Summarize and showcase the project’s objectives, process, findings, and conclusions in a concise, engaging format.
+
+**Requirements:**
+
+- A 15-minute presentation with 10 well-designed slides.
+- Visuals summarizing data insights, modeling approach, and final outcomes.
+- Focused delivery with clear, jargon-free communication for a mixed audience.
+- Participation in reviewing other student's projects based on structured criteria (e.g., clarity, analysis quality, presentation).
+
+::: {style="color: red;"}
+**The final project presentations are on  May 1, Th 1:30 PM - 3:30 PM, Franz Hall 125**
+:::
