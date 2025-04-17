@@ -552,8 +552,8 @@ The "Read" column in the table below contains page numbers (Pg.) or chapters (ch
 | Wrangling Text Data | Ch. 19 @baumer2017modern |
 | Visualizing and Analyzing Text Data | - |
 | [Project Milestone: Final Report](lessons/13.1-mth391-project-milestone-final-report/13.1-mth391-project-milestone-final-report.html) | - |
-| Wrangling Network Data | TBA |
-| Visualizing and Analyzing Network Data | TBA |
+| Wrangling Network Data | Ch. 20 @baumer2017modern |
+| Visualizing and Analyzing Network Data | - |
 | Final Project Presentations | - |
 
 ### Books \& Online Resources Lists
